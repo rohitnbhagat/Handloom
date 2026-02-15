@@ -1,0 +1,383 @@
+<div class="clearfix"></div>
+<div class="row" *ngIf="!IsAddNew && !IsPrint">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">GDN (Challan) List</h2>
+                <ul class="nav navbar-right panel_toolbox mt-1">
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="OpenGDN(0)">&nbsp;<i
+                                class="fa fa-plus-circle"></i>&nbsp;&nbsp;Add GDN</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0">
+                <div class="row ">
+                    <div class="col-md-12 col-sm-12">
+                        <form class="form-horizontal form-label-left mt-3" novalidate="">
+                            
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">GDN No
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <input type="text" name="VoucherNo" class="form-control"
+                                        [(ngModel)]="VoucherNo" />
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">From Date
+                                </label>
+                                <div class="col-xl-2 col-md-3 col-sm-6">
+                                    <div class="input-group mb-0">
+                                        <input type="text" class="form-control" matInput
+                                            [matDatepicker]="FromDatepicker" name="FromDate" [(ngModel)]="FromDate">
+                                        <mat-datepicker #FromDatepicker></mat-datepicker>
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-primary"
+                                                (click)="FromDatepicker.open()">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-1 col-md-0 col-sm-0">
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">To Date
+                                </label>
+                                <div class="col-xl-2 col-md-3 col-sm-6">
+                                    <div class="input-group mb-0">
+                                        <input type="text" class="form-control" matInput [matDatepicker]="ToDatepicker"
+                                            name="ToDate" [(ngModel)]="ToDate">
+                                        <mat-datepicker #ToDatepicker></mat-datepicker>
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-primary"
+                                                (click)="ToDatepicker.open()">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-1 col-md-0 col-sm-0">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Party
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="PartyID" placeholder="Search" class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtPartySearch placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstPartys | filtercolumn:txtPartySearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Consignee
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="ConsigneeID" placeholder="Search" class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtConsigneeSearch placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstConsignees | filtercolumn:txtConsigneeSearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Agent
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="AgentID" placeholder="Search" class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtAgentSearch placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstAgents | filtercolumn:txtAgentSearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Brand
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="BrandID" placeholder="Search"
+                                            class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtBrandSearch
+                                                    placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstBrands | filtercolumn:txtBrandSearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Sales
+                                    Location
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="SalesLocationID" placeholder="Search"
+                                            class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtSalesLocationSearch
+                                                    placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstSalesLocations | filtercolumn:txtSalesLocationSearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Priority
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="Priority" placeholder="Search" class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtPrioritySearch placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstPriority | filtercolumn:txtPrioritySearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                </div>
+
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Exhibition
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="ExhibitionID" placeholder="Search" class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtExhibitionSearch placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstExhibition | filtercolumn:txtExhibitionSearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Credit Type
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="CreditTypeID" placeholder="Search" class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtCreditTypeSearch placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstCreditType | filtercolumn:txtCreditTypeSearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Status
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <mat-form-field class="form-control-ddl">
+                                        <mat-select [(value)]="Status" placeholder="Search"
+                                            class="form-control">
+                                            <mat-option>
+                                                <ngx-mat-select-search #txtStatusSearch
+                                                    placeholderLabel="Search..."
+                                                    [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option
+                                                *ngFor="let c of lstStatus | filtercolumn:txtStatusSearch.value:['label']"
+                                                [value]="c.value" class="form-control-option">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">
+                                </label>
+                                <div class="col-xl-3 col-md-3 col-sm-6">
+                                    <button type="button" class="btn btn-danger btn-sm" (click)="loadGDNs(true)">&nbsp;<i
+                                        class="fa fa-search"></i>&nbsp;&nbsp;Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="!IsAddNew && !IsPrint">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <!-- <h2 class="pl-2">Sales Order List</h2> -->
+                <ul class="nav navbar-right panel_toolbox mt-1">
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="loadGDNs(true)">&nbsp;<i
+                                class="fa fa-refresh"></i>&nbsp;&nbsp;Refresh</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="ExportToExcel()">&nbsp;<i
+                                class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Export To Excel</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0 table-container">
+                <table mat-table [dataSource]="dataSource" matSort class="table table-striped mb-0 mb-n-6px">
+
+                    <ng-container matColumnDef="Actions">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef style="width: 80px;"> Actions </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!-- <button type="button" class="btn btn-success btn-sm"
+                                (click)="OpenGDN(element.GDNID)">&nbsp;<i class="fa fa-edit"></i>
+                                Edit</button>
+                            <button type="button" class="btn btn-danger btn-sm" (click)="DeleteRow(element)">&nbsp;<i
+                                    class="fa fa-trash"></i> Delete</button>
+                            <button type="button" class="btn btn-info btn-sm" (click)="PrintRow(element)">&nbsp;<i
+                                    class="fa fa-print"></i> Print</button>-->
+                                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="width: 30px; height: 30px; padding: 3px;">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button> 
+                                      <mat-menu #menu="matMenu">
+                                        <button class="btn-mat-menu-item" mat-menu-item style="min-height:32px" (click)="OpenGDN(element.GDNID)">
+                                          <mat-icon>edit</mat-icon>
+                                          <span>Edit</span>
+                                        </button>
+                                        <button class="btn-mat-menu-item" mat-menu-item style="min-height:32px" (click)="DeleteRow(element)">
+                                          <mat-icon>delete</mat-icon>
+                                          <span>Delete</span>
+                                        </button>
+                                        <button class="btn-mat-menu-item" mat-menu-item style="min-height:32px" (click)="PrintRow(element)">
+                                          <mat-icon>print</mat-icon>
+                                          <span>Print</span>
+                                        </button>
+                                      </mat-menu>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="GDNID">
+                        <th class="column-title justify-content-center" mat-header-cell *matHeaderCellDef
+                            mat-sort-header style="width: 105px;">ID </th>
+                        <td class="text-center" mat-cell *matCellDef="let row"> {{row.GDNID}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="GDNNo">
+                        <th class="column-title justify-content-left" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 150px;">GDN No</th>
+                        <td mat-cell *matCellDef="let row"> {{row.GDNNo}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="GDNDate">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 120px;"> GDN Date </th>
+                        <td mat-cell *matCellDef="let row"> {{row.GDNDate | date:'dd-MM-yyyy'}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="PartyName">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 250px;"> Party </th>
+                        <td mat-cell *matCellDef="let row"> {{row.PartyName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="PONo">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 150px;"> PO No </th>
+                        <td mat-cell *matCellDef="let row"> {{row.PONo}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="PODate">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 120px;"> PO Date </th>
+                        <td mat-cell *matCellDef="let row"> {{row.PODate | date:'dd-MM-yyyy'}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Status">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 200px;"> Status </th>
+                        <td mat-cell *matCellDef="let row"> {{row.Status}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="TotalQty">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 100px;"> Total Qty </th>
+                        <td mat-cell *matCellDef="let row" class="text-right"> {{row.TotalQty | number:'1.2-2'}}
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="TotalAmount">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 130px;"> Total Amount </th>
+                        <td mat-cell *matCellDef="let row" class="text-right"> {{row.TotalAmount | number:'1.2-2'}}
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ModifiedByName">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 200px;"> Modified By</th>
+                        <td mat-cell *matCellDef="let row"> {{row.ModifiedByName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ModifiedDate">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header
+                            style="width: 200px;"> Modified Date </th>
+                        <td mat-cell *matCellDef="let row"> {{row.ModifiedDate | date:'dd-MM-yyyy hh:mm:ss a'}} </td>
+                    </ng-container>
+
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="headings"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </tr>
+
+
+                </table>
+                <mat-paginator [pageSizeOptions]="[10, 20, 30, 40, 50]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-gdn-add #GDNAdd (BackEvent)="GDNBackEvent()"></app-gdn-add>
+<app-gdn-print #GDNPrint (BackEvent)="PrintClose_Click()"></app-gdn-print>

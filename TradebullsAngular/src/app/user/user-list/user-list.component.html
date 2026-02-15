@@ -1,0 +1,80 @@
+<div class="clearfix"></div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 ">
+    <div class="x_panel p-0">
+      <div class="x_title mb-0 mt-1">
+        <h2>User List</h2>
+        <ul class="nav navbar-right panel_toolbox mt-1">
+          <li>
+            <button type="button" class="btn btn-primary btn-sm" (click)="loadUsers(true)">&nbsp;<i
+              class="fa fa-refresh"></i>&nbsp;&nbsp;Refresh</button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-primary btn-sm" (click)="CreateUser()">&nbsp;<i
+              class="fa fa-plus-circle"></i>&nbsp;&nbsp;Add User</button>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content p-0">
+        <table mat-table [dataSource]="dataSource" matSort class="table table-striped mb-0 mb-n-6px">
+
+          <ng-container matColumnDef="ClientCode">
+            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header>Emp Code </th>
+            <td mat-cell *matCellDef="let row"> {{row.ClientCode}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="FullName">
+            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.FullName}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="Gender">
+            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+            <td mat-cell *matCellDef="let row"> {{row.Gender}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="PhoneNo">
+            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> Phone No </th>
+            <td mat-cell *matCellDef="let row"> {{row.PhoneNo}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="EmailID">
+            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> EmailID </th>
+            <td mat-cell *matCellDef="let row"> {{row.EmailID}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="IsLocked">
+            <th class="column-title" mat-header-cell *matHeaderCellDef> Is Locked </th>
+            <td mat-cell *matCellDef="let element">
+              <app-toggle-on-off [isChecked]="element.IsLocked" (checkedChange)="updateCheckedStatus(element.UserID, $event)" [showLabel]="false" [onLabel]="'Locked'" [offLabel]="'Unlocked'"></app-toggle-on-off>
+            </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="Actions">
+            <th class="column-title" mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <button type="button" class="btn btn-success btn-sm" (click)="CreateUser(element.UserID)" >&nbsp;<i class="fa fa-edit"></i> Edit</button>
+              <button type="button" class="btn btn-danger btn-sm" (click)="DeleteRow(element)">&nbsp;<i class="fa fa-trash"></i> Delete</button>
+            </td>
+          </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="headings"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+          </tr>
+    
+          
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 20, 30, 40, 50]" showFirstLastButtons></mat-paginator> 
+        <div class="loading" *ngIf="isLoading">
+        <mat-spinner diameter="50"></mat-spinner>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-createuser #usercomp (SaveEvent)="loadUsers(true)" ></app-createuser>
+

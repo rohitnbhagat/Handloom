@@ -1,0 +1,146 @@
+<div class="">
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row mb-2">
+                <div class="col-md=12">
+                    <input type="text" id="filter" [(ngModel)]="strProductFilter" placeholder="Search Product" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_content" style="height: 85vh;overflow-y:auto; overflow-x:hidden;">
+                            <div class="row">
+                                <div class="col-md-55" *ngFor="let product of lstParentProducts | posfilter:strProductFilter:['name']">
+                                    <div class="thumbnail" style="cursor: pointer;" (click)="ProductSelected(product)">
+                                        <div class="image view view-first">
+                                            <img style="width: 100%; display: block;" [src]="product.Photo" alt="image">
+                                        </div>
+                                        <div class="caption">
+                                            <p [innerHTML]="product.name"></p>
+                                            <h4 class="mb-1">₹ {{product.price}}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+</div>
+
+
+<div *ngIf="IsAddNew" class="modal fade bs-example-modal-lg " [ngClass]="{'show': IsAddNew}" tabindex="-1" role="dialog"
+    aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    {{SelectedParentProduct.name}}
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="BackProduct()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div *ngFor="let att of lstProductAttributes">
+                                    <br />
+                                    <h2 class="mb-1" [innerHTML]="att.Name"></h2>
+                                    <div>
+                                        <button type="button" class="btn btn-sm"
+                                            *ngFor="let att_V of GetProduct_AttributeValue(att.ProductAttributeID)"
+                                            [innerHTML]="att_V.option"
+                                            (click)="Attribute_SelectionChange(att, att_V)"
+                                            [ngClass]="getAttributeSelectionClass(att.ProductAttributeID, att_V.ProductAttributeValueID)"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ng-container *ngIf="selectedProduct">
+                            <div class="row mt-3">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Product
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <label class="col-form-label label-align" [innerHTML]="selectedProduct.name">
+                                    </label> 
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Price
+                                    </label>
+                                </div>
+                                <div class="col-md-4 col-sm-3">
+                                    <input type="number" name="Price" [(ngModel)]="Price" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Qty
+                                    </label>
+                                </div>
+                                <div class="col-md-4 col-sm-3">
+                                    <input type="number" name="qty" [(ngModel)]="Qty" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Total
+                                    </label>
+                                </div>
+                                <div class="col-md-4 col-sm-3">
+                                    <input type="number" name="TotalAmount" [value]="GetTotalAmount()" class="form-control" [disabled]="true" />
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">HSN Code
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <select2 [data]="lstHSNCode" [templates]="templateHSNCode" [minCountForSearch]="1"
+                                    [value]="HSNCodeID" (update)="HSNSelectionChange($event)">
+                                    <ng-template #templateHSNCode let-data="data">{{data?.HSNCodeName}}</ng-template>
+                                    </select2>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Remarks
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <textarea name="Remarks" [(ngModel)]="Remarks" class="form-control" ></textarea>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center">
+                        <img [src]="SelectedParentProduct.Photo" style="height: 50vh;max-width: 100%;" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="BackProduct()">Close</button>
+                <button type="button" class="btn btn-primary">Add To Cart</button>
+                    
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="IsAddNew"></div>

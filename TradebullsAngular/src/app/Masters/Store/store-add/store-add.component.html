@@ -1,0 +1,170 @@
+<div class="row" *ngIf="isModalOpen">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">{{header}}</h2>
+                <ul class="nav navbar-right panel_toolbox mt-1">
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="SaveUser()">Save changes</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="CloseModel()">&nbsp;<i
+                                class="fa fa-arrow-circle-o-left"></i>&nbsp;&nbsp;Back</button>
+                    </li>
+
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0">
+                <div class="row mt-3">
+                    <div class="col-md-6 col-sm-12">
+                        <form [formGroup]="UserForm" class="form-horizontal form-label-left" novalidate=""
+                            (ngSubmit)="SaveUser()">
+                            <div class="item form-group" style="display: none;">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">StoreID <span
+                                        class="required">*</span>
+                                </label>
+                                <div class="col-md-8 col-sm-10 ">
+                                    <input type="hidden" formControlName="StoreID" value="Usermodel.StoreID" />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">Store Name <span
+                                        class="required">*</span>
+                                </label>
+                                <div class="col-md-10 col-sm-10 ">
+                                    <input type="text" formControlName="StoreName" class="form-control "
+                                        placeholder="Enter Store Name" />
+                                    <ul *ngIf="( FormControl.StoreName.touched || submitted ) && FormControl.StoreName.errors?.required"
+                                        class="parsley-errors-list filled" id="parsley-id-5">
+                                        <li class="parsley-required">Store Name is required.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">Address Line 1
+                                </label>
+                                <div class="col-md-10 col-sm-10 ">
+                                    <input type="text" formControlName="Address1" class="form-control "
+                                        placeholder="Enter Address Line 1" />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">Address Line 2
+                                </label>
+                                <div class="col-md-10 col-sm-10 ">
+                                    <input type="text" formControlName="Address2" class="form-control "
+                                        placeholder="Enter Address Line 2" />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">Country
+                                </label>
+                                <div class="col-md-4 col-sm-10 ">
+                                    <input type="text" formControlName="Country" class="form-control "
+                                        placeholder="Enter Country" />
+                                </div>
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">State
+                                </label>
+                                <div class="col-md-4 col-sm-10 ">
+                                    <input type="text" formControlName="State" class="form-control "
+                                        placeholder="Enter State" />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">City
+                                </label>
+                                <div class="col-md-4 col-sm-10 ">
+                                    <input type="text" formControlName="City" class="form-control "
+                                        placeholder="Enter City" />
+                                </div>
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">Post Code
+                                </label>
+                                <div class="col-md-4 col-sm-10 ">
+                                    <input type="text" formControlName="Postcode" class="form-control "
+                                        placeholder="Enter Post Code" />
+                                </div>
+                            </div>
+
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">EmailID
+                                </label>
+                                <div class="col-md-4 col-sm-10 ">
+                                    <input type="text" formControlName="EmailID" class="form-control "
+                                        placeholder="Enter EmailID" />
+                                </div>
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">Phone No
+                                </label>
+                                <div class="col-md-4 col-sm-10 ">
+                                    <input type="text" formControlName="PhoneNo" class="form-control "
+                                        placeholder="Enter Phone No" />
+                                </div>
+                            </div>
+
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">Contact Person
+                                </label>
+                                <div class="col-md-10 col-sm-10 ">
+                                    <input type="text" formControlName="ContactPerson" class="form-control "
+                                        placeholder="Enter Contact Person" />
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50px;" class="text-center">
+                                        SrNo
+                                    </th>
+                                    <th>
+                                        Location Code
+                                    </th>
+                                    <th>
+                                        Location Name
+                                    </th>
+                                    <th style="width: 70px;">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let l of StoreLocations">
+                                    <td class="text-center">
+                                        {{l.SrNo}}
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="StoreLocationID"  [(ngModel)]="l.StoreLocationID" />
+                                        <input type="text" class="form-control" name="LocationCode"
+                                            placeholder="Enter Location Code" [(ngModel)]="l.LocationCode" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" name="LocationName"
+                                            placeholder="Enter Location Name" [(ngModel)]="l.LocationName" />
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm"
+                                            (click)="DeleteRow(l)">&nbsp;<i class="fa fa-trash"></i>&nbsp;</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <button type="button" class="btn btn-primary btn-sm" (click)="AddRow()">&nbsp;<i
+                                                class="fa fa-plus-circle"></i>&nbsp;&nbsp;Add Location</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,553 @@
+<div class="row" *ngIf="IsAddNew">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel p-0">
+                    <div class="x_title mb-0 mt-1">
+                        <h2 class="pl-2">{{GetHeaderText()}}</h2>
+                        <span class="badge badge-danger badge-lock ml-5 mt-2" *ngIf="IsLocked">
+                            <i class="fa fa-lock"></i>&nbsp;&nbsp;Locked
+                        </span>
+                        <ul class="nav navbar-right panel_toolbox mt-1">
+                            <li>
+                                <button type="button" class="btn btn-primary btn-sm" (click)="SaveOrderClick()"
+                                    *ngIf="!IsLocked">&nbsp;<i class="fa fa-save"></i>&nbsp;&nbsp;Save Order</button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-danger btn-sm" (click)="BackClick()">&nbsp;<i
+                                        class="fa fa-arrow-circle-o-left"></i>&nbsp;&nbsp;Back To List</button>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content p-0">
+                        <div class="row ">
+                            <div class="col-md-12 col-sm-12">
+                                <form class="form-horizontal form-label-left mt-3" novalidate="">
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Voucher No
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <input type="text" name="VoucherNo" class="form-control"
+                                                [(ngModel)]="VoucherNo" />
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Voucher
+                                            Date <span class="spnRequired">*</span>
+                                        </label>
+                                        <div class="col-xl-2 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0">
+                                                <input type="text" class="form-control" matInput
+                                                    [matDatepicker]="VoucherDatepicker" name="VoucherDate"
+                                                    [(ngModel)]="VoucherDate">
+                                                <mat-datepicker #VoucherDatepicker></mat-datepicker>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-primary"
+                                                        (click)="VoucherDatepicker.open()">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-1 col-md-0 col-sm-0">
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Brand <span
+                                                class="spnRequired">*</span>
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="BrandID" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtBrandSearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstBrands | filtercolumn:txtBrandSearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Party <span
+                                                class="spnRequired">*</span>
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0 withadd">
+                                                <mat-form-field class="form-control-ddl">
+                                                    <mat-select [(value)]="PartyID" placeholder="Search"
+                                                        (selectionChange)="PartyDropdownSelectionChange($event)"
+                                                        class="form-control">
+                                                        <mat-option>
+                                                            <ngx-mat-select-search #txtPartySearch
+                                                                placeholderLabel="Search..."
+                                                                [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                        </mat-option>
+                                                        <mat-option
+                                                            *ngFor="let c of lstPartys | filtercolumn:txtPartySearch.value:['label']"
+                                                            [value]="c.value" class="form-control-option">
+                                                            {{c.label}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                        (click)="CreateParty()">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Consignee
+                                            <span class="spnRequired">*</span>
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0 withadd">
+                                                <mat-form-field class="form-control-ddl">
+                                                    <mat-select [(value)]="ConsigneeID" placeholder="Search"
+                                                        class="form-control"
+                                                        (selectionChange)="ConsigneeDropdownSelectionChange($event)">
+                                                        <mat-option>
+                                                            <ngx-mat-select-search #txtConsigneeSearch
+                                                                placeholderLabel="Search..."
+                                                                [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                        </mat-option>
+                                                        <mat-option
+                                                            *ngFor="let c of lstConsignees | filtercolumn:txtConsigneeSearch.value:['label']"
+                                                            [value]="c.value" class="form-control-option">
+                                                            {{c.label}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                        (click)="CreateConsignee()">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Agent
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0 withadd">
+                                                <mat-form-field class="form-control-ddl">
+                                                    <mat-select [(value)]="AgentID" placeholder="Search"
+                                                        class="form-control">
+                                                        <mat-option>
+                                                            <ngx-mat-select-search #txtAgentSearch
+                                                                placeholderLabel="Search..."
+                                                                [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                        </mat-option>
+                                                        <mat-option
+                                                            *ngFor="let c of lstAgents | filtercolumn:txtAgentSearch.value:['label']"
+                                                            [value]="c.value" class="form-control-option">
+                                                            {{c.label}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                        (click)="CreateAgent()">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">PO No
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <input type="text" name="PONo" class="form-control" [(ngModel)]="PONo" />
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">PO Date
+                                        </label>
+                                        <div class="col-xl-2 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0">
+                                                <input type="text" class="form-control" matInput
+                                                    [matDatepicker]="PODatepicker" name="PODate" [(ngModel)]="PODate">
+                                                <mat-datepicker #PODatepicker></mat-datepicker>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-primary"
+                                                        (click)="PODatepicker.open()">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-1 col-md-0 col-sm-0">
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Delivery
+                                            Date
+                                        </label>
+                                        <div class="col-xl-2 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0">
+                                                <input type="text" class="form-control" matInput
+                                                    [matDatepicker]="DeliveryDatepicker" name="DeliveryDate"
+                                                    [(ngModel)]="DeliveryDate">
+                                                <mat-datepicker #DeliveryDatepicker></mat-datepicker>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-primary"
+                                                        (click)="DeliveryDatepicker.open()">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-1 col-md-0 col-sm-0">
+
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Sales
+                                            Location <span class="spnRequired">*</span>
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="SalesLocationID" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtSalesLocationSearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstSalesLocations | filtercolumn:txtSalesLocationSearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Priority
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="Priority" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtPrioritySearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstPriority | filtercolumn:txtPrioritySearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Due Days
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <input type="number" name="DeliveryDueDays" class="form-control"
+                                                [(ngModel)]="DeliveryDueDays" />
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Exhibition
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="ExhibitionID" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtExhibitionSearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstExhibition | filtercolumn:txtExhibitionSearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Credit Type
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="CreditTypeID" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtCreditTypeSearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstCreditType | filtercolumn:txtCreditTypeSearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Status
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="Status" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtStatusSearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstStatus | filtercolumn:txtStatusSearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel p-0">
+                    <div class="x_content p-0">
+
+                        <ul class="nav nav-tabs bar_tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="productdetails-tab" data-toggle="tab"
+                                    href="#productdetails" role="tab" aria-controls="productdetails"
+                                    aria-selected="true">Product Details <span class="spnRequired">*</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="taxdetails-tab" data-toggle="tab" href="#taxdetails" role="tab"
+                                    aria-controls="taxdetails" aria-selected="false">Tax Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="remarks-tab" data-toggle="tab" href="#remarks" role="tab"
+                                    aria-controls="remarks" aria-selected="false">Remarks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="billingaddress-tab" data-toggle="tab" href="#billingaddress"
+                                    role="tab" aria-controls="billingaddress" aria-selected="false">Billing Address</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="shippingaddress-tab" data-toggle="tab" href="#shippingaddress"
+                                    role="tab" aria-controls="shippingaddress" aria-selected="false">Shipping
+                                    Address</a>
+                            </li>
+                            <li class="nav-item" style="position: absolute;right: 11px;border: none;">
+                                <label class="col-form-label label-align" style="margin-right: 5px;">
+                                    Show Images
+                                </label>
+                                <span>
+                                    <mat-slide-toggle [(ngModel)]="IsPicVisible"></mat-slide-toggle>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="productdetails" role="tabpanel"
+                                aria-labelledby="productdetails-tab"
+                                style="margin-top: -13px;max-height: 45vh;overflow: auto;">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 70px;">SrNo</th>
+                                            <th style="width: 150px;" *ngIf="IsPicVisible">Image</th>
+                                            <th style="width: 130px;">SKU</th>
+                                            <th style="width: 250px;">Product</th>
+                                            <th style="width: 150px;">HSN Code</th>
+                                            <th style="width: 100px;" class="text-center">Qty</th>
+                                            <th style="width: 100px;" class="text-center">Rate</th>
+                                            <th style="width: 100px;" class="text-center">Amount</th>
+                                            <th style="width: 100px;" class="text-center">Tax</th>
+                                            <th style="width: 100px;" class="text-center">Total</th>
+                                            <th style="width: 200px;">Party Item Description</th>
+                                            <th style="width: 100px;" *ngIf="!IsLocked">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of ProductDetails">
+                                            <td>{{item.SrNo}}</td>
+                                            <td *ngIf="IsPicVisible"><img [src]="item.Photo" style="width: 150px; margin: -10px;"></td>
+                                            <td [innerHTML]="item.sku"></td>
+                                            <td [innerHTML]="item.ProductName"></td>
+                                            <td [innerHTML]="item.HSNCodeName"></td>
+                                            <td class="text-right">{{item.Qty | number:'1.2-2'}}</td>
+                                            <td class="text-right">{{item.Price | number:'1.2-2'}}</td>
+                                            <td class="text-right">{{item.TotalAmount | number:'1.2-2'}}</td>
+                                            <td class="text-right"><a (click)="ShowTaxDetails(item)"
+                                                    class="link">{{item.TotalTaxAmount | number:'1.2-2'}}</a></td>
+                                            <td class="text-right">{{item.FinalAmount | number:'1.2-2'}}</td>
+                                            <td [innerHTML]="item.Remarks"></td>
+                                            <td *ngIf="!IsLocked">
+                                                <button type="button" class="btn btn-sm btn-secondary" title="Edit"
+                                                    (click)="OpenProduct(item)"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-sm btn-danger" title="Delete"
+                                                    (click)="DeleteProduct(item)"><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="btn btn-primary btn-sm ml-2" (click)="OpenProduct(null)"
+                                    *ngIf="!IsLocked">&nbsp;<i class="fa fa-plus-circle"></i>&nbsp;&nbsp;Add
+                                    Product</button>
+
+                            </div>
+                            <div class="tab-pane fade" id="taxdetails" role="tabpanel" aria-labelledby="taxdetails-tab"
+                                style="margin-top: -13px;">
+                                <table class="table table-striped table-bordered m-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th style="width: 150px;" class="text-center">Rate</th>
+                                            <th style="width: 150px;" class="text-center">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of Taxes">
+                                            <td [innerHTML]="item.name"></td>
+                                            <td class="text-right">{{item.rate | number:'1.2-2'}}</td>
+                                            <td class="text-right">{{item.Amount | number:'1.2-2'}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="remarks" role="tabpanel" aria-labelledby="remarks-tab"
+                                style="margin-top: -13px;">
+                                <!-- <textarea [(ngModel)]="Remarks" class="form-control"
+                                    style="min-height: 200px;"></textarea> -->
+                                <!-- <ngx-editor [editor]="editor" [config]="editorConfig" [(ngModel)]="Remarks"></ngx-editor> -->
+
+                                <div class="editor">
+                                    <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                                    </ngx-editor-menu>
+                                    <ngx-editor [editor]="editor" [(ngModel)]="Remarks">
+                                    </ngx-editor>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="billingaddress" role="tabpanel"
+                                aria-labelledby="billingaddress-tab">
+                                <app-sales-add-address #BillingAddress
+                                    (StateChanged)="StateSelectedIndexChange($event)"></app-sales-add-address>
+                            </div>
+                            <div class="tab-pane fade" id="shippingaddress" role="tabpanel"
+                                aria-labelledby="shippingaddress-tab">
+                                <app-sales-add-address #ShippingAddress></app-sales-add-address>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel p-0">
+                    <div class="x_content p-0">
+                        <form class="form-horizontal form-label-left mt-3" novalidate="">
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Total Qty
+                                </label>
+                                <div class="col-xl-2 col-md-2 col-sm-6">
+                                    <input type="text" name="Total Qty" class="form-control text-right"
+                                        [(ngModel)]="TotalQty" />
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Gross Total
+                                </label>
+                                <div class="col-xl-2 col-md-2 col-sm-6">
+                                    <input type="text" name="GrossTotal" class="form-control text-right"
+                                        [(ngModel)]="GrossTotal" />
+                                </div>
+
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Total Tax
+                                </label>
+                                <div class="col-xl-2 col-md-2 col-sm-6">
+                                    <input type="text" name="TotalTax" class="form-control text-right"
+                                        [(ngModel)]="TotalTax" />
+                                </div>
+
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Total Amount
+                                </label>
+                                <div class="col-xl-2 col-md-2 col-sm-6">
+                                    <input type="text" name="TotalAmount" class="form-control text-right"
+                                        [(ngModel)]="TotalAmount" />
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <app-sales-add-product #CntProduct (SaveEvent)="AddeditProductSave($event)"></app-sales-add-product>
+
+</div>
+
+
+
+<div *ngIf="IsDisplayTax" class="modal fade bs-example-modal-md " [ngClass]="{'show': IsDisplayTax}" tabindex="-1"
+    role="dialog" aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    Tax Details
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseTaxModel()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <table class="table table-striped table-bordered m-0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th style="width: 100px;">Rate</th>
+                            <th style="width: 100px;">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of TaxDetail.Taxes">
+                            <td [innerHTML]="item.name"></td>
+                            <td class="text-right">{{item.rate | number:'1.2-2'}}</td>
+                            <td class="text-right">{{item.Amount | number:'1.2-2'}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-right" style="font-weight: 500;">Total</td>
+                            <td class="text-right" style="font-weight: 500;">{{TaxDetail.TotalTaxAmount |
+                                number:'1.2-2'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseTaxModel()">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="IsDisplayTax"></div>
+
+<app-party-add #partycomp (SaveEvent)="FillParty();FillConsignee();"></app-party-add>
+<app-party-add #consigneecomp (SaveEvent)="FillParty();FillConsignee();"></app-party-add>
+<app-party-add #agentcomp (SaveEvent)="FillAgent();"></app-party-add>

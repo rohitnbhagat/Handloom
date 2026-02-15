@@ -1,0 +1,11 @@
+2026-02-15 11:28:25.216 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-15 11:28:25.378 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/weatherforecast  
+2026-02-15 11:28:25.440 +05:30 [INF] Hosting environment: Development
+2026-02-15 11:28:25.441 +05:30 [INF] Content root path: G:\Projects\Handloom\HandloomAPI
+2026-02-15 11:28:26.455 +05:30 [INF] Method InvokeAsunc
+2026-02-15 11:28:26.456 +05:30 [INF] Method InvokeAsunc - 1
+2026-02-15 11:28:28.338 +05:30 [INF] Request finished in 2985.4167ms 401 application/json
+2026-02-15 11:28:41.302 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/favicon.ico  
+2026-02-15 11:28:41.304 +05:30 [INF] Method InvokeAsunc
+2026-02-15 11:28:41.305 +05:30 [INF] Method InvokeAsunc - 1
+2026-02-15 11:28:41.354 +05:30 [INF] Request finished in 53.009ms 401 application/json

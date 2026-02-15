@@ -1,0 +1,12 @@
+.table-container {
+    overflow: auto;
+  }
+  
+  mat-table {
+    width: 100%;
+  }
+
+  mat-paginator {
+    display: flex;
+    justify-content: flex-start;  /* Align paginator to the left */
+  }

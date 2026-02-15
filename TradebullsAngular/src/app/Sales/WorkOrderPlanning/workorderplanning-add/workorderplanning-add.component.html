@@ -1,0 +1,495 @@
+<div class="row" *ngIf="IsAddNew">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel p-0">
+                    <div class="x_title mb-0 mt-1">
+                        <h2 class="pl-2">{{GetHeaderText()}}</h2>
+                        <span class="badge badge-danger badge-lock ml-5 mt-2" *ngIf="IsLocked">
+                            <i class="fa fa-lock"></i>&nbsp;&nbsp;Locked
+                        </span>
+                        <ul class="nav navbar-right panel_toolbox mt-1">
+                            <li>
+                                <button type="button" class="btn btn-primary btn-sm" (click)="SaveOrderClick()"
+                                    *ngIf="!IsLocked">&nbsp;<i class="fa fa-save"></i>&nbsp;&nbsp;Save
+                                    Transaction</button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-danger btn-sm" (click)="BackClick()">&nbsp;<i
+                                        class="fa fa-arrow-circle-o-left"></i>&nbsp;&nbsp;Back To List</button>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content p-0">
+                        <div class="row ">
+                            <div class="col-md-12 col-sm-12">
+                                <form class="form-horizontal form-label-left mt-3" novalidate="">
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Voucher No
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <input type="text" name="VoucherNo" class="form-control"
+                                                [(ngModel)]="VoucherNo" />
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Voucher
+                                            Date <span class="spnRequired">*</span>
+                                        </label>
+                                        <div class="col-xl-2 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0">
+                                                <input type="text" class="form-control" matInput
+                                                    [matDatepicker]="VoucherDatepicker" name="VoucherDate"
+                                                    [(ngModel)]="VoucherDate">
+                                                <mat-datepicker #VoucherDatepicker></mat-datepicker>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-primary"
+                                                        (click)="VoucherDatepicker.open()">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-1 col-md-0 col-sm-0">
+                                        </div>
+
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Prepared By
+                                            <span class="spnRequired">*</span>
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="PreparedBy" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtPreparedBySearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstUsers | filtercolumn:txtPreparedBySearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Assigned To
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="AssignedTo" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtAssignedToSearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstUsers | filtercolumn:txtAssignedToSearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Authorized
+                                            By
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <mat-form-field class="form-control-ddl">
+                                                <mat-select [(value)]="AuthorizedBy" placeholder="Search"
+                                                    class="form-control">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtAuthorizedBySearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstUsers | filtercolumn:txtAuthorizedBySearch.value:['label']"
+                                                        [value]="c.value" class="form-control-option">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">
+                                            Start Date
+                                        </label>
+                                        <div class="col-xl-2 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0">
+                                                <input type="text" class="form-control" matInput
+                                                    [matDatepicker]="StartDatepicker" name="StartDate"
+                                                    [(ngModel)]="StartDate">
+                                                <mat-datepicker #StartDatepicker></mat-datepicker>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-primary"
+                                                        (click)="StartDatepicker.open()">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-1 col-md-0 col-sm-0">
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">
+                                            End Date
+                                        </label>
+                                        <div class="col-xl-2 col-md-3 col-sm-6">
+                                            <div class="input-group mb-0">
+                                                <input type="text" class="form-control" matInput
+                                                    [matDatepicker]="EndDatepicker" name="EndDate"
+                                                    [(ngModel)]="EndDate">
+                                                <mat-datepicker #EndDatepicker></mat-datepicker>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-sm btn-primary"
+                                                        (click)="EndDatepicker.open()">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-1 col-md-0 col-sm-0">
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">
+                                            Due Days
+                                        </label>
+                                        <div class="col-xl-1 col-md-2 col-sm-3">
+                                            <input type="number" class="form-control" [(ngModel)]="DueDays" />
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">
+                                        </label>
+                                        <div class="col-xl-3 col-md-3 col-sm-6">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm"
+                                                    [ngClass]="WOType == 'Local' ? 'btn-danger' : 'btn-secondary'"
+                                                    (click)="LocalButtonClick()">&nbsp;<i
+                                                        class="fa fa-list-alt"></i>&nbsp;&nbsp;Local</button>
+                                                <button type="button" class="btn btn-sm"
+                                                    [ngClass]="WOType == 'Sales Order' ? 'btn-danger' : 'btn-secondary'"
+                                                    (click)="OpenSalesOrder()">&nbsp;<i
+                                                        class="fa fa-list-ul"></i>&nbsp;&nbsp;Sales Order</button>
+                                            </div>
+
+
+                                        </div>
+                                        <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Sales Order
+                                        </label>
+                                        <div class="col-xl-7 col-md-3 col-sm-10">
+                                            <textarea type="" name="SalesOrderNo" class="form-control"
+                                                [ngModel]="GetSalesOrderDetails()" disabled></textarea>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel p-0">
+                    <div class="x_content p-0">
+
+                        <ul class="nav nav-tabs bar_tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="productdetails-tab" data-toggle="tab"
+                                    href="#productdetails" role="tab" aria-controls="productdetails"
+                                    aria-selected="true">Product Details <span class="spnRequired">*</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="remarks-tab" data-toggle="tab" href="#remarks" role="tab"
+                                    aria-controls="remarks" aria-selected="false">Remarks</a>
+                            </li>
+                            <li class="nav-item" style="position: absolute;right: 11px;border: none;">
+                                <label class="col-form-label label-align" style="margin-right: 5px;">
+                                    Show Images
+                                </label>
+                                <span>
+                                    <mat-slide-toggle [(ngModel)]="IsPicVisible"></mat-slide-toggle>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="productdetails" role="tabpanel"
+                                aria-labelledby="productdetails-tab"
+                                style="margin-top: -13px;max-height: 45vh;overflow: auto;">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 70px;">SrNo</th>
+                                            <th style="width: 130px;" *ngIf="WOType != 'Local'">Sales Order No</th>
+                                            <th style="width: 150px;" *ngIf="IsPicVisible">Image</th>
+                                            <th style="width: 130px;">SKU</th>
+                                            <th style="width: 250px;">Product</th>
+                                            <th style="width: 250px;">Components</th>
+                                            <th style="width: 100px;" class="text-center">Qty</th>
+                                            <th style="width: 200px;">Remarks</th>
+                                            <th style="width: 100px;" *ngIf="!IsLocked">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of ProductDetails">
+                                            <td>{{item.SrNo}}</td>
+                                            <td *ngIf="WOType != 'Local'" style="word-wrap: break-word;">{{item.SalesOrderNo}}</td>
+                                            <td *ngIf="IsPicVisible"><img [src]="item.Photo"
+                                                    style="width: 150px; margin: -10px;"></td>
+                                            <td [innerHTML]="item.sku"></td>
+                                            <td [innerHTML]="item.ProductName"></td>
+                                            <td>
+                                                <mat-form-field appearance="fill" class="form-control-ddl">
+                                                    <mat-select [(ngModel)]="item.Components" multiple placeholder="Search" class="form-control" [compareWith]="compareComponents">
+                                                    <mat-option *ngFor="let option of lstComponents" [value]="option" class="select-checkbox-item">
+                                                        {{option.ComponentName}} 
+                                                    </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </td>
+                                            <td class="text-right">{{item.Qty | number:'1.2-2'}}</td>
+                                            <td [innerHTML]="item.Remarks"></td>
+                                            <td *ngIf="!IsLocked">
+                                                <button type="button" class="btn btn-sm btn-secondary" title="Edit"
+                                                    *ngIf="WOType == 'Local'" (click)="OpenProduct(item)"><i
+                                                        class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-sm btn-danger" title="Delete"
+                                                    (click)="DeleteProduct(item)"><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="btn btn-primary btn-sm ml-2" (click)="OpenProduct(null)"
+                                    *ngIf="!IsLocked && WOType == 'Local'">&nbsp;<i
+                                        class="fa fa-plus-circle"></i>&nbsp;&nbsp;Add
+                                    Product</button>
+
+                            </div>
+
+                            <div class="tab-pane fade" id="remarks" role="tabpanel" aria-labelledby="remarks-tab"
+                                style="margin-top: -13px;">
+                                <div class="editor">
+                                    <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                                    </ngx-editor-menu>
+                                    <ngx-editor [editor]="editor" [(ngModel)]="Remarks">
+                                    </ngx-editor>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel p-0">
+                    <div class="x_content p-0">
+                        <form class="form-horizontal form-label-left mt-3" novalidate="">
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-3 col-sm-6 label-align">Total Qty
+                                </label>
+                                <div class="col-xl-2 col-md-2 col-sm-6">
+                                    <input type="text" name="Total Qty" class="form-control text-right"
+                                        [(ngModel)]="TotalQty" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <app-workorderplanning-add-product #CntProduct
+        (SaveEvent)="AddeditProductSave($event)"></app-workorderplanning-add-product>
+
+</div>
+
+
+
+<div *ngIf="IsOpenSaveOrder" class="modal fade bs-example-modal-lg " [ngClass]="{'show': IsOpenSaveOrder}" tabindex="-1"
+    role="dialog" aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-lg" style="max-width: 90vw;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    List of sales order
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseSalesorderModel()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0" style="max-height: 75vh;overflow: auto;">
+                <div class="row m-2">
+                    <div class="col-md-12">
+                        <input type="text" id="filter" [(ngModel)]="strSOFilter" placeholder="Search"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-md-12">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 80px;text-align: center;">
+                                        <input type="checkbox" [(ngModel)]="isSOAllSelected"
+                                            (change)="toggleSalesOrderSelectAll()">
+                                    </th>
+                                    <th style="display: none;">ID</th>
+                                    <th style="width: 150px;">Order No</th>
+                                    <th style="width: 120px;">Order Date</th>
+                                    <th style="width: 250px;">Party</th>
+                                    <th style="width: 150px;">PO No</th>
+                                    <th style="width: 120px;">PO Date</th>
+                                    <th style="width: 130px;">Total Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of filteredSalesOrders()">
+                                    <td class="text-center">
+                                        <input type="checkbox" name="radioGroup" [(ngModel)]="row.Select"
+                                            (change)="checkSalesOrderSelectAllStatus()" />
+                                    </td>
+                                    <td style="display: none;">{{row.Order.SalesOrderID}}</td>
+                                    <td>{{row.Order.SalesOrderNo}}</td>
+                                    <td>{{row.Order.SalesOrderDate | date:'dd-MM-yyyy'}}</td>
+                                    <td>{{row.Order.PartyName}}</td>
+                                    <td>{{row.Order.PONo}}</td>
+                                    <td>{{row.Order.PODate | date:'dd-MM-yyyy'}}</td>
+                                    <td>{{row.Order.TotalQty | number:'1.2-2'}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="SubmitSalesorderModel()">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseSalesorderModel()">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="IsOpenSaveOrder"></div>
+
+<div *ngIf="IsOpenSaveOrderItem" class="modal fade bs-example-modal-lg " [ngClass]="{'show': IsOpenSaveOrderItem}"
+    tabindex="-1" role="dialog" aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-lg" style="max-width: 90vw;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    List of sales order products
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseSalesorderItemModel()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0" style="max-height: 75vh;overflow: auto;">
+                <div class="row m-2">
+                    <div class="col-md-6">
+
+                        <div class="input-group">
+                            <input type="text" id="filter" [(ngModel)]="strSOProductFilter" placeholder="Search"
+                                class="form-control">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-danger" (click)="strSOProductFilter = ''"
+                                    style="border-top-left-radius: 0px;border-bottom-left-radius: 0px;padding-bottom: 5px;">
+                                    <i class="fa fa-close"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <label class="col-form-label col-md-2 label-align">
+                        Show Images
+                    </label>
+                    <div class="col-md-2 pt-1">
+                        <mat-slide-toggle [(ngModel)]="IsPicVisibleInSalesOrderItem"></mat-slide-toggle>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-md-12">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 80px;text-align: center;">
+                                        <input type="checkbox" [(ngModel)]="isAllSelected"
+                                            (change)="toggleSalesOrderItemSelectAll()">
+                                    </th>
+                                    <th style="width: 60px;">SrNo</th>
+                                    <th style="width: 130px;">Sales Order No</th>
+                                    <th *ngIf="IsPicVisibleInSalesOrderItem" style="width: 150px;">Image</th>
+                                    <th style="width: 120px;">SKU</th>
+                                    <th style="width: 250px;">Product</th>
+                                    <th style="width: 150px;">HSN Code</th>
+                                    <th style="width: 300px;">Components</th>
+                                    <th style="width: 100px;" class="text-center">Qty</th>
+                                    <th style="width: 100px;" class="text-center">Used Qty</th>
+                                    <th style="width: 250px;">Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    *ngFor="let item of lstSelectedSalesOrderDetails | filtercolumn:strSOProductFilter:['ProductName','SalesOrderNo','sku','ProductID']">
+                                    <!-- <tr *ngFor="let item of filteredSalesOrderOrders()"> -->
+                                    <td class="text-center">
+                                        <input type="checkbox" name="radioGroup" [(ngModel)]="item.Select"
+                                            (change)="checkSalesOrderItemSelectAllStatus()" />
+                                    </td>
+                                    <td>{{item.Data.SrNo}}</td>
+                                    <td>{{item.Data.SalesOrderNo}}</td>
+                                    <td *ngIf="IsPicVisibleInSalesOrderItem"><img [src]="item.Data.Photo"
+                                            style="width: 150px; margin: -10px;"></td>
+                                    <td [innerHTML]="item.Data.sku"></td>
+                                    <td [innerHTML]="item.Data.ProductName"></td>
+                                    <td [innerHTML]="item.Data.HSNCodeName"></td>
+                                    <td>
+                                        <!-- <mat-chip-set>
+                                            <mat-chip *ngFor="let comp of item.Data.Components" (removed)="removeChip(comp, item)">
+                                                {{ comp.ComponentName }}
+                                                <button matChipRemove>
+                                                    <mat-icon>cancel</mat-icon>
+                                                </button>
+                                            </mat-chip>
+                                        </mat-chip-set> -->
+                                        <mat-form-field appearance="fill" class="form-control-ddl">
+                                            <mat-select [(ngModel)]="item.Data.Components" multiple placeholder="Search" class="form-control" [compareWith]="compareComponents">
+                                            <mat-option *ngFor="let option of lstComponents" [value]="option" class="select-checkbox-item">
+                                                {{option.ComponentName}} 
+                                            </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </td>
+                                    <td class="text-right">{{item.Data.Qty | number:'1.2-2'}}</td>
+                                    <td>
+                                        <input type="number" [(ngModel)]="item.Data.UsedQty" class="form-control"
+                                            [min]="0" [max]="item.Data.Qty" />
+                                    </td>
+                                    <td [innerHTML]="item.Data.Remarks"></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="SubmitSalesorderItemModel()">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseSalesorderItemModel()">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="IsOpenSaveOrderItem"></div>

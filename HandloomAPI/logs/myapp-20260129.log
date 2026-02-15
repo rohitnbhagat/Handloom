@@ -1,0 +1,39 @@
+2026-01-29 08:34:48.980 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-29 08:34:49.059 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/weatherforecast  
+2026-01-29 08:34:49.136 +05:30 [INF] Hosting environment: Development
+2026-01-29 08:34:49.136 +05:30 [INF] Content root path: G:\Projects\Handloom\HandloomAPI
+2026-01-29 08:34:49.829 +05:30 [INF] Method InvokeAsunc
+2026-01-29 08:34:49.830 +05:30 [INF] Method InvokeAsunc - 1
+2026-01-29 08:34:50.454 +05:30 [INF] Request finished in 1429.1965ms 401 application/json
+2026-01-29 08:34:50.763 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/favicon.ico  
+2026-01-29 08:34:50.764 +05:30 [INF] Method InvokeAsunc
+2026-01-29 08:34:50.764 +05:30 [INF] Method InvokeAsunc - 1
+2026-01-29 08:34:50.785 +05:30 [INF] Request finished in 23.0813ms 401 application/json
+2026-01-29 08:51:54.928 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Brand/Get?BrandID=0  
+2026-01-29 08:51:54.927 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Product/Get  
+2026-01-29 08:51:54.942 +05:30 [INF] CORS policy execution successful.
+2026-01-29 08:51:54.942 +05:30 [INF] CORS policy execution successful.
+2026-01-29 08:51:54.951 +05:30 [INF] Request finished in 24.1951ms 204 
+2026-01-29 08:51:54.951 +05:30 [INF] Request finished in 23.3977ms 204 
+2026-01-29 08:51:55.160 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Masters/Product/Get application/json 139
+2026-01-29 08:51:55.161 +05:30 [INF] CORS policy execution successful.
+2026-01-29 08:51:55.161 +05:30 [INF] Method InvokeAsunc
+2026-01-29 08:51:55.162 +05:30 [INF] Method InvokeAsunc - 3
+2026-01-29 08:51:55.215 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2026-01-29 08:51:55.216 +05:30 [INF] CORS policy execution successful.
+2026-01-29 08:51:55.216 +05:30 [INF] Method InvokeAsunc
+2026-01-29 08:51:55.216 +05:30 [INF] Method InvokeAsunc - 3
+2026-01-29 08:51:55.349 +05:30 [INF] No CORS policy found for the specified request.
+2026-01-29 08:51:55.349 +05:30 [INF] No CORS policy found for the specified request.
+2026-01-29 08:51:55.364 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2026-01-29 08:51:55.364 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2026-01-29 08:51:55.447 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2026-01-29 08:51:55.447 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Masters.ProductMaster.ProductMaster_search_filter) on controller HandloomAPI.Controllers.Masters.ProductController (HandloomAPI).
+2026-01-29 08:51:55.581 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-29 08:51:55.886 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 425.4834ms
+2026-01-29 08:51:55.892 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2026-01-29 08:51:55.894 +05:30 [INF] Request finished in 678.5942ms 200 application/json; charset=utf-8
+2026-01-29 08:51:57.206 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ProductMaster.ProductMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-29 08:51:57.411 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI) in 1963.0528ms
+2026-01-29 08:51:57.411 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2026-01-29 08:51:57.412 +05:30 [INF] Request finished in 2257.6811ms 200 application/json; charset=utf-8

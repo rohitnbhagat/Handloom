@@ -1,0 +1,271 @@
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">Sales Order Report</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0">
+                <div class="row ">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="form-horizontal form-label-left mt-3" novalidate="">
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Sales Order No
+                                </label>
+                                <div class="col-xl-2 col-md-3 col-sm-6">
+                                    <input type="text" name="SalesOrderNo" class="form-control"
+                                        [(ngModel)]="SalesOrderNo" />
+                                </div>
+                                <div class="col-xl-1 col-md-1 col-sm-1">
+
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">From Date</label>
+                                <div class="col-xl-2 col-md-3 col-sm-6">
+                                    <div class="input-group mb-0">
+                                        <input type="text" class="form-control" matInput 
+                                            [matDatepicker]="FromDatepicker" name="FromDate"
+                                            [(ngModel)]="FromDate">
+                                        <mat-datepicker #FromDatepicker></mat-datepicker>
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-primary"
+                                                (click)="FromDatepicker.open()">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-1 col-md-1 col-sm-1">
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">To Date</label>
+                                <div class="col-xl-2 col-md-3 col-sm-6">
+                                    <div class="input-group mb-0">
+                                        <input type="text" class="form-control" matInput 
+                                            [matDatepicker]="ToDatepicker" name="ToDate"
+                                            [(ngModel)]="ToDate">
+                                        <mat-datepicker #ToDatepicker></mat-datepicker>
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-primary"
+                                                (click)="ToDatepicker.open()">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Party
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <!-- <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="PartyIDs" placeholder="Select Party"
+                                            class="form-control" multiple>
+                                            <mat-option *ngFor="let c of lstPartys"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field> -->
+                                    <p-multiSelect 
+                                            [options]="lstPartys" 
+                                            [(ngModel)]="PartyIDs" 
+                                            optionLabel="label" 
+                                            optionValue="value"
+                                            placeholder="Select Parties"
+                                            [showClear]="false"
+                                             />
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Product
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <!-- <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="ProductIDs" placeholder="Select Product" class="form-control" (selectionChange)="ProductSelectionChange($event)" multiple>
+                                            <mat-option *ngFor="let c of lstParentProducts"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field> -->
+                                    <p-multiSelect 
+                                            [options]="lstParentProducts" 
+                                            [(ngModel)]="ProductIDs" 
+                                            optionLabel="label" 
+                                            optionValue="value"
+                                            placeholder="Select Product"
+                                            [showClear]="false"
+                                            (onChange)="ProductSelectionChange($event)" />
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Variation
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <!-- <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="VariationIDs" placeholder="Select Variation" 
+                                            class="form-control" multiple>
+                                            <mat-option *ngFor="let c of lstProducts"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field> -->
+                                     <p-multiSelect 
+                                            [options]="lstProducts" 
+                                            [(ngModel)]="VariationIDs" 
+                                            optionLabel="label" 
+                                            optionValue="value"
+                                            placeholder="Select Variations"
+                                            [showClear]="false"
+                                             />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Brand
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="BrandIDs" placeholder="Select Brand"
+                                            class="form-control" multiple>
+                                            <mat-option *ngFor="let c of lstBrands"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Sales Location
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="SalesLocationIDs" placeholder="Select Sales Location"
+                                            class="form-control" multiple>
+                                            <mat-option *ngFor="let c of lstSalesLocations"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Exhibition
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="ExhibitionIDs" placeholder="Select Exhibition"
+                                            class="form-control" multiple>
+                                            <mat-option *ngFor="let c of lstExhibition"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Columns</label>
+                                <div class="col-xl-11 col-md-10 col-sm-6">
+                                    <mat-form-field appearance="fill" class="form-control-ddl">
+                                        <mat-select [(ngModel)]="selectedOptions" multiple placeholder="Search" class="form-control">
+                                          <mat-option *ngFor="let option of options" [value]="option.value" class="select-checkbox-item">
+                                            {{option.viewValue}} 
+                                            <!--  <mat-checkbox [checked]="selectedOptions.indexOf(option.value) > -1">
+                                              {{ option.viewValue }}
+                                            </mat-checkbox> -->
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="x_footer">
+                <div class="row">
+                    <div class="col-xl-1 col-md-2 col-sm-3">
+                    </div>
+                    <div class="col-xl-11 col-md-10 col-sm-9">
+                        <button type="button" name="btnSearch" class="btn btn-primary btn-sm" (click)="LoadReport()">&nbsp;<i
+                            class="fa fa-search"></i>&nbsp;&nbsp;Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="TotalRows > -1">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">Filtered Data</h2>
+                <ul class="nav navbar-right panel_toolbox mt-1">
+                    <li *ngIf="TotalRows > 0">
+                        <button type="button" class="btn btn-primary btn-sm" (click)="ExportToExcel()">&nbsp;<i
+                                class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Export To Excel</button>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="Print()">&nbsp;<i
+                                class="fa fa-print"></i>&nbsp;&nbsp;Print</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0 table-container" style="max-height: 58vh; overflow: auto;" id="contenttoprint" >
+                
+                <table class="table table-striped mb-0 mb-n-6px" *ngIf="TotalRows > 0">
+                    <thead>
+                        <tr>
+                            <ng-container *ngFor="let column of columnNames">
+                                <th *ngIf="column == 'Image'" [ngStyle]="{width: GetColumnWidth(column)}">{{ GetColumnName(column) }}</th>
+                                <th  *ngIf="column != 'Image'" [ngStyle]="{width: GetColumnWidth(column)}">{{ GetColumnName(column) }}</th>
+                            </ng-container>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders">
+                            <ng-container *ngFor="let column of columnNames">
+                                <td *ngIf="column == 'Image'">
+                                    <ng-container *ngIf="order[column] != '.'">
+                                        <img [src]="order[column]" style="max-width: 150px; max-height: 150px; margin: -10px;" />
+                                    </ng-container>
+                                </td>
+                                <td *ngIf="column != 'Image'" [innerHTML]="order[column]" ></td>
+                            </ng-container>
+                            <td></td>
+                          </tr>
+                    </tbody>
+                </table>
+
+                <div class="row" *ngIf="TotalRows == 0">
+                    <div class="col-md-12 text-center p-3">No Data Found</div>
+                </div>
+                
+
+
+            </div>
+            <div class="x_footer">
+                <div class="row" *ngIf="TotalRows > 0">
+                    <div class="col-md-12">
+                        <table class="table mb-0 mb-n-6px" style="width: auto;">
+                            <tbody>
+                                <tr>
+                                    <ng-container *ngFor="let col of Summary">
+                                        <td class="pt-3">
+                                            {{ col.Column }}
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control text-right" [value]="col.Total | number:'1.2-2'" />
+                                        </td>
+                                    </ng-container>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="loading" *ngIf="isLoading">
+    <mat-spinner diameter="50"></mat-spinner>
+</div>

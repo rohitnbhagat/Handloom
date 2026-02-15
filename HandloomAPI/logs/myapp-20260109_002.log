@@ -1,0 +1,54 @@
+2026-01-09 20:42:57.431 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-09 20:42:57.475 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/weatherforecast  
+2026-01-09 20:42:57.594 +05:30 [INF] Hosting environment: Development
+2026-01-09 20:42:57.595 +05:30 [INF] Content root path: G:\Projects\Handloom\HandloomAPI
+2026-01-09 20:42:57.648 +05:30 [INF] Method InvokeAsunc
+2026-01-09 20:42:57.648 +05:30 [INF] Method InvokeAsunc - 1
+2026-01-09 20:42:58.365 +05:30 [INF] Request finished in 906.336ms 401 application/json
+2026-01-09 20:42:58.560 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/favicon.ico  
+2026-01-09 20:42:58.561 +05:30 [INF] Method InvokeAsunc
+2026-01-09 20:42:58.561 +05:30 [INF] Method InvokeAsunc - 1
+2026-01-09 20:42:58.563 +05:30 [INF] Request finished in 3.3117ms 401 application/json
+2026-01-09 20:45:15.408 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44302/api/WooCommerce/Sync_Products  0
+2026-01-09 20:45:15.410 +05:30 [INF] Method InvokeAsunc
+2026-01-09 20:45:15.410 +05:30 [INF] Method InvokeAsunc - 3
+2026-01-09 20:45:15.592 +05:30 [INF] Executing endpoint 'TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI)'
+2026-01-09 20:45:15.655 +05:30 [INF] Route matched with {action = "Sync_Products", controller = "WooCommerce"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Sync_Products() on controller TrabullsAPI.Controllers.WooCommerceController (HandloomAPI).
+2026-01-09 21:11:58.497 +05:30 [INF] Executing ObjectResult, writing value of type 'TrabullsAPI.APIResult'.
+2026-01-09 21:11:58.704 +05:30 [INF] Executed action TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI) in 1603039.0567ms
+2026-01-09 21:11:58.710 +05:30 [INF] Executed endpoint 'TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI)'
+2026-01-09 21:11:58.710 +05:30 [INF] Request finished in 1603311.5632ms 404 application/json; charset=utf-8
+2026-01-09 21:31:18.073 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-09 21:31:18.140 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/weatherforecast  
+2026-01-09 21:31:18.202 +05:30 [INF] Hosting environment: Development
+2026-01-09 21:31:18.202 +05:30 [INF] Content root path: G:\Projects\Handloom\HandloomAPI
+2026-01-09 21:31:18.240 +05:30 [INF] Method InvokeAsunc
+2026-01-09 21:31:18.240 +05:30 [INF] Method InvokeAsunc - 1
+2026-01-09 21:31:18.614 +05:30 [INF] Request finished in 493.8792ms 401 application/json
+2026-01-09 21:31:18.765 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/favicon.ico  
+2026-01-09 21:31:18.766 +05:30 [INF] Method InvokeAsunc
+2026-01-09 21:31:18.767 +05:30 [INF] Method InvokeAsunc - 1
+2026-01-09 21:31:18.768 +05:30 [INF] Request finished in 3.0824ms 401 application/json
+2026-01-09 21:32:08.364 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44302/api/WooCommerce/Sync_Products  0
+2026-01-09 21:32:08.365 +05:30 [INF] Method InvokeAsunc
+2026-01-09 21:32:08.366 +05:30 [INF] Method InvokeAsunc - 3
+2026-01-09 21:32:08.737 +05:30 [INF] Executing endpoint 'TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI)'
+2026-01-09 21:32:08.796 +05:30 [INF] Route matched with {action = "Sync_Products", controller = "WooCommerce"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Sync_Products() on controller TrabullsAPI.Controllers.WooCommerceController (HandloomAPI).
+2026-01-09 21:32:51.742 +05:30 [INF] Executing ObjectResult, writing value of type 'TrabullsAPI.APIResult'.
+2026-01-09 21:32:51.989 +05:30 [INF] Executed action TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI) in 43167.8548ms
+2026-01-09 21:32:51.997 +05:30 [INF] Executed endpoint 'TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI)'
+2026-01-09 21:32:51.997 +05:30 [INF] Request finished in 43639.4355ms 400 application/json; charset=utf-8
+2026-01-09 21:33:17.181 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44302/api/WooCommerce/Sync_Products  0
+2026-01-09 21:33:17.183 +05:30 [INF] Method InvokeAsunc
+2026-01-09 21:33:17.184 +05:30 [INF] Method InvokeAsunc - 3
+2026-01-09 21:33:17.199 +05:30 [INF] Executing endpoint 'TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI)'
+2026-01-09 21:33:17.200 +05:30 [INF] Route matched with {action = "Sync_Products", controller = "WooCommerce"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Sync_Products() on controller TrabullsAPI.Controllers.WooCommerceController (HandloomAPI).
+2026-01-09 21:34:19.506 +05:30 [INF] Executing ObjectResult, writing value of type 'TrabullsAPI.APIResult'.
+2026-01-09 21:34:19.513 +05:30 [INF] Executed action TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI) in 62312.5641ms
+2026-01-09 21:34:19.514 +05:30 [INF] Executed endpoint 'TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI)'
+2026-01-09 21:34:19.516 +05:30 [INF] Request finished in 62336.3557ms 400 application/json; charset=utf-8
+2026-01-09 21:34:26.083 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44302/api/WooCommerce/Sync_Products  0
+2026-01-09 21:34:26.084 +05:30 [INF] Method InvokeAsunc
+2026-01-09 21:34:26.085 +05:30 [INF] Method InvokeAsunc - 3
+2026-01-09 21:34:26.088 +05:30 [INF] Executing endpoint 'TrabullsAPI.Controllers.WooCommerceController.Sync_Products (HandloomAPI)'
+2026-01-09 21:34:26.089 +05:30 [INF] Route matched with {action = "Sync_Products", controller = "WooCommerce"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Sync_Products() on controller TrabullsAPI.Controllers.WooCommerceController (HandloomAPI).

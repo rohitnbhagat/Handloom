@@ -1,0 +1,24 @@
+<!-- <div class="toggle-container">
+    <input type="checkbox" id="toggle" [(ngModel)]="val" (change)="toggle()" />
+    <label for="toggle" class="toggle-label">
+      <span class="toggle-slider"></span>
+    </label>
+    <span>{{ val ? 'ON' : 'OFF' }}</span>
+  </div> -->
+
+
+  <div class="" *ngIf="isChecked">
+    <label>
+        <input type="checkbox" class="js-switch" checked="" (change)="toggle()" data-switchery="true" style="display: none;">
+        <span (click)="toggle()" class="switchery switchery-default" style="background-color: rgb(38, 185, 154);border-color: rgb(38, 185, 154);box-shadow: rgb(38, 185, 154) 0px 0px 0px 11px inset;transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;">
+            <small style="left: 12px; transition: background-color 0.4s, left 0.2s; background-color: rgb(255, 255, 255);"></small>
+        </span> {{ showLabel ? onLabel :""}}
+    </label>
+</div>
+
+<div class="" *ngIf="!isChecked">
+    <label>
+        <input type="checkbox" class="js-switch" (change)="toggle()" data-switchery="true" style="display: none;"><span (click)="toggle()" class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s, box-shadow 0.4s;">
+        <small style="left: 0px; transition: background-color 0.4s, left 0.2s;"></small></span> {{ showLabel ? offLabel :"" }}
+    </label>
+</div>

@@ -1,0 +1,34 @@
+<div class="multi-select-container cntgroupsearch">
+    <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (focus)="showSuggestions = true"
+    (blur)="hideSuggestions()"
+    (input)="filterOptions()"
+    (keydown)="onKeydown($event)"
+    placeholder="Search client name / code"
+  />
+  <div *ngIf="showSuggestions && filteredOptions.length" class="table table-bordered suggestions-list">
+   <table >
+    <thead>
+        <tr>
+        <th style="width: 130px;">Client Code</th>
+        <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let option of filteredOptions; let i = index"
+        [class.selected]="i === activeOptionIndex"
+        (click)="selectOption(option)"
+        class="suggestion-item">
+                <td>
+                    {{ option.ClientCode }}
+                </td>
+                <td>
+                    {{ option.ClientName }}
+                </td>
+        </tr>
+    </tbody>
+  </table> 
+</div>
+  </div>

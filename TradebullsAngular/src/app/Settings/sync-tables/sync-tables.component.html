@@ -1,0 +1,76 @@
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">Sync Tables From Web Store</h2>
+                <ul class="nav navbar-right panel_toolbox mt-1" style="display: none;">
+                    <li>
+                        <button type="button" #btnSync class="btn btn-danger btn-sm" (click)="SyncTables()">&nbsp;<i class="fa fa-refresh"></i>&nbsp;&nbsp;Sync Tables</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0">
+                <table class="table table-striped mb-0 mb-n-6px">
+                    <thead>
+                        <th class="column-title justify-content-center">
+                            Table Name 
+                        </th>
+                        <th class="column-title justify-content-left">
+                            Remarks
+                        </th>
+                        <th class="column-title justify-content-left" >
+                            Last Sync By
+                        </th>
+                        <th class="column-title justify-content-center" style="width: 220px;">
+                            Last Sync Date
+                        </th>
+                        <th class="column-title justify-content-center" *ngIf="CTableID > 0">
+                            
+                        </th>
+                        <th>
+
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let table of TableList">
+                            <td>
+                                {{table.data.TableName}}
+                            </td>
+                            <td>
+                                {{table.data.Remarks}}
+                            </td>
+                            <td *ngIf="CTableID != table.data.TableID">
+                                {{table.data.LastSyncByName}}
+                            </td>
+                            <td *ngIf="CTableID != table.data.TableID">
+                                {{table.data.LastSyncDate | date:'dd-MM-yyyy hh:mm:ss a'}}
+                            </td>
+                            <td *ngIf="CTableID > 0">
+                                <div *ngIf="table.status == 0 && CTableID == table.data.TableID">
+                                    <mat-spinner diameter="25"></mat-spinner>
+                                </div>
+                                <div *ngIf="table.status > 0 && CTableID > 0">
+                                    <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-check-square-o"></i>&nbsp;&nbsp;Success</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div *ngIf="table.status == 0 && CTableID == 0">
+                                    <button type="button" class="btn btn-sm btn-primary" (click)="btnSync_Click(table.data.TableID)"><i class="fa fa-refresh"></i>&nbsp;&nbsp;Sync</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="LoadingContainer" *ngIf="isLoading">
+    <div class="LoadingBody">
+        {{LoadingMessage}}
+    </div>
+</div>

@@ -1,0 +1,347 @@
+<div *ngIf="IsAddNew" class="modal fade bs-example-modal-lg " [ngClass]="{'show': IsAddNew}" tabindex="-1" role="dialog"
+    aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    Product Detail
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="BackProduct()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="min-height: 65vh;max-height: 67vh; overflow: auto;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-6">
+                                <label class="col-form-label label-align" for="first-name">Product <span
+                                        class="spnRequired">*</span>
+                                </label>
+                            </div>
+                            <div class="col-md-10 col-sm-6">
+                                <select2 [data]="lstParentProducts" [templates]="template" [minCountForSearch]="1"
+                                    [value]="ParentProductID" (update)="ProductSelectionChange($event)"
+                                    [disabled]="IsDisabled">
+                                    <ng-template #template let-data="data">{{data?.name}}</ng-template>
+                                </select2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div *ngFor="let att of lstProductAttributes">
+                                    <br />
+                                    <h2 class="mb-1" [innerHTML]="att.Name"></h2>
+                                    <div>
+                                        <button type="button" class="btn btn-sm"
+                                            *ngFor="let att_V of GetProduct_AttributeValue(att.ProductAttributeID)"
+                                            [innerHTML]="att_V.option" (click)="Attribute_SelectionChange(att, att_V)"
+                                            [ngClass]="getAttributeSelectionClass(att.ProductAttributeID, att_V.ProductAttributeValueID)"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ng-container *ngIf="selectedProduct">
+                            <div class="row mt-3">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Product
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <label class="col-form-label label-align" [innerHTML]="selectedProduct.name">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Price <span class="spnRequired">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-4 col-sm-3">
+                                    <input type="number" name="Price" [(ngModel)]="Price" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Qty <span class="spnRequired">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-4 col-sm-3">
+                                    <input type="number" name="qty" [(ngModel)]="Qty" class="form-control" />
+                                    <!-- <input type="number" name="qty" [(ngModel)]="Qty" class="form-control" (input)="AutoStockAssignment()" /> -->
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Total
+                                    </label>
+                                </div>
+                                <div class="col-md-4 col-sm-3">
+                                    <input type="number" name="TotalAmount" [value]="GetTotalAmount()"
+                                        class="form-control" [disabled]="true" />
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">HSN Code
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <select2 [data]="lstHSNCode" [templates]="templateHSNCode" [minCountForSearch]="1"
+                                        [value]="HSNCodeID" (update)="HSNSelectionChange($event)">
+                                        <ng-template #templateHSNCode
+                                            let-data="data">{{data?.HSNCodeName}}</ng-template>
+                                    </select2>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Remarks
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <textarea name="Remarks" [(ngModel)]="Remarks" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mt-1" *ngIf="IsStock">
+                                <div class="col-md-2 col-sm-6">
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <button type="button" class="btn btn-danger" (click)="OpenStockModel()">{{ (IsStock && selectedStocks.length > 0) ? "Edit Stock" : "Select Stock" }}</button>
+                                    <button type="button" class="btn btn-danger" (click)="AutoStockDeduct()">Auto Select Stock</button>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center">
+                        <img [src]="ImageSrc" style="height: 50vh;max-width: 100%;" />
+                    </div>
+                </div>
+                <div class="row" *ngIf="IsStock && selectedStocks.length > 0">
+                    <div class="col-md-12">
+                        <p style="margin:0px 5px">Selected Stock Items</p>
+                    </div>
+                </div>
+                 <div class="row" *ngIf="IsStock && selectedStocks.length > 0">
+                    <div class="col-md-12 col-sm-12 p-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Brand</th>
+                                    <th style="width: 150px;">Sku</th>
+                                    <th>Product</th>
+                                    <th style="width: 250px;">Remarks</th>
+                                    <th style="width: 150px;">Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of selectedStocks">
+                                    <td>{{row.BrandName}}</td>
+                                    <td>{{row.SKU}}</td>
+                                    <td [innerHTML]="row.ProductName"></td>
+                                    <td [innerHTML]="row.Remarks"></td>
+                                    <td class="text-right">
+                                        <div style="display: flex;">
+                                            <input type="number" class="form-control text-right"
+                                            [(ngModel)]="row.Qty" readonly />
+                                            <button type="button" class="btn btn-sm btn-danger" style="border-top-left-radius: 0; border-bottom-left-radius: 0px;"
+                                            (click)="DeleteStock(row)"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="selectedStocks.length > 0">
+                                    <td colspan="3" class="text-right">
+                                        Total Qty
+                                    </td>
+                                    <td class="text-right">
+                                        {{GetTotalStockQty()  | number:'1.2-2'}}
+                                    </td>
+                                </tr> 
+                                <tr *ngIf="selectedStocks.length == 0">
+                                    <td colspan="4">
+                                        No record found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="BackProduct()">Close</button>
+                <button type="button" class="btn btn-primary" [disabled]="!selectedProduct"
+                    (click)="SaveProduct(false)">Save changes</button>
+                <button type="button" class="btn btn-primary" [disabled]="!selectedProduct"
+                    (click)="SaveProduct(true)">Save & Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div *ngIf="OpenStock" class="modal fade bs-example-modal-lg " [ngClass]="{'show': OpenStock}" tabindex="-1"
+    role="dialog" aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    Product Detail - Stock
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseStockModel(false)"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="min-height: 65vh;max-height: 67vh; overflow: auto;">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <p>
+                            Product : {{ selectedProduct.name }} <br/>
+                            Order Qty: {{ Qty }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1 col-sm-6">
+                        <label class="col-form-label label-align">Brand
+                        </label>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <mat-form-field class="form-control-ddl">
+                            <mat-select [(value)]="BrandID" placeholder="Search" class="form-control" (selectionChange)="BrandDropdownSelectionChange($event)">
+                                <mat-option>
+                                    <ngx-mat-select-search #txtBrandSearch placeholderLabel="Search..."
+                                        [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                </mat-option>
+                                <mat-option *ngFor="let c of lstBrands | filtercolumn:txtBrandSearch.value:['label']"
+                                    [value]="c.value" class="form-control-option">
+                                    {{c.label}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-1 col-sm-6">
+                        <label class="col-form-label label-align" for="first-name">Product
+                        </label>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <select2 [data]="lstParentProducts" [templates]="template1" [minCountForSearch]="1"
+                            [value]="Stock_ParentProductID" (update)="Stock_ProductSelectionChange($event)">
+                            <ng-template #template1 let-data="data">{{data?.name}}</ng-template>
+                        </select2>
+                    </div>
+                </div>
+                <div class="row mt-3" *ngFor="let att of Stock_lstProductAttributes">
+                    <div class="col-md-1 col-sm-6">
+                        <label class="col-form-label label-align" for="first-name" [innerHTML]="att.Name">
+                        </label>
+                    </div>
+                    <div class="col-md-10 col-sm-6">
+                        <button type="button" class="btn btn-sm"
+                            *ngFor="let att_V of Stock_GetProduct_AttributeValue(att.ProductAttributeID)"
+                            [innerHTML]="att_V.option" (click)="Stock_Attribute_SelectionChange(att, att_V)"
+                            [ngClass]="Stock_getAttributeSelectionClass(att.ProductAttributeID, att_V.ProductAttributeValueID)"></button>
+                    </div>
+                </div>
+                <div class="row" *ngIf="Stock_lstProducts">
+                    <div class="col-md-12 col-sm-12 p-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Brand</th>
+                                    <th style="width: 150px;">Sku</th>
+                                    <th>Product</th>
+                                    <th style="width: 250px;">Remarks</th>
+                                    <th style="width: 100px;">Stock Qty</th>
+                                    <th style="width: 150px;">Used Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of Stock_lstProducts">
+                                    <td>{{row.BrandName}}</td>
+                                    <td>{{row.SKU}}</td>
+                                    <td [innerHTML]="row.ProductName"></td>
+                                    <td [innerHTML]="row.Remarks"></td>
+                                    <td class="text-right">{{row.Qty  | number:'1.2-2'}}</td>
+                                    <td class="text-right">
+                                        <div style="display: flex;">
+                                            <input type="number" class="form-control text-right"
+                                            [(ngModel)]="row.UsedQty" />
+                                            <button type="button" class="btn btn-sm btn-primary" style="border-top-left-radius: 0; border-bottom-left-radius: 0px;"
+                                            (click)="AddStock(row)"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="Stock_lstProducts.length == 0">
+                                    <td colspan="5">
+                                        No record found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="selectedStocks.length > 0">
+                    <div class="col-md-12">
+                        <p style="margin:0px 5px">Selected Stock Items</p>
+                    </div>
+                </div>
+                 <div class="row" *ngIf="selectedStocks.length > 0">
+                    <div class="col-md-12 col-sm-12 p-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Brand</th>
+                                    <th style="width: 150px;">Sku</th>
+                                    <th>Product</th>
+                                    <th style="width: 250px;">Remarks</th>
+                                    <th style="width: 150px;">Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of selectedStocks">
+                                    <td>{{row.BrandName}}</td>
+                                    <td>{{row.SKU}}</td>
+                                    <td [innerHTML]="row.ProductName"></td>
+                                    <td [innerHTML]="row.Remarks"></td>
+                                    <td class="text-right">
+                                        <div style="display: flex;">
+                                            <input type="number" class="form-control text-right"
+                                            [(ngModel)]="row.Qty" />
+                                            <button type="button" class="btn btn-sm btn-danger" style="border-top-left-radius: 0; border-bottom-left-radius: 0px;"
+                                            (click)="DeleteStock(row)"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="selectedStocks.length > 0">
+                                    <td colspan="4" class="text-right">
+                                        Total Qty
+                                    </td>
+                                    <td class="text-right">
+                                        {{GetTotalStockQty()  | number:'1.2-2'}}
+                                    </td>
+                                </tr> 
+                                <tr *ngIf="selectedStocks.length == 0">
+                                    <td colspan="5">
+                                        No record found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseStockModel(false)">Close</button>
+                <button type="button" class="btn btn-primary" [disabled]="!selectedProduct"
+                    (click)="CloseStockModel(true)">Save & Back</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal-backdrop fade show" *ngIf="IsAddNew || OpenStock"></div>

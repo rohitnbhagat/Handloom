@@ -1,0 +1,230 @@
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">Stock Report</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0">
+                <div class="row ">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="form-horizontal form-label-left mt-3" novalidate="">
+                           
+                            <div class="item form-group">
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Brand
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="BrandIDs" placeholder="Select Brand"
+                                            class="form-control" multiple>
+                                            <mat-option *ngFor="let c of lstBrands"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Product
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <!-- <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="ProductIDs" placeholder="Select Product" class="form-control" (selectionChange)="ProductSelectionChange($event)" multiple>
+                                            <mat-option *ngFor="let c of lstParentProducts"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                       </mat-form-field> -->
+                                    <p-multiSelect 
+                                            [options]="lstParentProducts" 
+                                            [(ngModel)]="ProductIDs" 
+                                            optionLabel="label" 
+                                            optionValue="value"
+                                            placeholder="Select Product"
+                                            [showClear]="false"
+                                            (onChange)="ProductSelectionChange($event)" />
+                                </div>
+                                <label class="col-form-label col-xl-1 col-md-2 col-sm-6 label-align">Variation
+                                </label>
+                                <div class="col-xl-3 col-md-4 col-sm-6">
+                                    <!-- <mat-form-field class="form-control-ddl" appearance="fill">
+                                        <mat-select [(value)]="VariationIDs" placeholder="Select Variation" 
+                                            class="form-control" multiple>
+                                            <mat-option *ngFor="let c of lstProducts"
+                                                [value]="c.value" class="select-checkbox-item">
+                                                {{c.label}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field> -->
+                                     <p-multiSelect 
+                                            [options]="lstProducts" 
+                                            [(ngModel)]="VariationIDs" 
+                                            optionLabel="label" 
+                                            optionValue="value"
+                                            placeholder="Select Variations"
+                                            [showClear]="false"
+                                             />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="x_footer">
+                <div class="row mb-2">
+                    <div class="col-xl-1 col-md-2 col-sm-3">
+                    </div>
+                    <div class="col-xl-11 col-md-10 col-sm-9">
+                        <button type="button" name="btnSearch" class="btn btn-primary btn-sm" (click)="LoadReport()">&nbsp;<i
+                            class="fa fa-search"></i>&nbsp;&nbsp;Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="IsSearchClicked">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">Filtered Data</h2>
+                <ul class="nav navbar-right panel_toolbox mt-1">
+                    <li style="display: flex;align-items: center;" *ngIf="orders.length > 0">
+                        <label class="col-form-label label-align" style="margin-right: 5px;">
+                            Show Images
+                        </label>
+                        <div style="margin-right: 20px;">
+                            <mat-slide-toggle [(ngModel)]="IsPicVisible"></mat-slide-toggle>
+                        </div>
+                    </li>
+                    <li *ngIf="orders.length > 0">
+                        <button type="button" class="btn btn-primary btn-sm" (click)="ExportToExcel()">&nbsp;<i
+                                class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Export To Excel</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0 table-container" style="max-height: 67vh; overflow: auto;">
+                
+                <table class="table table-striped mb-0 mb-n-6px" *ngIf="orders.length > 0">
+                    <thead>
+                        <tr>
+                            <th style="width: 200px;" *ngIf="IsPicVisible">Image</th>
+                            <th style="width: 250px;">Brand</th>
+                            <th style="width: 130px;">SKU</th>
+                            <th style="width: 250px;">Product</th>
+                            <th style="width: 250px;">Remarks</th>
+                            <th style="width: 90px;">In Qty</th>
+                            <th style="width: 90px;">Out Qty</th>
+                            <th style="width: 110px;">OnHand Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders">
+                            <td *ngIf="IsPicVisible"><img [src]="order.ImageURL"
+                                                        style="max-width: 400px;max-height: 500px; width:100%;"></td>
+                            <td [innerHTML]="order.BrandName"></td>
+                            <td [innerHTML]="order.SKU">SKU</td>
+                            <td [innerHTML]="order.ProductName"></td>
+                            <td [innerHTML]="order.Remarks"></td>
+                            <td>
+                                <a (click)="ShowStockDetails(order.StockItemID, 'In')" class="link">{{ order.InQty | number:'1.2-2'}}</a>
+                            </td>
+                            <td>
+                                <a (click)="ShowStockDetails(order.StockItemID, 'Out')" class="link">{{ order.OutQty | number:'1.2-2'}}</a>
+                            </td>
+                            <td>
+                                <a (click)="ShowStockDetails(order.StockItemID, 'All')" class="link">{{ order.Qty | number:'1.2-2'}}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td *ngIf="IsPicVisible" colspan="5" class="text-right">Total</td>
+                            <td *ngIf="!IsPicVisible" colspan="4" class="text-right">Total</td>
+                            <td>{{ GetTotalInQty() | number:'1.2-2' }}</td>
+                            <td>{{ GetTotalOutQty() | number:'1.2-2' }}</td>
+                            <td>{{ GetTotalQty() | number:'1.2-2' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="row" *ngIf="orders.length == 0">
+                    <div class="col-md-12 text-center p-3">No Data Found</div>
+                </div>
+                
+
+
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="loading" *ngIf="isLoading">
+    <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+
+<div *ngIf="IsDisplayStock" class="modal fade bs-example-modal-md " [ngClass]="{'show': IsDisplayStock}" tabindex="-1"
+    role="dialog" aria-modal="true" style="padding-right: 17px; display: block; z-index: 10002;">
+    <div class="modal-dialog modal-lg" style="max-width: 80vw;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    Stock In-out Details
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseStockModel()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <table class="table table-striped table-bordered m-0">
+                    <thead>
+                        <tr>
+                            <th style="width: 120px;">Trans No</th>
+                            <th style="width: 150px;">Trans Date</th>
+                            <th style="width: 200px;">Trans Type</th>
+                            <th style="width: 150px;">Sku</th>
+                            <th>Product</th>
+                            <th style="width: 250px;">Remarks</th>
+                            <th style="width: 100px;">In Qty</th>
+                            <th style="width: 100px;">Out Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of StockDetail">
+                            <td>{{row.TransNo}}</td>
+                            <td>{{row.TransDate | date:'dd-MM-yyyy'}}</td>
+                            <td>{{row.TransType}}</td>
+                            <td>{{row.SKU}}</td>
+                            <td [innerHTML]="row.ProductName"></td>
+                            <td [innerHTML]="row.Remarks"></td>
+                            <td class="text-right">{{row.Qty | number:'1.2-2'}}</td>
+                            <td class="text-right">{{row.OutQty | number:'1.2-2'}}</td>
+                        </tr>
+                        <tr *ngIf="StockDetail && StockDetail.length > 0">
+                            <td colspan="6" class="text-right">
+                                Total Qty
+                            </td>
+                            <td class="text-right">
+                                {{GetItemTotalStockQty() | number:'1.2-2'}}
+                            </td>
+                            <td class="text-right">
+                                {{GetItemTotalStockOutQty() | number:'1.2-2'}}
+                            </td>
+                        </tr>
+                        <tr *ngIf="StockDetail == null || StockDetail.length == 0">
+                            <td colspan="8" class="text-center">
+                                No record found
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseStockModel()">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="IsDisplayStock" style="z-index: 10001;"></div>

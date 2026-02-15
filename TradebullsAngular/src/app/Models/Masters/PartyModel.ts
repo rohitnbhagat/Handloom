@@ -1,0 +1,82 @@
+export class PartyMaster_AddModel {
+    PartyID:number = 0;
+    PartyTypeID:number = 0;
+    PartyName?:string;
+    FirstName?:string;
+    LastName?:string;
+    PartyCode?:string;
+    Alias?:string;
+    EmailID?:string;
+    GSTNo?:string;
+    PANNo?:string;
+    StateCode?:string;
+    ECCNo?:string;
+    Website?:string;
+    BankName?:string;
+    BankAddress?:string;
+    BankAccountNo?:string;
+    BankIFSCCode?:string;
+    Remarks?:string;
+    PartyAddress?:PartyAddress_AddModel[];
+}
+export class PartyAddress_AddModel {
+    PartyAddressID?:number;
+    AddressTypeID?:number;
+    FirstName?:string;
+    LastName?:string;
+    Company?:string;
+    Address1?:string;
+    Address2?:string;
+    CityID?:number;
+    StateID?:number;
+    Postcode?:string;
+    CountryID?:number;
+    EmailID?:string;
+    PhoneNo?:string;
+}
+export class PartyMaster_ViewModel {
+    PartyID?:number;
+    PartyTypeID?:number;
+    PartyTypeName?:string;
+    FirstName?:string;
+    LastName?:string;
+    PartyName?:string;
+    PartyCode?:string;
+    Alias?:string;
+    EmailID?:string;
+    GSTNo?:string;
+    PANNo?:string;
+    StateCode?:string;
+    ECCNo?:string;
+    Website?:string;
+    BankName?:string;
+    BankAddress?:string;
+    BankAccountNo?:string;
+    BankIFSCCode?:string;
+    Remarks?:string;
+    ModifiedBy?:number;
+    ModifiedByName?:string;
+    ModifiedDate?:Date;
+}
+export class PartyAddress_ViewModel {
+    PartyAddressID?:number;
+    AddressTypeID?:number;
+    AddressTypeName?:string;
+    FirstName?:string;
+    LastName?:string;
+    Company?:string;
+    Address1?:string;
+    Address2?:string;
+    CityID?:number;
+    CityName?:string;
+    StateID?:number;
+    StateName?:string;
+    Postcode?:string;
+    CountryID?:number;
+    CountryName?:string;
+    EmailID?:string;
+    PhoneNo?:string;
+    ModifiedBy?:number;
+    ModifiedByName?:string;
+    ModifiedDate?:Date;
+}

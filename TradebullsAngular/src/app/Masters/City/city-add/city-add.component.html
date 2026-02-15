@@ -1,0 +1,70 @@
+<div *ngIf="isModalOpen" class="modal fade bs-example-modal-lg " [ngClass]="{'show': isModalOpen}" tabindex="-1"
+    role="dialog" aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    {{ header }}
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseModel()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="UserForm" class="form-horizontal form-label-left" novalidate=""
+                    (ngSubmit)="SaveUser()">
+                    <div class="item form-group" style="display: none;">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">CityID <span
+                                class="required">*</span>
+                        </label>
+                        <div class="col-md-8 col-sm-8 ">
+                            <input type="hidden" formControlName="CityID" class="form-control " placeholder="CityID"
+                                value="Usermodel.CityID" />
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Country
+                        </label>
+                        <div class="col-md-8 col-sm-8">
+                            <select2 [data]="lstCountrys" [templates]="templateCountry"
+                                [minCountForSearch]="1" [value]="CountryID" (update)="CountryDropdownSelectionChange($event)">
+                                <ng-template #templateCountry
+                                    let-data="data">{{data?.CountryName}}</ng-template>
+                            </select2>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">State
+                        </label>
+                        <div class="col-md-8 col-sm-8">
+                            <select2 [data]="lstStates" [templates]="templateState"
+                                [minCountForSearch]="1" [value]="StateID" (update)="StateDropdownSelectionChange($event)">
+                                <ng-template #templateState
+                                    let-data="data">{{data?.StateName}}</ng-template>
+                            </select2>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">City Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-8 col-sm-8 ">
+                            <input type="text" formControlName="CityName" class="form-control "
+                                placeholder="Enter City Name" />
+                            <ul *ngIf="( FormControl.CityName.touched || submitted ) && FormControl.CityName.errors?.required"
+                                class="parsley-errors-list filled" id="parsley-id-5">
+                                <li class="parsley-required">City Name is required.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseModel()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="SaveUser()">Save changes</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="isModalOpen"></div>

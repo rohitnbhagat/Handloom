@@ -1,0 +1,81 @@
+<div class="clearfix"></div>
+ 
+<div class="row" [ngStyle]="{ 'display' : IsAddnew ? 'none' : 'block' }">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">Store List</h2>
+                <ul class="nav navbar-right panel_toolbox mt-1">
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="loadUsers(true)">&nbsp;<i
+                                class="fa fa-refresh"></i>&nbsp;&nbsp;Refresh</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="CreateUser()">&nbsp;<i
+                                class="fa fa-plus-circle"></i>&nbsp;&nbsp;Add Store</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="ExportToExcel()">&nbsp;<i
+                                class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Export To Excel</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0">
+                <table mat-table [dataSource]="dataSource" matSort class="table table-striped mb-0 mb-n-6px">
+
+                    <ng-container matColumnDef="StoreID">
+                        <th class="column-title justify-content-center" mat-header-cell *matHeaderCellDef mat-sort-header style="width: 105px;">ID </th>
+                        <td class="text-center" mat-cell *matCellDef="let row"> {{row.StoreID}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="StoreName">
+                        <th class="column-title justify-content-left" mat-header-cell *matHeaderCellDef mat-sort-header> Store Name</th>
+                        <td mat-cell *matCellDef="let row"> {{row.StoreName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Address">
+                        <th class="column-title justify-content-left" mat-header-cell *matHeaderCellDef mat-sort-header> Address</th>
+                        <td mat-cell *matCellDef="let row"> {{row.Address1}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ContactPerson">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> ContactPerson </th>
+                        <td mat-cell *matCellDef="let row"> {{row.ContactPerson}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="ModifiedByName">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> Modified By</th>
+                        <td mat-cell *matCellDef="let row"> {{row.ModifiedByName}} </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="ModifiedDate">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> Modified Date </th>
+                        <td mat-cell *matCellDef="let row"> {{row.ModifiedDate | date:'dd-MM-yyyy hh:mm:ss a'}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Actions">
+                        <th class="column-title" mat-header-cell *matHeaderCellDef style="width: 200px;"> Actions </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button type="button" class="btn btn-success btn-sm"
+                                (click)="CreateUser(element.StoreID)">&nbsp;<i class="fa fa-edit"></i> Edit</button>
+                            <button type="button" class="btn btn-danger btn-sm" (click)="DeleteRow(element)">&nbsp;<i
+                                    class="fa fa-trash"></i> Delete</button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="headings"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </tr>
+
+
+                </table>
+                <mat-paginator [pageSizeOptions]="[10, 20, 30, 40, 50]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<app-store-add #usercomp (SaveEvent)="loadUsers(true)" (CloseEvent)="CloseUserModel()"></app-store-add>

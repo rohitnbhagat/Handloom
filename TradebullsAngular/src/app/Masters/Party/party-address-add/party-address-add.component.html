@@ -1,0 +1,147 @@
+<div *ngIf="isModalOpen" class="modal fade bs-example-modal-lg " [ngClass]="{'show': isModalOpen}" tabindex="-1"
+    role="dialog" aria-modal="true" style="padding-right: 17px; display: block;z-index: 100060;">
+    <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    {{ header }}
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseModel()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="UserForm" class="form-horizontal form-label-left" novalidate=""
+                    (ngSubmit)="SaveUser()">
+                    <div class="item form-group" style="display: none;">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">PartyAddressID <span
+                                class="required">*</span>
+                        </label>
+                        <div class="col-md-8 col-sm-8 ">
+                            <input type="hidden" formControlName="PartyAddressID" class="form-control " placeholder="PartyAddressID"/>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Address Type <span class="required">*</span>
+                        </label>
+                        <div class="col-md-4 col-sm-8 ">
+                            <select formControlName="AddressTypeID" class="form-control">
+                                <option value="0">Please select</option>
+                                <option *ngFor="let t of AddressTypes" [value]="t.AddressTypeID">{{t.AddressTypeName}}</option>
+                            </select>
+                            <ul *ngIf="( FormControl.AddressTypeID.touched || submitted ) && FormControl.AddressTypeID.errors?.required"
+                                class="parsley-errors-list filled" id="parsley-id-5">
+                                <li class="parsley-required">Address Type is required.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item form-group" style="display: none;">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">First Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-4 col-sm-8 ">
+                            <input type="text" formControlName="FirstName" class="form-control "
+                                placeholder="Enter First Name" />
+                            <ul *ngIf="( FormControl.FirstName.touched || submitted ) && FormControl.FirstName.errors?.required"
+                                class="parsley-errors-list filled" id="parsley-id-5">
+                                <li class="parsley-required">First Name is required.</li>
+                            </ul>
+                        </div>
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Last Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-4 col-sm-8 ">
+                            <input type="text" formControlName="LastName" class="form-control "
+                                placeholder="Enter Last Name" />
+                            <ul *ngIf="( FormControl.LastName.touched || submitted ) && FormControl.LastName.errors?.required"
+                                class="parsley-errors-list filled" id="parsley-id-5">
+                                <li class="parsley-required">Last Name is required.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Address Line 1 <span class="required">*</span>
+                        </label>
+                        <div class="col-md-10 col-sm-8 ">
+                            <input type="text" formControlName="Address1" class="form-control "
+                                placeholder="Enter Address Line 1" />
+                            <ul *ngIf="( FormControl.Address1.touched || submitted ) && FormControl.Address1.errors?.required"
+                                class="parsley-errors-list filled" id="parsley-id-5">
+                                <li class="parsley-required">Address Line 1 is required.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Address Line 2 <span class="required">*</span>
+                        </label>
+                        <div class="col-md-10 col-sm-8 ">
+                            <input type="text" formControlName="Address2" class="form-control "
+                                placeholder="Enter Address Line 2" />
+                            <ul *ngIf="( FormControl.Address2.touched || submitted ) && FormControl.Address2.errors?.required"
+                                class="parsley-errors-list filled" id="parsley-id-5">
+                                <li class="parsley-required">Address Line 2 is required.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Country
+                        </label>
+                        <div class="col-md-4 col-sm-8">
+                            <select2 [data]="lstCountrys" #country [templates]="templateCountry"
+                                [minCountForSearch]="1" [value]="CountryID" (update)="CountryDropdownSelectionChange($event)">
+                                <ng-template #templateCountry
+                                    let-data="data">{{data?.CountryName}}</ng-template>
+                            </select2>
+                        </div>
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">State
+                        </label>
+                        <div class="col-md-4 col-sm-8">
+                            <select2 [data]="lstStates" [templates]="templateState"
+                                [minCountForSearch]="1" [value]="StateID" (update)="StateDropdownSelectionChange($event)">
+                                <ng-template #templateState
+                                    let-data="data">{{data?.StateName}}</ng-template>
+                            </select2>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">City
+                        </label>
+                        <div class="col-md-4 col-sm-8">
+                            <select2 [data]="lstCitys" [templates]="templateCity"
+                                [minCountForSearch]="1" [value]="CityID" (update)="CityDropdownSelectionChange($event)">
+                                <ng-template #templateCity
+                                    let-data="data">{{data?.CityName}}</ng-template>
+                            </select2>
+                        </div>
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Post Code
+                        </label>
+                        <div class="col-md-4 col-sm-8 ">
+                            <input type="text" formControlName="Postcode" class="form-control "
+                                placeholder="Enter Post Code" />
+                        </div>
+                    </div>
+                    
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">EmailID
+                        </label>
+                        <div class="col-md-4 col-sm-8 ">
+                            <input type="text" formControlName="EmailID" class="form-control "
+                                placeholder="Enter EmailID" />
+                        </div>
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Phone No
+                        </label>
+                        <div class="col-md-4 col-sm-8 ">
+                            <input type="text" formControlName="PhoneNo" class="form-control "
+                                placeholder="Enter Phone No" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseModel()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="SaveUser()">Save changes</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="isModalOpen" style="z-index: 100059;"></div>

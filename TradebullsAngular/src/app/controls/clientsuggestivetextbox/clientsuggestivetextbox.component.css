@@ -1,0 +1,70 @@
+.multi-select-container {
+    position: relative;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px 0px 0px 4px;
+  }
+  
+  .selected-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+  
+  .selected-item {
+    background-color: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .selected-item button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 4px;
+    border: none;
+    outline: none;
+  }
+  
+  .suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 4px;
+    z-index: 1000;
+    box-shadow: 6px 13px 30px 3px #717171;
+  }
+  
+  .suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #f0f0f0;
+  }
+  .suggestion-item.selected td{
+    background-color: #f0f0f0;
+  }
+  .suggestions-list table{
+    width: 100%;
+  }
+  .suggestions-list table thead tr th{
+  background: rgba(52, 73, 94, 0.94);
+    color: #ECF0F1;
+  }

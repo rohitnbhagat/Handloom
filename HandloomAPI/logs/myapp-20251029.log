@@ -1,0 +1,1116 @@
+2025-10-29 12:01:42.809 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-29 12:01:42.878 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/weatherforecast  
+2025-10-29 12:01:42.967 +05:30 [INF] Hosting environment: Development
+2025-10-29 12:01:42.967 +05:30 [INF] Content root path: G:\Projects\Handloom\HandloomAPI
+2025-10-29 12:01:43.542 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:01:43.543 +05:30 [INF] Method InvokeAsunc - 1
+2025-10-29 12:01:44.469 +05:30 [INF] Request finished in 1611.0732ms 401 application/json
+2025-10-29 12:01:45.459 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/favicon.ico  
+2025-10-29 12:01:45.461 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:01:45.461 +05:30 [INF] Method InvokeAsunc - 1
+2025-10-29 12:01:45.466 +05:30 [INF] Request finished in 7.8133ms 401 application/json
+2025-10-29 12:03:44.305 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/User/Login  
+2025-10-29 12:03:44.316 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:44.322 +05:30 [INF] Request finished in 17.6827ms 204 
+2025-10-29 12:03:44.330 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/User/Login application/json 40
+2025-10-29 12:03:44.331 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:44.332 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:44.332 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:44.457 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:44.469 +05:30 [INF] Executing endpoint 'TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI)'
+2025-10-29 12:03:44.533 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TrabullsAPI.Models.UserCredential) on controller TrabullsAPI.Controllers.User.UserController (HandloomAPI).
+2025-10-29 12:03:44.798 +05:30 [INF] User login attempt: rohit
+2025-10-29 12:03:44.847 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:44.915 +05:30 [INF] Executed action TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI) in 373.8269ms
+2025-10-29 12:03:44.920 +05:30 [INF] Executed endpoint 'TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI)'
+2025-10-29 12:03:44.920 +05:30 [INF] Request finished in 593.5422ms 200 application/json; charset=utf-8
+2025-10-29 12:03:44.928 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/User/GetLoginUserInfo?UID=1  
+2025-10-29 12:03:44.929 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:44.930 +05:30 [INF] Request finished in 1.3997ms 204 
+2025-10-29 12:03:44.934 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/User/GetLoginUserInfo?UID=1 application/json 
+2025-10-29 12:03:44.934 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:44.934 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:44.934 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:44.942 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:44.942 +05:30 [INF] Executing endpoint 'TrabullsAPI.Controllers.User.UserController.GetLoginUserInfo (HandloomAPI)'
+2025-10-29 12:03:44.946 +05:30 [INF] Route matched with {action = "GetLoginUserInfo", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetLoginUserInfo(Int64) on controller TrabullsAPI.Controllers.User.UserController (HandloomAPI).
+2025-10-29 12:03:44.958 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[TrabullsAPI.Models.User.LoginUser_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-29 12:03:44.966 +05:30 [INF] Executed action TrabullsAPI.Controllers.User.UserController.GetLoginUserInfo (HandloomAPI) in 20.4471ms
+2025-10-29 12:03:44.967 +05:30 [INF] Executed endpoint 'TrabullsAPI.Controllers.User.UserController.GetLoginUserInfo (HandloomAPI)'
+2025-10-29 12:03:44.967 +05:30 [INF] Request finished in 32.9998ms 200 application/json; charset=utf-8
+2025-10-29 12:03:47.944 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Party/Get?PartyID=0  
+2025-10-29 12:03:47.946 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.949 +05:30 [INF] Request finished in 5.5657ms 204 
+2025-10-29 12:03:47.949 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Brand/Get?BrandID=0  
+2025-10-29 12:03:47.951 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Exhition/Get?ExhitionID=0  
+2025-10-29 12:03:47.951 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Product/Get  
+2025-10-29 12:03:47.951 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.951 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.952 +05:30 [INF] Request finished in 1.4464ms 204 
+2025-10-29 12:03:47.952 +05:30 [INF] Request finished in 2.2505ms 204 
+2025-10-29 12:03:47.953 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.953 +05:30 [INF] Request finished in 4.0627ms 204 
+2025-10-29 12:03:47.959 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/SalesLocation/Get?SalesLocationID=0  
+2025-10-29 12:03:47.960 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.960 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Masters/Product/Get application/json 139
+2025-10-29 12:03:47.960 +05:30 [INF] Request finished in 0.6825ms 204 
+2025-10-29 12:03:47.960 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Exhition/Get?ExhitionID=0 application/json 
+2025-10-29 12:03:47.960 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.966 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.966 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:47.966 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:47.966 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:03:47.966 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:47.966 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:47.966 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.967 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:47.967 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:47.970 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:47.970 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:47.970 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:03:47.970 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:03:47.976 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/SalesLocation/Get?SalesLocationID=0 application/json 
+2025-10-29 12:03:47.976 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.976 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:47.976 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:47.977 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:03:47.975 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:47.978 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI)'
+2025-10-29 12:03:47.982 +05:30 [INF] Route matched with {action = "Get", controller = "Exhition"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.ExhitionController (HandloomAPI).
+2025-10-29 12:03:47.985 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:47.985 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI)'
+2025-10-29 12:03:47.985 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:03:47.985 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:47.985 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:47.986 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:47.986 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:47.986 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:03:47.988 +05:30 [INF] Route matched with {action = "Get", controller = "SalesLocation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.SalesLocationController (HandloomAPI).
+2025-10-29 12:03:47.988 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Masters.ProductMaster.ProductMaster_search_filter) on controller HandloomAPI.Controllers.Masters.ProductController (HandloomAPI).
+2025-10-29 12:03:47.989 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:03:48.031 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.SalesLocationMaster.SalesLocationMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:48.064 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ExhitionMaster.ExhitionMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:48.071 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI) in 82.8198ms
+2025-10-29 12:03:48.071 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI) in 88.4858ms
+2025-10-29 12:03:48.072 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI)'
+2025-10-29 12:03:48.072 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI)'
+2025-10-29 12:03:48.072 +05:30 [INF] Request finished in 95.8826ms 200 application/json; charset=utf-8
+2025-10-29 12:03:48.072 +05:30 [INF] Request finished in 111.7166ms 200 application/json; charset=utf-8
+2025-10-29 12:03:48.267 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:48.290 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 312.5426ms
+2025-10-29 12:03:48.290 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:03:48.290 +05:30 [INF] Request finished in 324.0181ms 200 application/json; charset=utf-8
+2025-10-29 12:03:48.301 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:48.330 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 340.5279ms
+2025-10-29 12:03:48.331 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:03:48.331 +05:30 [INF] Request finished in 345.8208ms 200 application/json; charset=utf-8
+2025-10-29 12:03:49.097 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ProductMaster.ProductMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:49.310 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI) in 1321.2384ms
+2025-10-29 12:03:49.310 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:03:49.311 +05:30 [INF] Request finished in 1350.8034ms 200 application/json; charset=utf-8
+2025-10-29 12:03:49.845 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Masters/Product/Get application/json 139
+2025-10-29 12:03:49.846 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:49.847 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:49.848 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:49.848 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:03:49.849 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:49.850 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:49.851 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:49.854 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:49.854 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:03:49.855 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:49.855 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:03:49.856 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:03:49.856 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Masters.ProductMaster.ProductMaster_search_filter) on controller HandloomAPI.Controllers.Masters.ProductController (HandloomAPI).
+2025-10-29 12:03:49.921 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:49.937 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 80.4841ms
+2025-10-29 12:03:49.937 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:03:49.937 +05:30 [INF] Request finished in 89.2677ms 200 application/json; charset=utf-8
+2025-10-29 12:03:50.439 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ProductMaster.ProductMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:50.561 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI) in 705.1139ms
+2025-10-29 12:03:50.563 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:03:50.566 +05:30 [INF] Request finished in 721.8319ms 200 application/json; charset=utf-8
+2025-10-29 12:03:51.777 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/Stock/Register  
+2025-10-29 12:03:51.778 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:51.779 +05:30 [INF] Request finished in 2.5676ms 204 
+2025-10-29 12:03:51.784 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/Stock/Register application/json 46
+2025-10-29 12:03:51.784 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:03:51.784 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:03:51.784 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:03:51.789 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:03:51.789 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI)'
+2025-10-29 12:03:51.796 +05:30 [INF] Route matched with {action = "Register", controller = "Stock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(HandloomAPI.Models.Sales.Stock_Register_Filter) on controller HandloomAPI.Controllers.Sales.StockController (HandloomAPI).
+2025-10-29 12:03:51.864 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.Stock_Register_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:03:51.872 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI) in 76.5459ms
+2025-10-29 12:03:51.873 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI)'
+2025-10-29 12:03:51.873 +05:30 [INF] Request finished in 89.3886ms 200 application/json; charset=utf-8
+2025-10-29 12:04:25.327 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Brand/Get?BrandID=0  
+2025-10-29 12:04:25.333 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:25.334 +05:30 [INF] Request finished in 7.3285ms 204 
+2025-10-29 12:04:25.385 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/LabelPrintSettings/Get?SettingID=0  
+2025-10-29 12:04:25.386 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:25.387 +05:30 [INF] Request finished in 1.6453ms 204 
+2025-10-29 12:04:25.390 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:04:25.391 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:25.391 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:25.391 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:25.392 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:25.392 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:25.393 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:04:25.414 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/LabelPrintSettings/Get?SettingID=0 application/json 
+2025-10-29 12:04:25.415 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:25.415 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:25.415 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:25.417 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:25.418 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI)'
+2025-10-29 12:04:25.427 +05:30 [INF] Route matched with {action = "Get", controller = "LabelPrintSettings"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.LabelPrintSettingsController (HandloomAPI).
+2025-10-29 12:04:25.474 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/RemoveStock/Get  
+2025-10-29 12:04:25.475 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:25.477 +05:30 [INF] Request finished in 2.6272ms 204 
+2025-10-29 12:04:25.488 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.LabelPrintSettings.LabelPrintSettings_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:25.533 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI) in 104.8386ms
+2025-10-29 12:04:25.533 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI)'
+2025-10-29 12:04:25.533 +05:30 [INF] Request finished in 119.2855ms 200 application/json; charset=utf-8
+2025-10-29 12:04:25.585 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/RemoveStock/Get application/json 80
+2025-10-29 12:04:25.585 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:25.586 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:25.586 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:25.592 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:25.592 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI)'
+2025-10-29 12:04:25.607 +05:30 [INF] Route matched with {action = "Get", controller = "RemoveStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.RemoveStock_Filter) on controller HandloomAPI.Controllers.Sales.RemoveStockController (HandloomAPI).
+2025-10-29 12:04:25.653 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.RemoveStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:25.660 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI) in 52.4994ms
+2025-10-29 12:04:25.660 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI)'
+2025-10-29 12:04:25.660 +05:30 [INF] Request finished in 75.4026ms 200 application/json; charset=utf-8
+2025-10-29 12:04:25.679 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:25.723 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 330.0125ms
+2025-10-29 12:04:25.724 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:25.724 +05:30 [INF] Request finished in 334.0892ms 200 application/json; charset=utf-8
+2025-10-29 12:04:25.735 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:04:25.735 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:25.736 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:25.736 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:25.736 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:25.738 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:25.739 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:04:25.830 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:25.837 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 97.3177ms
+2025-10-29 12:04:25.838 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:25.838 +05:30 [INF] Request finished in 103.4219ms 200 application/json; charset=utf-8
+2025-10-29 12:04:29.161 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/RemoveStock/Delete?RemoveStockID=5  
+2025-10-29 12:04:29.163 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:29.164 +05:30 [INF] Request finished in 3.0265ms 204 
+2025-10-29 12:04:29.177 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/RemoveStock/Delete?RemoveStockID=5 application/json 0
+2025-10-29 12:04:29.177 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:29.177 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:29.177 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:29.182 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:29.183 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.RemoveStockController.Delete (HandloomAPI)'
+2025-10-29 12:04:29.190 +05:30 [INF] Route matched with {action = "Delete", controller = "RemoveStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.RemoveStockController (HandloomAPI).
+2025-10-29 12:04:29.245 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:29.246 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.RemoveStockController.Delete (HandloomAPI) in 55.0404ms
+2025-10-29 12:04:29.246 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.RemoveStockController.Delete (HandloomAPI)'
+2025-10-29 12:04:29.246 +05:30 [INF] Request finished in 69.4671ms 200 application/json; charset=utf-8
+2025-10-29 12:04:29.258 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/RemoveStock/Get application/json 80
+2025-10-29 12:04:29.259 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:29.260 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:29.260 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:29.260 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:29.260 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI)'
+2025-10-29 12:04:29.261 +05:30 [INF] Route matched with {action = "Get", controller = "RemoveStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.RemoveStock_Filter) on controller HandloomAPI.Controllers.Sales.RemoveStockController (HandloomAPI).
+2025-10-29 12:04:29.265 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.RemoveStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:29.266 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI) in 5.3573ms
+2025-10-29 12:04:29.266 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI)'
+2025-10-29 12:04:29.267 +05:30 [INF] Request finished in 8.507ms 200 application/json; charset=utf-8
+2025-10-29 12:04:31.021 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Product/Get  
+2025-10-29 12:04:31.022 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:31.022 +05:30 [INF] Request finished in 1.0432ms 204 
+2025-10-29 12:04:31.021 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Brand/Get?BrandID=0  
+2025-10-29 12:04:31.025 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:31.026 +05:30 [INF] Request finished in 4.7353ms 204 
+2025-10-29 12:04:31.036 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Masters/Product/Get application/json 139
+2025-10-29 12:04:31.036 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:31.036 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:04:31.037 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:31.037 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:31.037 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:31.037 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:31.037 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:31.037 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:31.038 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:04:31.038 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:31.038 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:31.038 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Masters.ProductMaster.ProductMaster_search_filter) on controller HandloomAPI.Controllers.Masters.ProductController (HandloomAPI).
+2025-10-29 12:04:31.038 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:04:31.115 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:31.170 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 131.4065ms
+2025-10-29 12:04:31.170 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:31.172 +05:30 [INF] Request finished in 135.1502ms 200 application/json; charset=utf-8
+2025-10-29 12:04:31.691 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ProductMaster.ProductMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:31.751 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI) in 712.492ms
+2025-10-29 12:04:31.751 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:04:31.752 +05:30 [INF] Request finished in 715.6108ms 200 application/json; charset=utf-8
+2025-10-29 12:04:32.042 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/Stock/Register  
+2025-10-29 12:04:32.042 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:32.043 +05:30 [INF] Request finished in 0.8513ms 204 
+2025-10-29 12:04:32.052 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/Stock/Register application/json 46
+2025-10-29 12:04:32.052 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:32.052 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:32.052 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:32.059 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:32.059 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI)'
+2025-10-29 12:04:32.059 +05:30 [INF] Route matched with {action = "Register", controller = "Stock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(HandloomAPI.Models.Sales.Stock_Register_Filter) on controller HandloomAPI.Controllers.Sales.StockController (HandloomAPI).
+2025-10-29 12:04:32.071 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.Stock_Register_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:32.075 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI) in 15.2991ms
+2025-10-29 12:04:32.076 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI)'
+2025-10-29 12:04:32.076 +05:30 [INF] Request finished in 25.0229ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.199 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Exhition/Get?ExhitionID=0  
+2025-10-29 12:04:35.202 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:04:35.202 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.202 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.203 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.203 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.204 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:35.204 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:04:35.207 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.208 +05:30 [INF] Request finished in 8.8427ms 204 
+2025-10-29 12:04:35.221 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/CreditType/Get?CreditTypeID=0  
+2025-10-29 12:04:35.221 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.221 +05:30 [INF] Request finished in 1.0473ms 204 
+2025-10-29 12:04:35.222 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Party/Get?PartyID=0  
+2025-10-29 12:04:35.222 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.223 +05:30 [INF] Request finished in 0.7401ms 204 
+2025-10-29 12:04:35.223 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Party/Get?PartyID=0  
+2025-10-29 12:04:35.223 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.224 +05:30 [INF] Request finished in 0.6687ms 204 
+2025-10-29 12:04:35.237 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/SalesLocation/Get?SalesLocationID=0  
+2025-10-29 12:04:35.237 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Party/Get?PartyID=0  
+2025-10-29 12:04:35.237 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.237 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.238 +05:30 [INF] Request finished in 0.7131ms 204 
+2025-10-29 12:04:35.238 +05:30 [INF] Request finished in 0.7132ms 204 
+2025-10-29 12:04:35.244 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:04:35.244 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.244 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.245 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.245 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Exhition/Get?ExhitionID=0 application/json 
+2025-10-29 12:04:35.246 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.247 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.247 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.249 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.250 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI)'
+2025-10-29 12:04:35.250 +05:30 [INF] Route matched with {action = "Get", controller = "Exhition"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.ExhitionController (HandloomAPI).
+2025-10-29 12:04:35.258 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.258 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:35.260 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:04:35.270 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/CreditType/Get?CreditTypeID=0 application/json 
+2025-10-29 12:04:35.271 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.271 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.271 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.279 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.279 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.CreditTypeController.Get (HandloomAPI)'
+2025-10-29 12:04:35.280 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ExhitionMaster.ExhitionMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.294 +05:30 [INF] Route matched with {action = "Get", controller = "CreditType"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.CreditTypeController (HandloomAPI).
+2025-10-29 12:04:35.297 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI) in 46.5368ms
+2025-10-29 12:04:35.298 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI)'
+2025-10-29 12:04:35.298 +05:30 [INF] Request finished in 52.2592ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.349 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/SalesLocation/Get?SalesLocationID=0 application/json 
+2025-10-29 12:04:35.350 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.350 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.350 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.351 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.CreditTypeMaster.CreditTypeMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.352 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.353 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI)'
+2025-10-29 12:04:35.353 +05:30 [INF] Route matched with {action = "Get", controller = "SalesLocation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.SalesLocationController (HandloomAPI).
+2025-10-29 12:04:35.389 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.SalesLocationMaster.SalesLocationMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.401 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0  
+2025-10-29 12:04:35.402 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.402 +05:30 [INF] Request finished in 0.6288ms 204 
+2025-10-29 12:04:35.417 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0  
+2025-10-29 12:04:35.417 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.420 +05:30 [INF] Request finished in 3.3581ms 204 
+2025-10-29 12:04:35.508 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Exhition/Get?ExhitionID=0 application/json 
+2025-10-29 12:04:35.508 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.508 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.508 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.509 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.509 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI)'
+2025-10-29 12:04:35.509 +05:30 [INF] Route matched with {action = "Get", controller = "Exhition"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.ExhitionController (HandloomAPI).
+2025-10-29 12:04:35.511 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.515 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ExhitionMaster.ExhitionMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.516 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI) in 6.6368ms
+2025-10-29 12:04:35.516 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ExhitionController.Get (HandloomAPI)'
+2025-10-29 12:04:35.516 +05:30 [INF] Request finished in 8.3108ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.522 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0  
+2025-10-29 12:04:35.522 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.522 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0 application/json 
+2025-10-29 12:04:35.522 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.522 +05:30 [INF] Request finished in 0.5517ms 204 
+2025-10-29 12:04:35.523 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.523 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.525 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.526 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:04:35.528 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI) in 175.1338ms
+2025-10-29 12:04:35.529 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI)'
+2025-10-29 12:04:35.529 +05:30 [INF] Request finished in 179.3962ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.531 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Get  
+2025-10-29 12:04:35.531 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.531 +05:30 [INF] Request finished in 0.5139ms 204 
+2025-10-29 12:04:35.531 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.CreditTypeController.Get (HandloomAPI) in 236.333ms
+2025-10-29 12:04:35.532 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.CreditTypeController.Get (HandloomAPI)'
+2025-10-29 12:04:35.532 +05:30 [INF] Request finished in 261.3447ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.547 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Location"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCountry(Int64) on controller HandloomAPI.Controllers.Masters.LocationController (HandloomAPI).
+2025-10-29 12:04:35.511 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/HSNCode/Get?HSNCodeID=0  
+2025-10-29 12:04:35.551 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.553 +05:30 [INF] Request finished in 42.3995ms 204 
+2025-10-29 12:04:35.587 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.Location.CountryMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.588 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 327.3166ms
+2025-10-29 12:04:35.588 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:35.589 +05:30 [INF] Request finished in 344.8068ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.594 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI) in 46.0865ms
+2025-10-29 12:04:35.594 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:04:35.594 +05:30 [INF] Request finished in 72.0193ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.605 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:04:35.605 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.605 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.605 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.605 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.606 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:35.606 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:04:35.608 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/SalesLocation/Get?SalesLocationID=0 application/json 
+2025-10-29 12:04:35.608 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/CreditType/Get?CreditTypeID=0 application/json 
+2025-10-29 12:04:35.608 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.608 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.608 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.608 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.608 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.608 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.609 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.609 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI)'
+2025-10-29 12:04:35.609 +05:30 [INF] Route matched with {action = "Get", controller = "SalesLocation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.SalesLocationController (HandloomAPI).
+2025-10-29 12:04:35.608 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/HSNCode/Get?HSNCodeID=0 application/json 
+2025-10-29 12:04:35.610 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.610 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.610 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.610 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.CreditTypeController.Get (HandloomAPI)'
+2025-10-29 12:04:35.610 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.611 +05:30 [INF] Route matched with {action = "Get", controller = "CreditType"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.CreditTypeController (HandloomAPI).
+2025-10-29 12:04:35.643 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.CreditTypeMaster.CreditTypeMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.644 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.644 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.HSNCodeController.Get (HandloomAPI)'
+2025-10-29 12:04:35.645 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.SalesLocationMaster.SalesLocationMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.645 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.CreditTypeController.Get (HandloomAPI) in 33.8301ms
+2025-10-29 12:04:35.645 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.CreditTypeController.Get (HandloomAPI)'
+2025-10-29 12:04:35.645 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI) in 35.7007ms
+2025-10-29 12:04:35.645 +05:30 [INF] Request finished in 37.5954ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.645 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.SalesLocationController.Get (HandloomAPI)'
+2025-10-29 12:04:35.646 +05:30 [INF] Request finished in 38.0357ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.650 +05:30 [INF] Route matched with {action = "Get", controller = "HSNCode"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.HSNCodeController (HandloomAPI).
+2025-10-29 12:04:35.651 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Get application/json 184
+2025-10-29 12:04:35.666 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.666 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.666 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.667 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.667 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:35.671 +05:30 [INF] Route matched with {action = "Get", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.GDN_Filter) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:35.688 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0 application/json 
+2025-10-29 12:04:35.688 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.688 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.688 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.694 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.695 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:04:35.695 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Location"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCountry(Int64) on controller HandloomAPI.Controllers.Masters.LocationController (HandloomAPI).
+2025-10-29 12:04:35.701 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.712 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.Location.CountryMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.717 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.HSNCodeMaster.HSNCodeMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.724 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.730 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI) in 34.6171ms
+2025-10-29 12:04:35.730 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:04:35.730 +05:30 [INF] Request finished in 42.2648ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.759 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.HSNCodeController.Get (HandloomAPI) in 94.3758ms
+2025-10-29 12:04:35.760 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:04:35.760 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:04:35.762 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.HSNCodeController.Get (HandloomAPI)'
+2025-10-29 12:04:35.762 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.761 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 556.7212ms
+2025-10-29 12:04:35.762 +05:30 [INF] Request finished in 154.1243ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.762 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.762 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:35.771 +05:30 [INF] Request finished in 568.6012ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.762 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.767 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.771 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.771 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:35.772 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.772 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.772 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:04:35.772 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.772 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:35.773 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:04:35.796 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 189.5298ms
+2025-10-29 12:04:35.796 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:35.802 +05:30 [INF] Request finished in 197.5314ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.822 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0 application/json 
+2025-10-29 12:04:35.822 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.822 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.822 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.823 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.823 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:04:35.823 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Location"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCountry(Int64) on controller HandloomAPI.Controllers.Masters.LocationController (HandloomAPI).
+2025-10-29 12:04:35.840 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.Location.CountryMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.842 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI) in 19.4031ms
+2025-10-29 12:04:35.843 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:04:35.843 +05:30 [INF] Request finished in 20.9028ms 200 application/json; charset=utf-8
+2025-10-29 12:04:35.915 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:35.976 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:04:35.976 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:35.977 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:35.977 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:35.977 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:35.977 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:35.977 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:04:35.982 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 208.9781ms
+2025-10-29 12:04:35.982 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:35.982 +05:30 [INF] Request finished in 221.8629ms 200 application/json; charset=utf-8
+2025-10-29 12:04:36.088 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:36.209 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 231.4058ms
+2025-10-29 12:04:36.209 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:36.210 +05:30 [INF] Request finished in 233.4453ms 200 application/json; charset=utf-8
+2025-10-29 12:04:36.210 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:04:36.210 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:36.210 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:36.210 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:36.211 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:36.211 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:36.211 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:04:36.218 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.GDN_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:36.265 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI) in 593.7941ms
+2025-10-29 12:04:36.265 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:36.265 +05:30 [INF] Request finished in 613.652ms 200 application/json; charset=utf-8
+2025-10-29 12:04:36.283 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:36.317 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:36.328 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:04:36.328 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:36.329 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:36.329 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:36.329 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:36.329 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:36.329 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:04:36.332 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 120.3771ms
+2025-10-29 12:04:36.332 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:36.332 +05:30 [INF] Request finished in 122.261ms 200 application/json; charset=utf-8
+2025-10-29 12:04:36.335 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 563.279ms
+2025-10-29 12:04:36.336 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:36.336 +05:30 [INF] Request finished in 575.6655ms 200 application/json; charset=utf-8
+2025-10-29 12:04:36.401 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:36.409 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 79.437ms
+2025-10-29 12:04:36.409 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:04:36.409 +05:30 [INF] Request finished in 80.7956ms 200 application/json; charset=utf-8
+2025-10-29 12:04:39.449 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Delete?GDNID=50011  
+2025-10-29 12:04:39.449 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:39.450 +05:30 [INF] Request finished in 0.867ms 204 
+2025-10-29 12:04:39.454 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Delete?GDNID=50011 application/json 0
+2025-10-29 12:04:39.454 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:39.454 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:39.454 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:39.462 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:39.462 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:39.477 +05:30 [INF] Route matched with {action = "Delete", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:39.521 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:39.522 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI) in 44.6868ms
+2025-10-29 12:04:39.522 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:39.522 +05:30 [INF] Request finished in 68.1671ms 200 application/json; charset=utf-8
+2025-10-29 12:04:39.535 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Get application/json 184
+2025-10-29 12:04:39.535 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:39.535 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:39.535 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:39.536 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:39.536 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:39.536 +05:30 [INF] Route matched with {action = "Get", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.GDN_Filter) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:39.590 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.GDN_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:39.593 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI) in 56.7254ms
+2025-10-29 12:04:39.593 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:39.594 +05:30 [INF] Request finished in 58.7801ms 200 application/json; charset=utf-8
+2025-10-29 12:04:42.416 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Delete?GDNID=50010  
+2025-10-29 12:04:42.417 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:42.417 +05:30 [INF] Request finished in 0.6474ms 204 
+2025-10-29 12:04:42.421 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Delete?GDNID=50010 application/json 0
+2025-10-29 12:04:42.422 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:42.422 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:42.422 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:42.422 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:42.422 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:42.425 +05:30 [INF] Route matched with {action = "Delete", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:42.442 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:42.442 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI) in 16.8096ms
+2025-10-29 12:04:42.443 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:42.443 +05:30 [INF] Request finished in 21.7522ms 200 application/json; charset=utf-8
+2025-10-29 12:04:42.459 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Get  
+2025-10-29 12:04:42.459 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:42.460 +05:30 [INF] Request finished in 0.531ms 204 
+2025-10-29 12:04:42.466 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Get application/json 184
+2025-10-29 12:04:42.466 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:42.466 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:42.466 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:42.466 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:42.467 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:42.468 +05:30 [INF] Route matched with {action = "Get", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.GDN_Filter) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:42.534 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.GDN_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:42.536 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI) in 68.3094ms
+2025-10-29 12:04:42.537 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:42.537 +05:30 [INF] Request finished in 71.1431ms 200 application/json; charset=utf-8
+2025-10-29 12:04:46.210 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Delete?GDNID=40019  
+2025-10-29 12:04:46.210 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:46.215 +05:30 [INF] Request finished in 5.1241ms 204 
+2025-10-29 12:04:46.221 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Delete?GDNID=40019 application/json 0
+2025-10-29 12:04:46.221 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:46.223 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:46.224 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:46.224 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:46.225 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:46.225 +05:30 [INF] Route matched with {action = "Delete", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:46.269 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:46.269 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI) in 44.3913ms
+2025-10-29 12:04:46.270 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:46.270 +05:30 [INF] Request finished in 48.8332ms 200 application/json; charset=utf-8
+2025-10-29 12:04:46.293 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Get application/json 184
+2025-10-29 12:04:46.293 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:46.293 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:46.293 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:46.293 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:46.293 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:46.294 +05:30 [INF] Route matched with {action = "Get", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.GDN_Filter) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:46.348 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.GDN_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:46.352 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI) in 58.2389ms
+2025-10-29 12:04:46.352 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:46.352 +05:30 [INF] Request finished in 59.7936ms 200 application/json; charset=utf-8
+2025-10-29 12:04:49.689 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Delete?GDNID=40018  
+2025-10-29 12:04:49.689 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:49.690 +05:30 [INF] Request finished in 0.5149ms 204 
+2025-10-29 12:04:49.694 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Delete?GDNID=40018 application/json 0
+2025-10-29 12:04:49.694 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:49.694 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:49.694 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:49.694 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:49.694 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:49.694 +05:30 [INF] Route matched with {action = "Delete", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:49.743 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:49.745 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI) in 49.3098ms
+2025-10-29 12:04:49.745 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:49.745 +05:30 [INF] Request finished in 51.5419ms 200 application/json; charset=utf-8
+2025-10-29 12:04:49.794 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Get  
+2025-10-29 12:04:49.794 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:49.794 +05:30 [INF] Request finished in 0.5171ms 204 
+2025-10-29 12:04:49.807 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Get application/json 184
+2025-10-29 12:04:49.807 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:49.807 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:49.808 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:49.808 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:49.808 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:49.808 +05:30 [INF] Route matched with {action = "Get", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.GDN_Filter) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:49.865 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.GDN_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:49.869 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI) in 60.2389ms
+2025-10-29 12:04:49.869 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:49.869 +05:30 [INF] Request finished in 61.8701ms 200 application/json; charset=utf-8
+2025-10-29 12:04:52.745 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Delete?GDNID=40017  
+2025-10-29 12:04:52.745 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:52.745 +05:30 [INF] Request finished in 0.697ms 204 
+2025-10-29 12:04:52.752 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Delete?GDNID=40017 application/json 0
+2025-10-29 12:04:52.752 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:52.752 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:52.752 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:52.753 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:52.753 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:52.753 +05:30 [INF] Route matched with {action = "Delete", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:52.769 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:52.770 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI) in 16.9726ms
+2025-10-29 12:04:52.770 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:52.771 +05:30 [INF] Request finished in 19.7586ms 200 application/json; charset=utf-8
+2025-10-29 12:04:52.796 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Get application/json 184
+2025-10-29 12:04:52.796 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:52.796 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:52.796 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:52.799 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:52.799 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:52.799 +05:30 [INF] Route matched with {action = "Get", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.GDN_Filter) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:52.876 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.GDN_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:52.878 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI) in 78.167ms
+2025-10-29 12:04:52.878 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:52.879 +05:30 [INF] Request finished in 82.8702ms 200 application/json; charset=utf-8
+2025-10-29 12:04:56.569 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Delete?GDNID=40016  
+2025-10-29 12:04:56.570 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:56.570 +05:30 [INF] Request finished in 0.6847ms 204 
+2025-10-29 12:04:56.574 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Delete?GDNID=40016 application/json 0
+2025-10-29 12:04:56.574 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:56.574 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:56.574 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:56.574 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:56.574 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:56.574 +05:30 [INF] Route matched with {action = "Delete", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:56.584 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:56.586 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI) in 10.9733ms
+2025-10-29 12:04:56.586 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Delete (HandloomAPI)'
+2025-10-29 12:04:56.586 +05:30 [INF] Request finished in 12.5669ms 200 application/json; charset=utf-8
+2025-10-29 12:04:56.606 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/GDN/Get  
+2025-10-29 12:04:56.607 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:56.607 +05:30 [INF] Request finished in 0.5058ms 204 
+2025-10-29 12:04:56.613 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/GDN/Get application/json 184
+2025-10-29 12:04:56.613 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:56.613 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:56.613 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:56.613 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:56.613 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:56.614 +05:30 [INF] Route matched with {action = "Get", controller = "GDN"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.GDN_Filter) on controller HandloomAPI.Controllers.Sales.GDNController (HandloomAPI).
+2025-10-29 12:04:56.663 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.GDN_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:56.665 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI) in 51.1794ms
+2025-10-29 12:04:56.665 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.GDNController.Get (HandloomAPI)'
+2025-10-29 12:04:56.665 +05:30 [INF] Request finished in 52.6748ms 200 application/json; charset=utf-8
+2025-10-29 12:04:58.236 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Brand/Get?BrandID=0  
+2025-10-29 12:04:58.236 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.237 +05:30 [INF] Request finished in 0.6493ms 204 
+2025-10-29 12:04:58.241 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:04:58.241 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.242 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:58.242 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:58.242 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:58.242 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:58.242 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:04:58.255 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/LabelPrintSettings/Get?SettingID=0  
+2025-10-29 12:04:58.255 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.256 +05:30 [INF] Request finished in 0.5104ms 204 
+2025-10-29 12:04:58.265 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/LabelPrintSettings/Get?SettingID=0 application/json 
+2025-10-29 12:04:58.265 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.265 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:58.265 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:58.268 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:58.268 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI)'
+2025-10-29 12:04:58.268 +05:30 [INF] Route matched with {action = "Get", controller = "LabelPrintSettings"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.LabelPrintSettingsController (HandloomAPI).
+2025-10-29 12:04:58.271 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.LabelPrintSettings.LabelPrintSettings_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:58.271 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI) in 2.9796ms
+2025-10-29 12:04:58.272 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI)'
+2025-10-29 12:04:58.272 +05:30 [INF] Request finished in 6.8989ms 200 application/json; charset=utf-8
+2025-10-29 12:04:58.278 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/RemoveStock/Get  
+2025-10-29 12:04:58.278 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.279 +05:30 [INF] Request finished in 0.5621ms 204 
+2025-10-29 12:04:58.289 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/RemoveStock/Get application/json 80
+2025-10-29 12:04:58.289 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.289 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:58.289 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:58.290 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:58.290 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI)'
+2025-10-29 12:04:58.290 +05:30 [INF] Route matched with {action = "Get", controller = "RemoveStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.RemoveStock_Filter) on controller HandloomAPI.Controllers.Sales.RemoveStockController (HandloomAPI).
+2025-10-29 12:04:58.295 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.RemoveStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:58.297 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI) in 6.559ms
+2025-10-29 12:04:58.297 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.RemoveStockController.Get (HandloomAPI)'
+2025-10-29 12:04:58.297 +05:30 [INF] Request finished in 7.8558ms 200 application/json; charset=utf-8
+2025-10-29 12:04:58.339 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:58.346 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:04:58.347 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.347 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:58.347 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:58.347 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:58.347 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:58.347 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:04:58.348 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 104.9976ms
+2025-10-29 12:04:58.348 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:58.348 +05:30 [INF] Request finished in 106.669ms 200 application/json; charset=utf-8
+2025-10-29 12:04:58.398 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:58.406 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 58.1005ms
+2025-10-29 12:04:58.406 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:58.406 +05:30 [INF] Request finished in 59.8293ms 200 application/json; charset=utf-8
+2025-10-29 12:04:58.886 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Product/Get  
+2025-10-29 12:04:58.886 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.886 +05:30 [INF] Request finished in 0.5315ms 204 
+2025-10-29 12:04:58.888 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:04:58.888 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.888 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:58.888 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:58.889 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:58.889 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:58.889 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:04:58.896 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Masters/Product/Get application/json 139
+2025-10-29 12:04:58.896 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:58.896 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:58.896 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:58.896 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:58.896 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:04:58.896 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Masters.ProductMaster.ProductMaster_search_filter) on controller HandloomAPI.Controllers.Masters.ProductController (HandloomAPI).
+2025-10-29 12:04:58.996 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:59.070 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 181.0192ms
+2025-10-29 12:04:59.071 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:04:59.071 +05:30 [INF] Request finished in 182.8118ms 200 application/json; charset=utf-8
+2025-10-29 12:04:59.601 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ProductMaster.ProductMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:59.682 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI) in 778.7897ms
+2025-10-29 12:04:59.683 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:04:59.684 +05:30 [INF] Request finished in 787.847ms 200 application/json; charset=utf-8
+2025-10-29 12:04:59.775 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/Stock/Register  
+2025-10-29 12:04:59.775 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:59.776 +05:30 [INF] Request finished in 0.7662ms 204 
+2025-10-29 12:04:59.778 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/Stock/Register application/json 46
+2025-10-29 12:04:59.778 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:04:59.779 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:04:59.779 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:04:59.779 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:04:59.779 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI)'
+2025-10-29 12:04:59.779 +05:30 [INF] Route matched with {action = "Register", controller = "Stock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(HandloomAPI.Models.Sales.Stock_Register_Filter) on controller HandloomAPI.Controllers.Sales.StockController (HandloomAPI).
+2025-10-29 12:04:59.785 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.Stock_Register_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:04:59.786 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI) in 6.4686ms
+2025-10-29 12:04:59.786 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI)'
+2025-10-29 12:04:59.787 +05:30 [INF] Request finished in 8.3501ms 200 application/json; charset=utf-8
+2025-10-29 12:05:06.190 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Party/Get?PartyID=0  
+2025-10-29 12:05:06.190 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.190 +05:30 [INF] Request finished in 0.5596ms 204 
+2025-10-29 12:05:06.190 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Brand/Get?BrandID=0  
+2025-10-29 12:05:06.190 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.191 +05:30 [INF] Request finished in 0.3766ms 204 
+2025-10-29 12:05:06.214 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:05:06.214 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.214 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:06.215 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:06.215 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:06.216 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:05:06.216 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:05:06.225 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:05:06.225 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.225 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:06.225 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:06.226 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:06.226 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:05:06.226 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:05:06.253 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/LabelPrintSettings/Get?SettingID=0  
+2025-10-29 12:05:06.253 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.254 +05:30 [INF] Request finished in 0.461ms 204 
+2025-10-29 12:05:06.258 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Get  
+2025-10-29 12:05:06.258 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.259 +05:30 [INF] Request finished in 0.6722ms 204 
+2025-10-29 12:05:06.259 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0  
+2025-10-29 12:05:06.259 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.259 +05:30 [INF] Request finished in 0.4233ms 204 
+2025-10-29 12:05:06.275 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/LabelPrintSettings/Get?SettingID=0 application/json 
+2025-10-29 12:05:06.275 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.276 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:06.276 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:06.276 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:06.276 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI)'
+2025-10-29 12:05:06.276 +05:30 [INF] Route matched with {action = "Get", controller = "LabelPrintSettings"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.LabelPrintSettingsController (HandloomAPI).
+2025-10-29 12:05:06.296 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.LabelPrintSettings.LabelPrintSettings_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:06.297 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI) in 20.3841ms
+2025-10-29 12:05:06.297 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI)'
+2025-10-29 12:05:06.297 +05:30 [INF] Request finished in 21.6858ms 200 application/json; charset=utf-8
+2025-10-29 12:05:06.297 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Get application/json 92
+2025-10-29 12:05:06.298 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.298 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:06.298 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:06.298 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0 application/json 
+2025-10-29 12:05:06.298 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.298 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:06.299 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:06.299 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:06.299 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:06.299 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:06.299 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:05:06.299 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Location"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCountry(Int64) on controller HandloomAPI.Controllers.Masters.LocationController (HandloomAPI).
+2025-10-29 12:05:06.302 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:06.303 +05:30 [INF] Route matched with {action = "Get", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.InsertStock_Filter) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:06.307 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.Location.CountryMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:06.308 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI) in 8.6319ms
+2025-10-29 12:05:06.308 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:05:06.308 +05:30 [INF] Request finished in 10.4462ms 200 application/json; charset=utf-8
+2025-10-29 12:05:06.382 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:05:06.382 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.382 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:06.382 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:06.382 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 166.4952ms
+2025-10-29 12:05:06.383 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:06.383 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:05:06.383 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:05:06.383 +05:30 [INF] Request finished in 169.2619ms 200 application/json; charset=utf-8
+2025-10-29 12:05:06.383 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:05:06.413 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.InsertStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:06.419 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI) in 115.0805ms
+2025-10-29 12:05:06.419 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:06.419 +05:30 [INF] Request finished in 121.6412ms 200 application/json; charset=utf-8
+2025-10-29 12:05:06.443 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:06.452 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 225.3949ms
+2025-10-29 12:05:06.452 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:05:06.452 +05:30 [INF] Request finished in 226.9938ms 200 application/json; charset=utf-8
+2025-10-29 12:05:06.471 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:05:06.471 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:06.472 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:06.472 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:06.472 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:06.472 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:05:06.473 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:05:06.481 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:06.496 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 112.5884ms
+2025-10-29 12:05:06.496 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:05:06.496 +05:30 [INF] Request finished in 114.2172ms 200 application/json; charset=utf-8
+2025-10-29 12:05:06.527 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:06.533 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 60.0731ms
+2025-10-29 12:05:06.533 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:05:06.533 +05:30 [INF] Request finished in 62.2326ms 200 application/json; charset=utf-8
+2025-10-29 12:05:09.731 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10004  
+2025-10-29 12:05:09.731 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:09.732 +05:30 [INF] Request finished in 1.0268ms 204 
+2025-10-29 12:05:09.737 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10004 application/json 0
+2025-10-29 12:05:09.738 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:09.738 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:09.738 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:09.742 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:09.742 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:09.750 +05:30 [INF] Route matched with {action = "Delete", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:09.850 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:09.851 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI) in 100.6973ms
+2025-10-29 12:05:09.851 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:09.851 +05:30 [INF] Request finished in 113.8036ms 200 application/json; charset=utf-8
+2025-10-29 12:05:09.860 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Get application/json 92
+2025-10-29 12:05:09.860 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:09.860 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:09.860 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:09.861 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:09.861 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:09.861 +05:30 [INF] Route matched with {action = "Get", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.InsertStock_Filter) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:09.865 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.InsertStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:09.866 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI) in 5.24ms
+2025-10-29 12:05:09.867 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:09.867 +05:30 [INF] Request finished in 6.7406ms 200 application/json; charset=utf-8
+2025-10-29 12:05:12.889 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10006  
+2025-10-29 12:05:12.889 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:12.890 +05:30 [INF] Request finished in 1.2845ms 204 
+2025-10-29 12:05:12.901 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10006 application/json 0
+2025-10-29 12:05:12.902 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:12.902 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:12.902 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:12.902 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:12.902 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:12.902 +05:30 [INF] Route matched with {action = "Delete", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:12.920 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:12.920 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI) in 17.722ms
+2025-10-29 12:05:12.921 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:12.921 +05:30 [INF] Request finished in 19.4903ms 200 application/json; charset=utf-8
+2025-10-29 12:05:12.927 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Get  
+2025-10-29 12:05:12.928 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:12.928 +05:30 [INF] Request finished in 0.7644ms 204 
+2025-10-29 12:05:12.932 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Get application/json 92
+2025-10-29 12:05:12.932 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:12.932 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:12.932 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:12.933 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:12.933 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:12.933 +05:30 [INF] Route matched with {action = "Get", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.InsertStock_Filter) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:12.936 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.InsertStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:12.937 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI) in 3.4702ms
+2025-10-29 12:05:12.937 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:12.937 +05:30 [INF] Request finished in 5.0809ms 200 application/json; charset=utf-8
+2025-10-29 12:05:16.145 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10007  
+2025-10-29 12:05:16.145 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:16.146 +05:30 [INF] Request finished in 0.6811ms 204 
+2025-10-29 12:05:16.150 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10007 application/json 0
+2025-10-29 12:05:16.150 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:16.151 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:16.151 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:16.151 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:16.151 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:16.151 +05:30 [INF] Route matched with {action = "Delete", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:16.166 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:16.167 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI) in 15.3973ms
+2025-10-29 12:05:16.167 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:16.167 +05:30 [INF] Request finished in 17.007ms 200 application/json; charset=utf-8
+2025-10-29 12:05:16.173 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Get application/json 92
+2025-10-29 12:05:16.173 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:16.173 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:16.174 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:16.174 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:16.174 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:16.174 +05:30 [INF] Route matched with {action = "Get", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.InsertStock_Filter) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:16.183 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.InsertStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:16.184 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI) in 9.5879ms
+2025-10-29 12:05:16.184 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:16.184 +05:30 [INF] Request finished in 11.0955ms 200 application/json; charset=utf-8
+2025-10-29 12:05:18.921 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10008  
+2025-10-29 12:05:18.921 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:18.922 +05:30 [INF] Request finished in 0.6413ms 204 
+2025-10-29 12:05:18.928 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10008 application/json 0
+2025-10-29 12:05:18.928 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:18.928 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:18.928 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:18.928 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:18.928 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:18.929 +05:30 [INF] Route matched with {action = "Delete", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:18.944 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:18.944 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI) in 15.6623ms
+2025-10-29 12:05:18.945 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:18.945 +05:30 [INF] Request finished in 17.6389ms 200 application/json; charset=utf-8
+2025-10-29 12:05:18.952 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Get  
+2025-10-29 12:05:18.952 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:18.953 +05:30 [INF] Request finished in 0.6121ms 204 
+2025-10-29 12:05:18.956 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Get application/json 92
+2025-10-29 12:05:18.956 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:18.956 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:18.956 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:18.956 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:18.956 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:18.957 +05:30 [INF] Route matched with {action = "Get", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.InsertStock_Filter) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:18.961 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.InsertStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:18.962 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI) in 4.757ms
+2025-10-29 12:05:18.962 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:18.962 +05:30 [INF] Request finished in 6.2896ms 200 application/json; charset=utf-8
+2025-10-29 12:05:22.112 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10005  
+2025-10-29 12:05:22.112 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:22.113 +05:30 [INF] Request finished in 0.6037ms 204 
+2025-10-29 12:05:22.116 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Delete?InsertStockID=10005 application/json 0
+2025-10-29 12:05:22.117 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:22.117 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:22.117 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:22.117 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:22.117 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:22.118 +05:30 [INF] Route matched with {action = "Delete", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int64) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:22.172 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:22.173 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI) in 54.9483ms
+2025-10-29 12:05:22.173 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Delete (HandloomAPI)'
+2025-10-29 12:05:22.173 +05:30 [INF] Request finished in 56.4918ms 200 application/json; charset=utf-8
+2025-10-29 12:05:22.188 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Get application/json 92
+2025-10-29 12:05:22.188 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:22.188 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:22.189 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:22.189 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:22.189 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:22.189 +05:30 [INF] Route matched with {action = "Get", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.InsertStock_Filter) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:05:22.191 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.InsertStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:22.193 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI) in 3.8915ms
+2025-10-29 12:05:22.194 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:05:22.194 +05:30 [INF] Request finished in 5.7554ms 200 application/json; charset=utf-8
+2025-10-29 12:05:23.314 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Product/Get  
+2025-10-29 12:05:23.315 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:23.317 +05:30 [INF] Request finished in 2.2495ms 204 
+2025-10-29 12:05:23.320 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Brand/Get?BrandID=0  
+2025-10-29 12:05:23.320 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:23.320 +05:30 [INF] Request finished in 0.5091ms 204 
+2025-10-29 12:05:23.323 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Masters/Product/Get application/json 139
+2025-10-29 12:05:23.323 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:23.323 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:23.323 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:23.323 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:23.323 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:05:23.324 +05:30 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Masters.ProductMaster.ProductMaster_search_filter) on controller HandloomAPI.Controllers.Masters.ProductController (HandloomAPI).
+2025-10-29 12:05:23.336 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:05:23.336 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:23.337 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:23.337 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:23.337 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:23.337 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:05:23.339 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:05:23.384 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:23.391 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 51.5038ms
+2025-10-29 12:05:23.391 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:05:23.391 +05:30 [INF] Request finished in 56.4264ms 200 application/json; charset=utf-8
+2025-10-29 12:05:23.793 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.ProductMaster.ProductMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:23.848 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI) in 524.4728ms
+2025-10-29 12:05:23.848 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.ProductController.Get (HandloomAPI)'
+2025-10-29 12:05:23.849 +05:30 [INF] Request finished in 525.9887ms 200 application/json; charset=utf-8
+2025-10-29 12:05:24.175 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/Stock/Register  
+2025-10-29 12:05:24.175 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:24.176 +05:30 [INF] Request finished in 0.721ms 204 
+2025-10-29 12:05:24.179 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/Stock/Register application/json 46
+2025-10-29 12:05:24.180 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:05:24.180 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:05:24.180 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:05:24.180 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:05:24.180 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI)'
+2025-10-29 12:05:24.180 +05:30 [INF] Route matched with {action = "Register", controller = "Stock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(HandloomAPI.Models.Sales.Stock_Register_Filter) on controller HandloomAPI.Controllers.Sales.StockController (HandloomAPI).
+2025-10-29 12:05:24.186 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.Stock_Register_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:05:24.187 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI) in 6.0017ms
+2025-10-29 12:05:24.187 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.StockController.Register (HandloomAPI)'
+2025-10-29 12:05:24.187 +05:30 [INF] Request finished in 7.5869ms 200 application/json; charset=utf-8
+2025-10-29 12:06:43.022 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Party/Get?PartyID=0  
+2025-10-29 12:06:43.024 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.025 +05:30 [INF] Request finished in 3.5219ms 204 
+2025-10-29 12:06:43.033 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Brand/Get?BrandID=0  
+2025-10-29 12:06:43.033 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.034 +05:30 [INF] Request finished in 0.7249ms 204 
+2025-10-29 12:06:43.034 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:06:43.034 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.034 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:06:43.034 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:06:43.035 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:06:43.035 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:06:43.041 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:06:43.049 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/LabelPrintSettings/Get?SettingID=0  
+2025-10-29 12:06:43.049 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.050 +05:30 [INF] Request finished in 0.8666ms 204 
+2025-10-29 12:06:43.059 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:06:43.060 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.066 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:06:43.066 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:06:43.066 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:06:43.066 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:06:43.066 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:06:43.067 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/LabelPrintSettings/Get?SettingID=0 application/json 
+2025-10-29 12:06:43.068 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.068 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:06:43.068 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:06:43.068 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:06:43.069 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI)'
+2025-10-29 12:06:43.069 +05:30 [INF] Route matched with {action = "Get", controller = "LabelPrintSettings"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.LabelPrintSettingsController (HandloomAPI).
+2025-10-29 12:06:43.076 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.LabelPrintSettings.LabelPrintSettings_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:06:43.077 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI) in 8.3433ms
+2025-10-29 12:06:43.077 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LabelPrintSettingsController.Get (HandloomAPI)'
+2025-10-29 12:06:43.078 +05:30 [INF] Request finished in 10.2969ms 200 application/json; charset=utf-8
+2025-10-29 12:06:43.083 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Sales/InsertStock/Get  
+2025-10-29 12:06:43.083 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.084 +05:30 [INF] Request finished in 0.5199ms 204 
+2025-10-29 12:06:43.084 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0  
+2025-10-29 12:06:43.084 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.084 +05:30 [INF] Request finished in 0.37ms 204 
+2025-10-29 12:06:43.126 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:06:43.148 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Location/GetCountry?CountryID=0 application/json 
+2025-10-29 12:06:43.148 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.149 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:06:43.149 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:06:43.149 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:06:43.149 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:06:43.149 +05:30 [INF] Route matched with {action = "GetCountry", controller = "Location"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCountry(Int64) on controller HandloomAPI.Controllers.Masters.LocationController (HandloomAPI).
+2025-10-29 12:06:43.150 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/Sales/InsertStock/Get application/json 92
+2025-10-29 12:06:43.150 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.150 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:06:43.150 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:06:43.150 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:06:43.151 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:06:43.151 +05:30 [INF] Route matched with {action = "Get", controller = "InsertStock"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(HandloomAPI.Models.Sales.InsertStock_Filter) on controller HandloomAPI.Controllers.Sales.InsertStockController (HandloomAPI).
+2025-10-29 12:06:43.153 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.Location.CountryMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:06:43.153 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI) in 4.1777ms
+2025-10-29 12:06:43.154 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.LocationController.GetCountry (HandloomAPI)'
+2025-10-29 12:06:43.154 +05:30 [INF] Request finished in 6.0816ms 200 application/json; charset=utf-8
+2025-10-29 12:06:43.160 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 119.0491ms
+2025-10-29 12:06:43.160 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:06:43.160 +05:30 [INF] Request finished in 126.2001ms 200 application/json; charset=utf-8
+2025-10-29 12:06:43.167 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Sales.InsertStock_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:06:43.168 +05:30 [INF] Executed action HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI) in 16.794ms
+2025-10-29 12:06:43.168 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Sales.InsertStockController.Get (HandloomAPI)'
+2025-10-29 12:06:43.168 +05:30 [INF] Request finished in 18.4669ms 200 application/json; charset=utf-8
+2025-10-29 12:06:43.178 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Party/Get?PartyID=0 application/json 
+2025-10-29 12:06:43.179 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.179 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:06:43.179 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:06:43.179 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:06:43.179 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:06:43.179 +05:30 [INF] Route matched with {action = "Get", controller = "Party"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64, Int64) on controller HandloomAPI.Controllers.Masters.PartyController (HandloomAPI).
+2025-10-29 12:06:43.246 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:06:43.253 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 186.5159ms
+2025-10-29 12:06:43.253 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:06:43.254 +05:30 [INF] Request finished in 194.4644ms 200 application/json; charset=utf-8
+2025-10-29 12:06:43.262 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/api/Masters/Brand/Get?BrandID=0 application/json 
+2025-10-29 12:06:43.262 +05:30 [INF] CORS policy execution successful.
+2025-10-29 12:06:43.262 +05:30 [INF] Method InvokeAsunc
+2025-10-29 12:06:43.262 +05:30 [INF] Method InvokeAsunc - 3
+2025-10-29 12:06:43.262 +05:30 [INF] No CORS policy found for the specified request.
+2025-10-29 12:06:43.262 +05:30 [INF] Executing endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:06:43.263 +05:30 [INF] Route matched with {action = "Get", controller = "Brand"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int64) on controller HandloomAPI.Controllers.Masters.BrandController (HandloomAPI).
+2025-10-29 12:06:43.264 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.PartyMaster.PartyMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:06:43.274 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI) in 94.0947ms
+2025-10-29 12:06:43.274 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.PartyController.Get (HandloomAPI)'
+2025-10-29 12:06:43.275 +05:30 [INF] Request finished in 96.7374ms 200 application/json; charset=utf-8
+2025-10-29 12:06:43.304 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[HandloomAPI.Models.Masters.BrandMaster.BrandMaster_ViewModel, HandloomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-29 12:06:43.314 +05:30 [INF] Executed action HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI) in 51.0724ms
+2025-10-29 12:06:43.314 +05:30 [INF] Executed endpoint 'HandloomAPI.Controllers.Masters.BrandController.Get (HandloomAPI)'
+2025-10-29 12:06:43.315 +05:30 [INF] Request finished in 52.7745ms 200 application/json; charset=utf-8

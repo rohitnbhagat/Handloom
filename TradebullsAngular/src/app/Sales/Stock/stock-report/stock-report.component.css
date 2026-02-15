@@ -1,0 +1,6 @@
+/* .mdc-list-item--selected {
+    background-color: #5897fb !important;
+} */
+.mat-mdc-option{
+    min-height: 33px !important;
+}

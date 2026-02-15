@@ -1,0 +1,225 @@
+<div class="clearfix"></div>
+
+<div class="row" *ngIf="IsOpen">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">GDN (Challan)</h2>
+                <ul class="nav navbar-right panel_toolbox mt-1">
+                    <li style="display: flex;align-items: center;" *ngIf="PrintType != 2">
+                        <label class="col-form-label label-align" style="margin-right: 5px;">
+                            Show Images
+                        </label>
+                        <div style="margin-right: 20px;">
+                            <mat-slide-toggle [(ngModel)]="IsPicVisible"></mat-slide-toggle>
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="BacktoList()">&nbsp;<i
+                                class="fa fa-arrow-circle-o-left"></i>&nbsp;&nbsp;Back</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="Print()">&nbsp;<i
+                                class="fa fa-print"></i>&nbsp;&nbsp;Print</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-3" style="max-height: 80vh; overflow: auto;">
+                <section class="content invoice" id="contenttoprint">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <div *ngIf="Brand && Brand.BrandLogo" style="float: left;">
+                                <img [src]="Brand.BrandLogo" alt="Uploaded Image" height="130px" />
+                            </div>
+                            <h4 style="font-weight: 300;float: right;text-align: right;" [innerHTML]="GetAddress()">
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row invoice-info m-3">
+                        <div class="col-sm-4 invoice-col">
+                            <b>Challan No:</b>&nbsp;{{VoucherNo}}
+                            <br>
+                            <b>Challan Date:</b>&nbsp;{{ VoucherDate | date: "dd-MMM-yyyy" }}
+                            <br>
+                            <b>Party:</b>&nbsp;{{PartyName}}
+                            <br>
+                            <b>Email:</b>&nbsp;{{ billingAddress?.EmailID }}
+                            <br>
+                            <b>Phone:</b>&nbsp;{{ billingAddress?.PhoneNo }}
+                        </div>
+                        <div class="col-sm-4 invoice-col">
+                            <strong>Billing Address</strong>
+                            <address [innerHTML]="GetBillingAddress()">
+                            </address>
+                        </div>
+                        <div class="col-sm-4 invoice-col">
+                            <b>PO No:</b> {{PONo}}
+                            <br>
+                            <b>PO Date:</b> {{ PODate | date: "dd-MMM-yyyy" }}
+                            <br>
+                            <b>Brand:</b> {{ BrandName }}
+                            <br>
+                            <b>Location:</b> {{ SalesLocationName }}
+                            <br>
+                            <b>Delivery Date:</b> {{ DeliveryDate | date: "dd-MMM-yyyy" }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="  table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;" class="text-center">Sr#</th>
+                                        <th style="width: 420px;"
+                                            [ngStyle]="{'display': !IsPicVisible ? 'none' : null}">Image</th>
+                                        <th>Product</th>
+                                        <th style="width: 100px;">Qty</th>
+                                        <th style="width: 100px;">Price</th>
+                                        <th style="width: 100px;">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ng-container *ngIf="PrintType == 1">
+                                        <ng-container *ngFor="let orderline of ParentProductDetails">
+                                            <tr>
+                                                <td class="text-center">{{orderline.SrNo}}</td>
+                                                <td [ngStyle]="{'display': !IsPicVisible ? 'none' : null}"><img
+                                                        [src]="orderline.Photo"
+                                                        style="max-width: 400px;max-height: 500px;"></td>
+                                                <td colspan="4" class="p-0">
+                                                    <table class="table table-bordered mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td [innerHTML]="orderline.ProductName"></td>
+                                                                <td class="text-right" style="width: 100px;">
+                                                                    {{orderline.Qty | number:'1.2-2'}}</td>
+                                                                <td class="text-right" style="width: 100px;"></td>
+                                                                <td class="text-right" style="width: 100px;">
+                                                                    {{orderline.TotalAmount | number:'1.2-2'}}</td>
+                                                            </tr>
+                                                            <tr
+                                                                *ngFor="let Vorderline of GetProductDetails(orderline.ProductID)">
+                                                                <!-- <td class="pl-5" [innerHTML]="Vorderline.ProductName"></td> -->
+                                                                <td class="pl-5">
+                                                                    <span [innerHTML]="Vorderline.ProductName"></span>
+                                                                    <span *ngIf="Vorderline.Remarks"
+                                                                        [innerHTML]="' - ' + Vorderline.Remarks"></span>
+                                                                </td>
+                                                                <td class="text-right">{{Vorderline.Qty |
+                                                                    number:'1.2-2'}}</td>
+                                                                <td class="text-right">{{Vorderline.Price |
+                                                                    number:'1.2-2'}}</td>
+                                                                <td class="text-right">{{Vorderline.TotalAmount |
+                                                                    number:'1.2-2'}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                        </ng-container>
+
+                                    </ng-container>
+                                    <ng-container *ngIf="PrintType == 0">
+                                        <tr *ngFor="let orderline of ProductDetails">
+                                            <td class="text-center">{{orderline.SrNo}}</td>
+                                            <td [ngStyle]="{'display': !IsPicVisible ? 'none' : null}"><img
+                                                    [src]="orderline.Photo" style="max-width: 400px;max-height: 500px;">
+                                            </td>
+                                            <!-- <td>{{orderline.ProductName}}</td> -->
+                                            <td>
+                                                <span [innerHTML]="orderline.ProductName"></span>
+                                                <span *ngIf="orderline.Remarks"
+                                                    [innerHTML]="' - ' + orderline.Remarks"></span>
+                                            </td>
+                                            <td class="text-right">{{orderline.Qty | number:'1.2-2'}}</td>
+                                            <td class="text-right">{{orderline.Price | number:'1.2-2'}}</td>
+                                            <td class="text-right">{{orderline.TotalAmount | number:'1.2-2'}}</td>
+                                        </tr>
+                                    </ng-container>
+                                    <tr>
+                                        <td [attr.colspan]="IsPicVisible ? '2': '1'"></td>
+                                        <td>Sub Total</td>
+                                        <td class="text-right">{{GetTotalQty() | number:'1.2-2'}}</td>
+                                        <td class="text-right"></td>
+                                        <td class="text-right">{{GrossTotal | number:'1.2-2'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td [attr.colspan]="IsPicVisible ? '3' : '2'">
+                                            <b>Remarks:</b>
+                                            <br>
+                                            <div [innerHTML]="Remarks"></div>
+                                        </td>
+                                        <td colspan="3" class="p-0">
+                                            <table class="table mb-0">
+                                                <tbody>
+                                                    <tr *ngFor="let tax of Taxes">
+                                                        <td colspan="2">{{tax.name}}</td>
+                                                        <td class="text-right" style="width: 100px;">{{tax.Amount |
+                                                            number:'1.2-2'}}</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td colspan="2">Total</td>
+                                                        <td class="text-right" style="width: 100px;">{{TotalAmount |
+                                                            number:'1.2-2'}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="isModalOpen" class="modal fade bs-example-modal-md " [ngClass]="{'show': isModalOpen}" tabindex="-1"
+    role="dialog" aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    GDN Print Type
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseModel()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 ml-5">
+                        <label>
+                            <input type="radio" name="option" [(ngModel)]="PrintType" value="1">
+                            &nbsp;&nbsp;Product Wise
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ml-5">
+                        <label>
+                            <input type="radio" name="option" [(ngModel)]="PrintType" value="0">
+                            &nbsp;&nbsp;Product Variation Wise
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseModel()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="btnOkay_Click()">Ok</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="isModalOpen"></div>

@@ -1,0 +1,93 @@
+<form class="form-horizontal form-label-left" novalidate="">
+    <div class="item form-group" style="display: none;">
+        <label class="col-form-label col-md-2 col-sm-2 label-align">First Name
+        </label>
+        <div class="col-md-4 col-sm-8 ">
+            <input type="text" [(ngModel)]="AddressData.FirstName" name="FirstName" class="form-control " placeholder="Enter First Name" />
+        </div>
+        <label class="col-form-label col-md-2 col-sm-2 label-align">Last Name
+        </label>
+        <div class="col-md-4 col-sm-8 ">
+            <input type="text" [(ngModel)]="AddressData.LastName" name="LastName" class="form-control " placeholder="Enter Last Name" />
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="col-form-label col-md-2 col-sm-2 label-align">Address Line 1
+        </label>
+        <div class="col-md-10 col-sm-8 ">
+            <input type="text" [(ngModel)]="AddressData.Address1" name="Address1" class="form-control " placeholder="Enter Address Line 1" />
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="col-form-label col-md-2 col-sm-2 label-align">Address Line 2
+        </label>
+        <div class="col-md-10 col-sm-8 ">
+            <input type="text" [(ngModel)]="AddressData.Address2" name="Address2" class="form-control " placeholder="Enter Address Line 2" />
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="col-form-label col-md-2 col-sm-2 label-align">Country
+        </label>
+        <div class="col-md-4 col-sm-8">
+            <mat-form-field class="form-control-ddl">
+                <mat-select [(value)]="AddressData.CountryID" placeholder="Search" class="form-control" (selectionChange)="CountryDropdownSelectionChange($event)">
+                    <mat-option>
+                        <ngx-mat-select-search #txtCountrySearch  placeholderLabel="Search..." [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                    </mat-option>
+                    <mat-option *ngFor="let c of lstCountrys | filtercolumn:txtCountrySearch.value:['label']" [value]="c.value" class="form-control-option">
+                    {{c.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+        <label class="col-form-label col-md-2 col-sm-2 label-align">State
+        </label>
+        <div class="col-md-4 col-sm-8">
+            <mat-form-field class="form-control-ddl">
+                <mat-select [(value)]="AddressData.StateID" placeholder="Search" class="form-control" (selectionChange)="StateDropdownSelectionChange($event)">
+                    <mat-option>
+                        <ngx-mat-select-search #txtStateSearch  placeholderLabel="Search..." [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                    </mat-option>
+                    <mat-option *ngFor="let c of lstStates | filtercolumn:txtStateSearch.value:['label']" [value]="c.value" class="form-control-option">
+                    {{c.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="col-form-label col-md-2 col-sm-2 label-align">City
+        </label>
+        <div class="col-md-4 col-sm-8">
+            <mat-form-field class="form-control-ddl">
+                <mat-select [(value)]="AddressData.CityID" placeholder="Search" class="form-control">
+                    <mat-option>
+                        <ngx-mat-select-search #txtCitySearch  placeholderLabel="Search..." [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                    </mat-option>
+                    <mat-option *ngFor="let c of lstCitys | filtercolumn:txtCitySearch.value:['label']" [value]="c.value" class="form-control-option">
+                    {{c.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <label class="col-form-label col-md-2 col-sm-2 label-align">Post Code
+        </label>
+        <div class="col-md-4 col-sm-8 ">
+            <input type="text" [(ngModel)]="AddressData.Postcode" name="Postcode" class="form-control " placeholder="Enter Post Code" />
+        </div>
+    </div>
+
+    <div class="item form-group">
+        <label class="col-form-label col-md-2 col-sm-2 label-align">EmailID
+        </label>
+        <div class="col-md-4 col-sm-8 ">
+            <input type="text" [(ngModel)]="AddressData.EmailID" name="EmailID" class="form-control " placeholder="Enter EmailID" />
+        </div>
+        <label class="col-form-label col-md-2 col-sm-2 label-align">Phone No
+        </label>
+        <div class="col-md-4 col-sm-8 ">
+            <input type="text" [(ngModel)]="AddressData.PhoneNo" name="PhoneNo" class="form-control " placeholder="Enter Phone No" />
+        </div>
+    </div>
+</form>

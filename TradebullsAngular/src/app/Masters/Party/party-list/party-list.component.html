@@ -1,0 +1,97 @@
+<div class="clearfix"></div>
+ 
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel p-0">
+            <div class="x_title mb-0 mt-1">
+                <h2 class="pl-2">Party List</h2>
+                <ul class="nav navbar-right panel_toolbox mt-1">
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="loadUsers(true)">&nbsp;<i
+                                class="fa fa-refresh"></i>&nbsp;&nbsp;Refresh</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="CreateUser()">&nbsp;<i
+                                class="fa fa-plus-circle"></i>&nbsp;&nbsp;Add Party</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="ExportToExcel()">&nbsp;<i
+                                class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Export To Excel</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content p-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" [(ngModel)]="strFilter" (keyup)="applyFilter($event)" class="form-control" placeholder="Search Party" />
+                    </div>
+                </div>
+                <div>
+                    <table mat-table [dataSource]="dataSource" matSort class="table table-striped mb-0 mb-n-6px">
+
+                        <ng-container matColumnDef="PartyID">
+                            <th class="column-title justify-content-center" mat-header-cell *matHeaderCellDef mat-sort-header style="width: 105px;">ID </th>
+                            <td class="text-center" mat-cell *matCellDef="let row"> {{row.PartyID}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="PartyTypeName">
+                            <th class="column-title justify-content-left" mat-header-cell *matHeaderCellDef mat-sort-header> Party Type</th>
+                            <td mat-cell *matCellDef="let row"> {{row.PartyTypeName}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="PartyName">
+                            <th class="column-title justify-content-left" mat-header-cell *matHeaderCellDef mat-sort-header> Party Name</th>
+                            <td mat-cell *matCellDef="let row"> {{row.PartyName}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="PartyCode">
+                            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> PartyCode </th>
+                            <td mat-cell *matCellDef="let row"> {{row.PartyCode}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Alias">
+                            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> Alias </th>
+                            <td mat-cell *matCellDef="let row"> {{row.Alias}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="EmailID">
+                            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> EmailID </th>
+                            <td mat-cell *matCellDef="let row"> {{row.EmailID}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="ModifiedByName">
+                            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> Modified By</th>
+                            <td mat-cell *matCellDef="let row"> {{row.ModifiedByName}} </td>
+                        </ng-container>
+                        
+                        <ng-container matColumnDef="ModifiedDate">
+                            <th class="column-title" mat-header-cell *matHeaderCellDef mat-sort-header> Modified Date </th>
+                            <td mat-cell *matCellDef="let row"> {{row.ModifiedDate | date:'dd-MM-yyyy hh:mm:ss a'}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Actions">
+                            <th class="column-title" mat-header-cell *matHeaderCellDef style="width: 200px;"> Actions </th>
+                            <td mat-cell *matCellDef="let element">
+                                <button type="button" class="btn btn-success btn-sm"
+                                    (click)="CreateUser(element.PartyID)">&nbsp;<i class="fa fa-edit"></i> Edit</button>
+                                <button type="button" class="btn btn-danger btn-sm" (click)="DeleteRow(element)">&nbsp;<i
+                                        class="fa fa-trash"></i> Delete</button>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="headings"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                        </tr>
+
+
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[10, 20, 30, 40, 50]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<app-party-add #usercomp (SaveEvent)="loadUsers(true)"></app-party-add>

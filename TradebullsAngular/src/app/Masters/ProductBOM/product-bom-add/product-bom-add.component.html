@@ -1,0 +1,105 @@
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel p-0">
+                    <div class="x_title mb-0 mt-1">
+                        <h2 class="pl-2">Product BOM</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content p-0" >
+                        <div class="row ">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-horizontal form-label-left mt-3" novalidate="">
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-1 col-sm-2 label-align">Product
+                                        </label>
+                                        <div class="col-xl-6 col-md-6 col-sm-12">
+                                            <mat-form-field class="form-control-ddl" appearance="fill">
+                                                <mat-select [(value)]="ProductID" placeholder="Select Product"
+                                                    class="form-control"
+                                                    (selectionChange)="ProductSelectionChange($event)">
+                                                    <mat-option>
+                                                        <ngx-mat-select-search #txtProductSearch
+                                                            placeholderLabel="Search..."
+                                                            [noEntriesFoundLabel]="'No match found...'"></ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option
+                                                        *ngFor="let c of lstParentProducts | filtercolumn:txtProductSearch.value:['label']"
+                                                        class="form-control-option" [value]="c.value">
+                                                        {{c.label}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="lstComponents.length > 0" >
+                            <div class="col-md-12 col-sm-12 ">
+                                <div class="x_content p-3" style="max-height: 80vh; overflow: auto;">
+
+
+                                        <table class="table table-striped mb-0 mb-n-6px"
+                                            style="border:1px solid #dee2e6;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 60px;text-align: center;">Select</th>
+                                                    <th>Component</th>
+                                                    <th>Processes</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let component of lstComponents">
+                                                    <td style="width: 60px;text-align: center;">
+                                                        <input type="checkbox" [(ngModel)]="component.IsSelected" />
+                                                    </td>
+                                                    <td [innerHTML]="component.ComponentName"></td>
+                                                    <td>
+                                                        <p-multiSelect [options]="lstProcesses"
+                                                            [(ngModel)]="component.Processes" optionLabel="ProcessName"
+                                                            optionValue="ProcessID" placeholder="Select Processes"
+                                                            [showClear]="false" appendTo="body" />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <!-- <div class="row" *ngIf="lstComponents.length == 0" style="width: 100%;">
+                                            <div class="col-md-12 text-center p-3">No Data Found</div>
+                                        </div> -->
+
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="x_footer" *ngIf="lstComponents.length > 0" >
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 ">
+                                <button type="button" class="btn btn-primary" (click)="SaveBOM()" style="margin-left: 10px;">Save
+                                    changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" *ngIf="isLoading">
+            <mat-spinner diameter="50"></mat-spinner>
+        </div>
+    </div>
+    <div class="col-md-9 col-sm-12 ">
+
+
+    </div>
+</div>
+
+
+
+<div class="clearfix"></div>

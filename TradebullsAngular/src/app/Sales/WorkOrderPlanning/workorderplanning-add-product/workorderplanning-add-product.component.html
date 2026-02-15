@@ -1,0 +1,122 @@
+<div *ngIf="IsAddNew" class="modal fade bs-example-modal-lg " [ngClass]="{'show': IsAddNew}" tabindex="-1" role="dialog"
+    aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    Product Detail
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="BackProduct()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="min-height: 65vh;max-height: 67vh; overflow: auto;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-6">
+                                <label class="col-form-label label-align" for="first-name">Product <span
+                                        class="spnRequired">*</span>
+                                </label>
+                            </div>
+                            <div class="col-md-10 col-sm-6">
+                                <select2 [data]="lstParentProducts" [templates]="template" [minCountForSearch]="1"
+                                    [value]="ParentProductID" (update)="ProductSelectionChange($event)"
+                                    [disabled]="IsDisabled">
+                                    <ng-template #template let-data="data">{{data?.name}}</ng-template>
+                                </select2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div *ngFor="let att of lstProductAttributes">
+                                    <br />
+                                    <h2 class="mb-1" [innerHTML]="att.Name"></h2>
+                                    <div>
+                                        <button type="button" class="btn btn-sm"
+                                            *ngFor="let att_V of GetProduct_AttributeValue(att.ProductAttributeID)"
+                                            [innerHTML]="att_V.option" (click)="Attribute_SelectionChange(att, att_V)"
+                                            [ngClass]="getAttributeSelectionClass(att.ProductAttributeID, att_V.ProductAttributeValueID)"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ng-container *ngIf="selectedProduct">
+                            <div class="row mt-3">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Product
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <label class="col-form-label label-align" [innerHTML]="selectedProduct.name">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Qty <span class="spnRequired">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-4 col-sm-3">
+                                    <input type="number" name="qty" [(ngModel)]="Qty" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">HSN Code
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <select2 [data]="lstHSNCode" [templates]="templateHSNCode" [minCountForSearch]="1"
+                                        [value]="HSNCodeID" (update)="HSNSelectionChange($event)">
+                                        <ng-template #templateHSNCode
+                                            let-data="data">{{data?.HSNCodeName}}</ng-template>
+                                    </select2>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Remarks
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <textarea name="Remarks" [(ngModel)]="Remarks" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-2 col-sm-6">
+                                    <label class="col-form-label label-align">Components
+                                    </label>
+                                </div>
+                                <div class="col-md-10 col-sm-6">
+                                    <mat-form-field appearance="fill" class="form-control-ddl">
+                                        <mat-select [(ngModel)]="SelectedComponents" multiple placeholder="Search"
+                                            class="form-control" [compareWith]="compareComponents">
+                                            <mat-option *ngFor="let option of lstComponents" [value]="option"
+                                                class="select-checkbox-item">
+                                                {{option.ComponentName}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center">
+                        <img [src]="ImageSrc" style="height: 50vh;max-width: 100%;" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="BackProduct()">Close</button>
+                <button type="button" class="btn btn-primary" [disabled]="!selectedProduct"
+                    (click)="SaveProduct(false)">Save changes</button>
+                <button type="button" class="btn btn-primary" [disabled]="!selectedProduct"
+                    (click)="SaveProduct(true)">Save & Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="IsAddNew"></div>
