@@ -11,19 +11,21 @@ export class WorkOrderPlanning_AddModel {
     DueDays:number | null = null;
     Remarks?:string;
     TotalQty?:number;
+    SalesOrderNo: string = "";
     Items:WorkOrderPlanning_Item_AddModel[] = [];
 }
 
 export class WorkOrderPlanning_Item_AddModel {
     ID?:number;
-    SalesOrderItemID?:number;
+    SalesOrderItemID: string = "";
+    SalesOrderNo: string = "";
     SrNo?:number;
     ParentProductID?:number;
     ProductID?:number;
     AttributeValues:{ProductAttributeID: number, ProductAttributeValueID: number} [] = [];
     Qty?:number;
-    HSNCodeID?:number;
     Remarks?:string;
+    SOItems: {SalesOrderItemID: number,SalesOrderNo: string, Qty: number}[] = [];
     Components: {ComponentID: number, ComponentName: string}[] = [];
 }
 

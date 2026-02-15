@@ -26,6 +26,7 @@ namespace HandloomAPI.Models.Sales
         public DateTime ModifiedDate { get; set; }
         public string ModifiedByName { get; set; }
         public bool IsLocked { get; set; }
+        public string SalesOrderNo { get; set; }
     }
     public class WorkOrderPlanning_AddModel
     {
@@ -41,20 +42,39 @@ namespace HandloomAPI.Models.Sales
         public int? DueDays { get; set; }
         public string Remarks { get; set; }
         public decimal TotalQty { get; set; }
+        public string SalesOrderNo { get; set; }
         public List<WorkOrderPlanning_Item_AddModel> Items { get; set; }
 
     }
     public class WorkOrderPlanning_Item_AddModel
     {
         public long ID { get; set; }
+        public string SalesOrderItemID { get; set; }
+        public string SalesOrderNo { get; set; }
         public long SrNo { get; set; }
-        public long SalesOrderItemID { get; set; }
         public long ParentProductID { get; set; }
         public long ProductID { get; set; }
-        public List<GDN_Item_Attribute_AddModel> AttributeValues { get; set; }
+        public List<WorkOrderPlanning_Item_Attribute_AddModel> AttributeValues { get; set; }
         public decimal Qty { get; set; }
-        public long HSNCodeID { get; set; }
         public string Remarks { get; set; }
+        public List<WorkOrderPlanning_Item_SOItem_AddModel> SOItems { get; set; }
+        public List<WorkOrderPlanning_Item_Component_AddModel> Components { get; set; }
+    }
+    public class WorkOrderPlanning_Item_Attribute_AddModel
+    {
+        public long ProductAttributeID { get; set; }
+        public long ProductAttributeValueID { get; set; }
+    }
+    public class WorkOrderPlanning_Item_Component_AddModel
+    {
+        public long ComponentID { get; set; }
+        public string ComponentName { get; set; }
+    }
+    public class WorkOrderPlanning_Item_SOItem_AddModel
+    {
+        public long SalesOrderItemID { get; set; }
+        public string SalesOrderNo { get; set; }
+        public decimal Qty { get; set; }
     }
     public class WorkOrderPlanning_Filter
     {
@@ -120,5 +140,56 @@ namespace HandloomAPI.Models.Sales
         public long ProductID { get; set; }
         public long ComponentID { get; set; }
         public string ComponentName { get; set; }
+    }
+
+    public class WorkOrderPlanning_Item_ViewModel
+    {
+        public long ID { get; set; }
+        public string SalesOrderItemID { get; set; }
+        public string SalesOrderNo { get; set; }
+        public long WOPlanningID { get; set; }
+        public long SrNo { get; set; }
+        public long ParentProductID { get; set; }
+        public long ProductID { get; set; }
+        public string sku { get; set; }
+        public string ProductName { get; set; }
+        public decimal Qty { get; set; }
+        public string Remarks { get; set; }
+        public string Photo { get; set; }
+        public List<WorkOrderPlanning_Item_Attribute_ViewModel> AttributeValues { get; set; }
+        public List<WorkOrderPlanning_Item_SOItem_ViewModel> SOItems { get; set; }
+        public List<WorkOrderPlanning_Item_Component_ViewModel> Components { get; set; }
+    }
+
+    public class WorkOrderPlanning_Item_Attribute_ViewModel
+    {
+        public long WOPlanningID { get; set; }
+        public long WOPlanningItemID { get; set; }
+        public long ProductAttributeID { get; set; }
+        public long ProductAttributeValueID { get; set; }
+        public string name { get; set; }
+        public string option { get; set; }
+    }
+    public class WorkOrderPlanning_Item_SOItem_ViewModel
+    {
+        public long WOPlanningID { get; set; }
+        public long WOPlanningItemID { get; set; }
+        public long SalesOrderItemID { get; set; }
+        public string SalesOrderNo { get; set; }
+        public decimal Qty { get; set; }
+    }
+    public class WorkOrderPlanning_Item_Component_ViewModel
+    {
+        public long WOPlanningID { get; set; }
+        public long WOPlanningItemID { get; set; }
+        public long ComponentID { get; set; }
+        public string ComponentName { get; set; }
+    }
+
+    public class WorkOrderPlanning_SelectedSO_ViewModel
+    {
+        public long SalesOrderID { get; set; }
+        public string SalesOrderNo { get; set; }
+        public DateTime SalesOrderDate { get; set; }
     }
 }

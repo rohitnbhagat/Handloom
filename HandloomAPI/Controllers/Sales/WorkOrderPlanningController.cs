@@ -72,7 +72,7 @@ namespace HandloomAPI.Controllers.Sales
                 }
                 else
                 {
-                    List<GDN_ViewModel> obj = result.GetDataList<GDN_ViewModel>();
+                    List<WorkOrderPlanning_ViewModel> obj = result.GetDataList<WorkOrderPlanning_ViewModel>();
                     return Ok(new
                     {
                         success = true,
@@ -91,22 +91,18 @@ namespace HandloomAPI.Controllers.Sales
         }
 
         [HttpPost("Create")]
-        public IActionResult Create(GDN_AddModel model)
+        public IActionResult Create(WorkOrderPlanning_AddModel model)
         {
             try
             {
                 System.Data.DataTable dtItems = new System.Data.DataTable("Items");
                 dtItems.Columns.Add("ID");
-                dtItems.Columns.Add("SrNo");
                 dtItems.Columns.Add("SalesOrderItemID");
+                dtItems.Columns.Add("SalesOrderNo");
+                dtItems.Columns.Add("SrNo");
                 dtItems.Columns.Add("ParentProductID");
                 dtItems.Columns.Add("ProductID");
                 dtItems.Columns.Add("Qty");
-                dtItems.Columns.Add("Price");
-                dtItems.Columns.Add("TotalAmount");
-                dtItems.Columns.Add("TotalTaxAmount");
-                dtItems.Columns.Add("FinalAmount");
-                dtItems.Columns.Add("HSNCodeID");
                 dtItems.Columns.Add("Remarks");
 
                 System.Data.DataTable dtItems_Attribute = new System.Data.DataTable("dtItems_Attribute");
@@ -115,51 +111,38 @@ namespace HandloomAPI.Controllers.Sales
                 dtItems_Attribute.Columns.Add("ProductAttributeID");
                 dtItems_Attribute.Columns.Add("ProductAttributeValueID");
 
-                System.Data.DataTable dtItems_Taxes = new System.Data.DataTable("dtItems_Taxes");
-                dtItems_Taxes.Columns.Add("SrNo");
-                dtItems_Taxes.Columns.Add("TaxRateID");
-                dtItems_Taxes.Columns.Add("TaxName");
-                dtItems_Taxes.Columns.Add("Rate");
-                dtItems_Taxes.Columns.Add("Total");
+                System.Data.DataTable dtItems_SOItem = new System.Data.DataTable("dtItems_SOItem");
+                dtItems_SOItem.Columns.Add("ID");
+                dtItems_SOItem.Columns.Add("SrNo");
+                dtItems_SOItem.Columns.Add("SalesOrderItemID");
+                dtItems_SOItem.Columns.Add("SalesOrderNo");
+                dtItems_SOItem.Columns.Add("Qty");
 
-                System.Data.DataTable dt_Taxes = new System.Data.DataTable("dt_Taxes");
-                dt_Taxes.Columns.Add("TaxRateID");
-                dt_Taxes.Columns.Add("TaxName");
-                dt_Taxes.Columns.Add("Rate");
-                dt_Taxes.Columns.Add("Total");
-
-                System.Data.DataTable dtStock = new System.Data.DataTable("Stocks");
-                dtStock.Columns.Add("SrNo");
-                dtStock.Columns.Add("StockItemID");
-                dtStock.Columns.Add("BrandID");
-                dtStock.Columns.Add("ProductID");
-                dtStock.Columns.Add("ParentProductID");
-                dtStock.Columns.Add("Qty");
-                dtStock.Columns.Add("Remarks");
+                System.Data.DataTable dtItems_Component = new System.Data.DataTable("dtItems_Component");
+                dtItems_Component.Columns.Add("ID");
+                dtItems_Component.Columns.Add("SrNo");
+                dtItems_Component.Columns.Add("ComponentID");
+                dtItems_Component.Columns.Add("ComponentName");
 
 
                 if (model.Items != null)
                 {
-                    foreach (GDN_Item_AddModel item in model.Items) 
+                    foreach (WorkOrderPlanning_Item_AddModel item in model.Items) 
                     {
                         System.Data.DataRow dr = dtItems.NewRow();
                         dr["ID"] = item.ID;
                         dr["SalesOrderItemID"] = item.SalesOrderItemID;
+                        dr["SalesOrderNo"] = item.SalesOrderNo;
                         dr["SrNo"] = item.SrNo;
                         dr["ParentProductID"] = item.ParentProductID;
                         dr["ProductID"] = item.ProductID;
                         dr["Qty"] = item.Qty;
-                        dr["Price"] = item.Price;
-                        dr["TotalAmount"] = item.TotalAmount;
-                        dr["TotalTaxAmount"] = item.TotalTaxAmount;
-                        dr["FinalAmount"] = item.FinalAmount;
-                        dr["HSNCodeID"] = item.HSNCodeID;
                         dr["Remarks"] = item.Remarks;
                         dtItems.Rows.Add(dr);
 
                         if (item.AttributeValues != null)
                         {
-                            foreach (GDN_Item_Attribute_AddModel attribute in item.AttributeValues)
+                            foreach (WorkOrderPlanning_Item_Attribute_AddModel attribute in item.AttributeValues)
                             {
                                 System.Data.DataRow drattr = dtItems_Attribute.NewRow();
                                 drattr["ID"] = item.ID;
@@ -171,115 +154,63 @@ namespace HandloomAPI.Controllers.Sales
                             dtItems_Attribute.AcceptChanges();
                         }
 
-                        if (item.Taxes != null) {
-                            foreach (GDN_Item_Tax_AddModel tax in item.Taxes)
+                        if (item.SOItems != null)
+                        {
+                            foreach (WorkOrderPlanning_Item_SOItem_AddModel SOitem in item.SOItems)
                             {
-                                System.Data.DataRow drTax = dtItems_Taxes.NewRow();
-                                drTax["SrNo"] = item.SrNo;
-                                drTax["TaxRateID"] = tax.TaxRateID;
-                                drTax["TaxName"] = tax.name;
-                                drTax["Rate"] = tax.rate;
-                                drTax["Total"] = tax.Amount;
-                                dtItems_Taxes.Rows.Add(drTax);
+                                System.Data.DataRow drattr = dtItems_SOItem.NewRow();
+                                drattr["ID"] = item.ID;
+                                drattr["SrNo"] = item.SrNo;
+                                drattr["SalesOrderItemID"] = SOitem.SalesOrderItemID;
+                                drattr["SalesOrderNo"] = SOitem.SalesOrderNo;
+                                drattr["Qty"] = SOitem.Qty;
+                                dtItems_SOItem.Rows.Add(drattr);
                             }
+                            dtItems_SOItem.AcceptChanges();
                         }
 
-                        if (item.Stock != null)
+                        if (item.Components != null)
                         {
-                            foreach (Stock_Used_ViewModel stock in item.Stock)
+                            foreach (WorkOrderPlanning_Item_Component_AddModel component in item.Components)
                             {
-                                System.Data.DataRow drStock = dtStock.NewRow();
-                                drStock["SrNo"] = item.SrNo;
-                                drStock["StockItemID"] = stock.StockItemID;
-                                drStock["BrandID"] = stock.BrandID;
-                                drStock["ProductID"] = stock.ProductID;
-                                drStock["ParentProductID"] = stock.ParentProductID;
-                                drStock["Qty"] = stock.Qty;
-                                drStock["Remarks"] = stock.Remarks;
-                                dtStock.Rows.Add(drStock);
+                                System.Data.DataRow drattr = dtItems_Component.NewRow();
+                                drattr["ID"] = item.ID;
+                                drattr["SrNo"] = item.SrNo;
+                                drattr["ComponentID"] = component.ComponentID;
+                                drattr["ComponentName"] = component.ComponentName;
+                                dtItems_Component.Rows.Add(drattr);
                             }
+                            dtItems_Component.AcceptChanges();
                         }
+
+
                     }
                     dtItems.AcceptChanges();
                 }
 
-                if (model.Taxes != null)
-                {
-                    foreach (GDN_Tax_AddModel item in model.Taxes)
-                    {
-                        System.Data.DataRow dr = dt_Taxes.NewRow();
-                        dr["TaxRateID"] = item.TaxRateID;
-                        dr["TaxName"] = item.name;
-                        dr["Rate"] = item.rate;
-                        dr["Total"] = item.Amount;
-                        dt_Taxes.Rows.Add(dr);
-                    }
-                }
 
                 ContextData contextData = Common.GetContextData(Request);
                 DBOperation dBConnection = new DBOperation(_configuration, contextData);
                 ArrayList alparameter = new ArrayList();
                 alparameter.Add(new System.Data.SqlClient.SqlParameter("@ContextUserID", contextData.UserID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@GDNID", model.GDNID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@VoucherType", model.VoucherType));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@GDNNo", model.GDNNo));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@GDNDate", model.GDNDate));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@BrandID", model.BrandID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@PartyID", model.PartyID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@ConsigneeID", model.ConsigneeID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@AgentID", model.AgentID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@PONo", model.PONo));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@PODate", model.PODate));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@DeliveryDate", model.DeliveryDate));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@SalesLocationID", model.SalesLocationID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Priority", model.Priority));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@WOPlanningID", model.WOPlanningID));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@WONo", model.WONo));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@WODate", model.WODate));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@WOType", model.WOType));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@PreparedBy", model.PreparedBy));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@AssignedTo", model.AssignedTo));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@AuthorizedBy", model.AuthorizedBy));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@StartDate", model.StartDate));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@EndDate", model.EndDate));
                 alparameter.Add(new System.Data.SqlClient.SqlParameter("@DueDays", model.DueDays));
                 alparameter.Add(new System.Data.SqlClient.SqlParameter("@Remarks", model.Remarks));
                 alparameter.Add(new System.Data.SqlClient.SqlParameter("@TotalQty", model.TotalQty));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@GrossTotal", model.GrossTotal));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@TotalTax", model.TotalTax));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@TotalAmount", model.TotalAmount));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@SalesOrderNo", model.SalesOrderNo));
                 alparameter.Add(new System.Data.SqlClient.SqlParameter("@Items", dtItems));
                 alparameter.Add(new System.Data.SqlClient.SqlParameter("@Items_Attribute", dtItems_Attribute));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Items_Tax", dtItems_Taxes));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Tax", dt_Taxes));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Stock", dtStock));
-
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_FirstName", model.Billing_FirstName));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_LastName", model.Billing_LastName));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_Company", model.Billing_Company));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_Address1", model.Billing_Address1));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_Address2", model.Billing_Address2));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_Postcode", model.Billing_Postcode));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_EmailID", model.Billing_EmailID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_PhoneNo", model.Billing_PhoneNo));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_CountryID", model.Billing_CountryID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_StateID", model.Billing_StateID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_CityID", model.Billing_CityID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_Country", model.Billing_Country));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_State", model.Billing_State));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Billing_City", model.Billing_City));
-
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_FirstName", model.Shipping_FirstName));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_LastName", model.Shipping_LastName));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_Company", model.Shipping_Company));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_Address1", model.Shipping_Address1));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_Address2", model.Shipping_Address2));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_Postcode", model.Shipping_Postcode));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_EmailID", model.Shipping_EmailID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_PhoneNo", model.Shipping_PhoneNo));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_CountryID", model.Shipping_CountryID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_StateID", model.Shipping_StateID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_CityID", model.Shipping_CityID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_Country", model.Shipping_Country));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_State", model.Shipping_State));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Shipping_City", model.Shipping_City));
-
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@ExhibitionID", model.ExhibitionID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@CreditTypeID", model.CreditTypeID));
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@Status", model.Status));
-
-                clsResult result = dBConnection.execute("dbo.GDN_Add", alparameter);
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@dtItems_SOItem", dtItems_SOItem));
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@dtItems_Component", dtItems_Component));
+                clsResult result = dBConnection.execute("dbo.WorkOrderPlanning_Add", alparameter);
                 if (result.HasError)
                 {
                     return new NotFoundObjectResult(new APIResult() { success = false, message = result.GetException.Message, data = null });
@@ -302,92 +233,67 @@ namespace HandloomAPI.Controllers.Sales
         }
 
         [HttpGet("GetOrderDetails")]
-        public IActionResult GetOrderDetails(Int64 GDNID)
+        public IActionResult GetOrderDetails(Int64 WOPlanningID)
         {
             try
             {
                 ContextData contextData = Common.GetContextData(Request);
                 DBOperation dBConnection = new DBOperation(_configuration, contextData);
                 ArrayList alparameter = new ArrayList();
-                alparameter.Add(new System.Data.SqlClient.SqlParameter("@GDNID", GDNID));
-                clsResult result = dBConnection.execute("dbo.GDN_Get_Items", alparameter);
+                alparameter.Add(new System.Data.SqlClient.SqlParameter("@WOPlanningID", WOPlanningID));
+                clsResult result = dBConnection.execute("dbo.WorkOrderPlanning_Get_Items", alparameter);
                 if (result.HasError)
                 {
                     return new NotFoundObjectResult(new APIResult() { success = false, message = result.GetException.Message, data = null });
                 }
                 else
                 {
-                    List<GDN_Item_ViewModel> obj = result.GetDataList<GDN_Item_ViewModel>();
-                    List<GDN_Tax_ViewModel> Taxes = new List<GDN_Tax_ViewModel>();
-                    List<GDN_Parent_Item_ViewModel> lstParentProduct = new List<GDN_Parent_Item_ViewModel>();
-                    List<GDN_SalesOrder_ViewModel> lstSO = new List<GDN_SalesOrder_ViewModel>();
+                    List<WorkOrderPlanning_Item_ViewModel> obj = result.GetDataList<WorkOrderPlanning_Item_ViewModel>();
+                    List<WorkOrderPlanning_SelectedSO_ViewModel> SelectedSO = new List<WorkOrderPlanning_SelectedSO_ViewModel>();
 
                     if (result.ResultDataSet.Tables.Count > 1)
                     {
-                        List<GDN_Item_Attribute_ViewModel> lstAttribute = clsConvert.ConvertDataTable<GDN_Item_Attribute_ViewModel>(result.ResultDataSet.Tables[1]);
+                        List<WorkOrderPlanning_Item_Attribute_ViewModel> lstAttribute = clsConvert.ConvertDataTable<WorkOrderPlanning_Item_Attribute_ViewModel>(result.ResultDataSet.Tables[1]);
                         if (lstAttribute.Count > 0)
                         {
-                            foreach (GDN_Item_ViewModel item in obj) {
-                                item.AttributeValues = lstAttribute.Where(t => t.GDNItemID == item.ID).ToList();
+                            foreach (WorkOrderPlanning_Item_ViewModel item in obj) {
+                                item.AttributeValues = lstAttribute.Where(t => t.WOPlanningItemID == item.ID).ToList();
                             }
                         }
                     }
                     if (result.ResultDataSet.Tables.Count > 2)
                     {
-                        List<GDN_Item_Tax_ViewModel> lstTaxes = clsConvert.ConvertDataTable<GDN_Item_Tax_ViewModel>(result.ResultDataSet.Tables[2]);
+                        List<WorkOrderPlanning_Item_SOItem_ViewModel> lstTaxes = clsConvert.ConvertDataTable<WorkOrderPlanning_Item_SOItem_ViewModel>(result.ResultDataSet.Tables[2]);
                         if (lstTaxes.Count > 0)
                         {
-                            foreach (GDN_Item_ViewModel item in obj) {
-                                item.Taxes = lstTaxes.Where(t => t.GDNItemID == item.ID).ToList();
+                            foreach (WorkOrderPlanning_Item_ViewModel item in obj) {
+                                item.SOItems = lstTaxes.Where(t => t.WOPlanningItemID == item.ID).ToList();
                             }
                         }
                     }
                     if (result.ResultDataSet.Tables.Count > 3)
                     {
-                        Taxes = clsConvert.ConvertDataTable<GDN_Tax_ViewModel>(result.ResultDataSet.Tables[3]);
-                    }
-                    if (result.ResultDataSet.Tables.Count > 4)
-                    {
-                        lstParentProduct = clsConvert.ConvertDataTable<GDN_Parent_Item_ViewModel>(result.ResultDataSet.Tables[4]);
-                    }
-                    if (result.ResultDataSet.Tables.Count > 5)
-                    {
-                        lstSO = clsConvert.ConvertDataTable<GDN_SalesOrder_ViewModel>(result.ResultDataSet.Tables[5]);
-                    }
-                    if (result.ResultDataSet.Tables.Count > 6)
-                    {
-                        foreach (GDN_Item_ViewModel item in obj)
+                        List<WorkOrderPlanning_Item_Component_ViewModel> lstTaxes = clsConvert.ConvertDataTable<WorkOrderPlanning_Item_Component_ViewModel>(result.ResultDataSet.Tables[3]);
+                        if (lstTaxes.Count > 0)
                         {
-                            item.Stock = new List<Stock_Used_ViewModel>();
-                            System.Data.DataRow[] drRows = result.ResultDataSet.Tables[6].Select("GDNItemID = "+ item.ID.ToString() + "");
-                            if(drRows.Length > 0)
+                            foreach (WorkOrderPlanning_Item_ViewModel item in obj)
                             {
-                                foreach (System.Data.DataRow dr in drRows)
-                                {
-                                    Stock_Used_ViewModel stock = new Stock_Used_ViewModel();
-                                    stock.StockItemID = Convert.ToInt64(dr["StockItemID"]);
-                                    stock.BrandID = Convert.ToInt64(dr["BrandID"]);
-                                    stock.BrandName = Convert.ToString(dr["BrandName"]);
-                                    stock.ProductID = Convert.ToInt64(dr["ProductID"]);
-                                    stock.ParentProductID = Convert.ToInt64(dr["ParentProductID"]);
-                                    stock.SKU = Convert.ToString(dr["SKU"]);
-                                    stock.ProductName = Convert.ToString(dr["ProductName"]);
-                                    stock.Remarks = Convert.ToString(dr["Remarks"]);
-                                    stock.Qty = Convert.ToDecimal(dr["Qty"]);
-                                    item.Stock.Add(stock);
-                                }
+                                item.Components = lstTaxes.Where(t => t.WOPlanningItemID == item.ID).ToList();
                             }
                         }
                     }
+                    if (result.ResultDataSet.Tables.Count > 4)
+                    {
+                        SelectedSO = clsConvert.ConvertDataTable<WorkOrderPlanning_SelectedSO_ViewModel>(result.ResultDataSet.Tables[4]);
+                    }
+
 
                     return Ok(new
                     {
                         success = true,
                         message = "success",
                         data = obj,
-                        Taxes = Taxes,
-                        ParentProduct = lstParentProduct,
-                        SalesOrder = lstSO
+                        SelectedSO = SelectedSO
                     });
                 }
 

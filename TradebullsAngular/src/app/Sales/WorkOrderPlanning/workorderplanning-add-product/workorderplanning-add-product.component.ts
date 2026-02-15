@@ -20,8 +20,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
   SrNo: number = 0;
   ParentProductID: number = 0;
   ProductID: number = 0;
-  HSNCodeID: number = 0;
-  HSNCodeName:string = "";
   Qty: number = 1;
   ImageSrc: string = "";
   Remarks: string = "";
@@ -43,8 +41,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
       Option: string
     }[],
     Qty: number,
-    HSNCodeID: number,
-    HSNCodeName: string,
     Remarks: string,
     Photo: string,
     Components: { ComponentID: number, ComponentName: string }[]
@@ -53,7 +49,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
   lstProducts: any[] = [];
   lstProductAttributes: any[] = [];
   lstProductAttributeValues: any[] = [];
-  lstHSNCode: any[] = [];
   lstComponents: { ComponentID: number, ComponentName: string }[] = [];
   SelectedComponents: { ComponentID: number, ComponentName: string }[] = [];
 
@@ -67,7 +62,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.FillParentProduct();
-    this.FillHSNCode();
     this.FillComponent();
   }
 
@@ -112,8 +106,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
       ]);
 
       this.Qty = product.Qty;
-      this.HSNCodeID = product.HSNCodeID;
-      this.HSNCodeName = product.HSNCodeName;
       this.Remarks = product.Remarks;
       this.SelectedComponents = product.Components;
     }
@@ -129,8 +121,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
       this.lstProductAttributes = [];
       this.lstProductAttributeValues = [];
       this.ImageSrc = "";
-      this.HSNCodeID = 0;
-      this.HSNCodeName = "";
       this.Remarks = "";
     }
   }
@@ -178,43 +168,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
       }
 
     });
-  }
-
-  FillHSNCode() {
-    this.hSNCodeService.Get(0).subscribe(users => {
-
-      let d: any = users;
-      if (!d.success) {
-        this.toastr.error(d.message, '', {
-          enableHtml: true,
-          closeButton: true
-        });
-      }
-      else {
-        const a: any[] = d.data;
-
-        this.lstHSNCode = a.map((prod) => ({
-          value: prod.HSNCodeID,
-          label: prod.HSNCodeName,
-          data: prod,
-        }));
-
-        this.lstHSNCode.unshift({
-          value: 0,
-          label: "Please Select",
-          data: { HSNCodeID: 0, HSNCodeName: "Please Select" },
-        });
-
-      }
-
-    });
-  }
-
-  HSNSelectionChange(event:any){
-    if (event && event.options) {
-      this.HSNCodeID = event.options[0].data.HSNCodeID;
-      this.HSNCodeName = (this.HSNCodeID == 0) ? "" : event.options[0].data.HSNCodeName;
-    }
   }
 
   ProductSelectionChange(event: any) {
@@ -378,8 +331,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
           Option: string
         }[],
         Qty: number,
-        HSNCodeID: number,
-        HSNCodeName: string,
         Remarks: string,
         Photo: string,
         Components: { ComponentID: number, ComponentName: string }[]
@@ -392,8 +343,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
         ProductName: this.selectedProduct.name,
         AttributeValues: this.AttributeValues,
         Qty: this.Qty,
-        HSNCodeID: this.HSNCodeID,
-        HSNCodeName: this.HSNCodeName,
         Remarks: this.Remarks,
         Photo: this.ImageSrc,
         Components: this.SelectedComponents
@@ -410,8 +359,6 @@ export class WorkorderplanningAddProductComponent implements AfterViewInit {
       this.ProductID = 0;
       this.Qty = 1;
       this.selectedProduct = null;
-      this.HSNCodeID = 0;
-      this.HSNCodeName = "";
       this.Remarks = "";
       }
     }

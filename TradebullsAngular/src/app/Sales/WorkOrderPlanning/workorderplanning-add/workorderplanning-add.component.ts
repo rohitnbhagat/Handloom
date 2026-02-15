@@ -47,6 +47,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
   EndDate: Date | null = new Date();
   DueDays: number | null = null;
   Remarks: string = "";
+  SalesOrderNo: string = "";
   TotalQty: number = 0;
   IsLocked: boolean = false;
   ProductDetails: WorkOrderPlanning_Item[] = [];
@@ -170,8 +171,8 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
           else {
             const order = response.data[0];
             if (order) {
-              this.VoucherNo = order.InsertStockNo;
-              this.VoucherDate = order.InsertStockDate ? new Date(order.InsertStockDate) : null;
+              this.VoucherNo = order.WONo;
+              this.VoucherDate = order.WODate ? new Date(order.WODate) : null;
               this.WOType = order.WOType;
               this.PreparedBy = order.PreparedBy;
               this.AssignedTo = order.AssignedTo;
@@ -182,6 +183,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
               this.Remarks = order.Remarks;
               this.TotalQty = order.TotalQty;
               this.IsLocked = order.IsLocked;
+              this.SalesOrderNo = order.SalesOrderNo;
               this.ProductDetails = [];
 
               this.workOrderPlanningService.GetOrderDetails(this.WOPlanningID).then(
@@ -198,8 +200,8 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
                         {
                           ID: t.ID,
                           SrNo: t.SrNo,
-                          SalesOrderItemID: "",
-                          SalesOrderNo: "",
+                          SalesOrderItemID: t.SalesOrderItemID,
+                          SalesOrderNo: t.SalesOrderNo,
                           ParentProductID: t.ParentProductID,
                           ProductID: t.ProductID,
                           sku: t.sku,
@@ -213,11 +215,28 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
                           Qty: t.Qty,
                           Remarks: t.Remarks,
                           Photo: t.Photo,
-                          SOItems: [],
-                          Components: []
+                          SOItems: (t.SOItems ? t.SOItems.map((m: any) => ({
+                            SalesOrderItemID: m.SalesOrderItemID,
+                            SalesOrderNo: m.SalesOrderNo,
+                            Qty: m.Qty
+                          })) : []),
+                          Components: (t.Components ?t.Components.map((m: any) => ({
+                            ComponentID: m.ComponentID,
+                            ComponentName: m.ComponentName
+                          })) : [])
                         }
                       )
                     );
+                    if (responseDetail.SelectedSO && responseDetail.SelectedSO.length > 0) {
+                      this.lstSelectedSalesOrder = responseDetail.SelectedSO.map((data: any) => (
+                        {
+                          SalesOrderID: data.SalesOrderID,
+                          SalesOrderNo: data.SalesOrderNo,
+                          SalesOrderDate: data.SalesOrderDate
+                        }
+                      ));
+                    }
+
                   }
                 }
               );
@@ -319,12 +338,15 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
     const Items: WorkOrderPlanning_Item_AddModel[] = this.ProductDetails.map(t => (
       {
         ID: t.ID,
+        SalesOrderItemID: t.SalesOrderItemID,
+        SalesOrderNo: t.SalesOrderNo,
         SrNo: t.SrNo,
         ParentProductID: t.ParentProductID,
         ProductID: t.ProductID,
         AttributeValues: t.AttributeValues.map(m => ({ ProductAttributeID: m.ProductAttributeID, ProductAttributeValueID: m.ProductAttributeValueID })),
         Qty: t.Qty,
         Remarks: t.Remarks,
+        SOItems: t.SOItems,
         Components: t.Components.map(c => ({ ComponentID: c.ComponentID, ComponentName: c.ComponentName }))
       }
     ));
@@ -345,6 +367,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
       DueDays: this.DueDays,
       Remarks: this.Remarks ?? "",
       TotalQty: this.TotalQty ?? 0,
+      SalesOrderNo: this.SalesOrderNo ?? "",
       Items: Items
     };
 
@@ -388,6 +411,47 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
     this.ProductDetails = [];
     this.TotalQty = 0;
     this.IsLocked = false;
+    this.SalesOrderNo = "";
+
+    this.isSOAllSelected = false;
+    this.lstSelectedSalesOrder = [];
+    this.lstSelectedSalesOrderDetails = [];
+    this.lstSalesOrder = [];
+  }
+
+  StartDateChanged(value: any) {
+    this.StartDate = value ? new Date(value) : null;
+    this.updateDueDaysFromDates();
+  }
+
+  EndDateChanged(value: any) {
+    this.EndDate = value ? new Date(value) : null;
+    this.updateDueDaysFromDates();
+  }
+
+  DueDaysChanged(value: any) {
+    const days = value !== null && value !== undefined && value !== '' ? Number(value) : null;
+    this.DueDays = days;
+    if (this.StartDate && days !== null && !isNaN(days)) {
+      const sd = new Date(this.StartDate);
+      sd.setHours(0,0,0,0);
+      const ed = new Date(sd.getTime() + days * 24 * 60 * 60 * 1000);
+      this.EndDate = ed;
+    }
+  }
+
+  private updateDueDaysFromDates() {
+    if (this.StartDate && this.EndDate) {
+      const sd = new Date(this.StartDate);
+      const ed = new Date(this.EndDate);
+      sd.setHours(0,0,0,0);
+      ed.setHours(0,0,0,0);
+      const diff = Math.round((ed.getTime() - sd.getTime()) / (1000 * 60 * 60 * 24));
+      this.DueDays = diff + 1;
+    }
+    else {
+      this.DueDays = null;
+    }
   }
 
   onSelectionChange(event: MatSelectChange): void {
@@ -444,8 +508,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
       return;
     }
 
-    if (confirm("Are you sure, you want to change from Local to Sales Order?")) {
-
+    if (this.WOType != "Local" || confirm("Are you sure, you want to change from Local to Sales Order?")) {
       const model: {
         SalesOrderID: number,
         FromDate: Date | null,
@@ -488,7 +551,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
           else {
             this.lstSalesOrder = response.data.map((row: any) => (
               {
-                Select: false,
+                Select: (this.lstSelectedSalesOrder && this.lstSelectedSalesOrder.findIndex((o) => o.SalesOrderID == row.SalesOrderID) >= 0),
                 Order: row
               }
             ));
@@ -498,14 +561,14 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
         });
     }
   }
-  GetSalesOrderDetails() {
+  SetSalesOrderDetails() {
     let str = "";
     this.lstSelectedSalesOrder.forEach((order) => {
       let SOdate = this.formatDate(new Date(order.SalesOrderDate));
       str = str + ((str.length > 0) ? "\n" : "") + order.SalesOrderNo;
       str = str + " - " + SOdate;
     });
-    return str;
+    this.SalesOrderNo = str;
   }
   formatDate(date: Date): string {
     const day = ('0' + date.getDate()).slice(-2); // Adds leading zero if necessary
@@ -571,7 +634,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
               this.lstSelectedSalesOrderDetails = response.data.map(
                 (t: any) => (
                   {
-                    Select: false,
+                    Select: (this.ProductDetails && this.ProductDetails.findIndex((p) => p.SOItems && p.SOItems.findIndex((so) => so.SalesOrderItemID == t.SalesOrderItemID) >= 0) >= 0),
                     Data: {
                       SalesOrderItemID: t.SalesOrderItemID,
                       SalesOrderNo: t.SalesOrderNo,
@@ -683,6 +746,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
             }
           }
         });
+        this.SetSalesOrderDetails();
         this.CalculateAmount();
         this.WOType = "Sales Order";
         this.IsOpenSaveOrder = false;

@@ -63,19 +63,6 @@
                             </div>
                             <div class="row mt-1">
                                 <div class="col-md-2 col-sm-6">
-                                    <label class="col-form-label label-align">HSN Code
-                                    </label>
-                                </div>
-                                <div class="col-md-10 col-sm-6">
-                                    <select2 [data]="lstHSNCode" [templates]="templateHSNCode" [minCountForSearch]="1"
-                                        [value]="HSNCodeID" (update)="HSNSelectionChange($event)">
-                                        <ng-template #templateHSNCode
-                                            let-data="data">{{data?.HSNCodeName}}</ng-template>
-                                    </select2>
-                                </div>
-                            </div>
-                            <div class="row mt-1">
-                                <div class="col-md-2 col-sm-6">
                                     <label class="col-form-label label-align">Remarks
                                     </label>
                                 </div>
