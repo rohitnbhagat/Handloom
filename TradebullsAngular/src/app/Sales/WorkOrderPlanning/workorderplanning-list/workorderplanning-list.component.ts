@@ -171,8 +171,8 @@ export class WorkorderplanningListComponent  implements OnInit {
     this.IsAddNew = false;
   }
   PrintRow(item: any) {
-    // this.IsPrint = true;
-    // this.InsertStockPrint?.OpenWorkOrderPlanning(item.InsertStockID);
+    this.IsPrint = true;
+    this.WorkOrderPlanningPrint?.OpenWorkOrderPlanning(item.WOPlanningID);
   }
   PrintClose_Click(){
     this.IsPrint = false;

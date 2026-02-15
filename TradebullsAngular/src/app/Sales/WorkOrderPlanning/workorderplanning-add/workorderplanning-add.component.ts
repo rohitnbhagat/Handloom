@@ -64,6 +64,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
   strSOProductFilter: string = "";
   strSOFilter: string = "";
   lstComponents: { ComponentID: number, ComponentName: string }[] = [];
+  UserId: number = 0;
 
   constructor(private toastr: ToastrService,
     private workOrderPlanningService: WorkorderplanningService,
@@ -82,6 +83,13 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
 
 
   ngOnInit(): void {
+    if(localStorage.getItem("userSession")){
+    let userSession:any = localStorage.getItem("userSession");
+    let context = JSON.parse(<string>userSession);
+    this.UserId = context.data.UserID;
+    this.PreparedBy = this.UserId;
+    }
+
     this.editor = new Editor();
     this.FillComponent();
     this.FillUsers();
@@ -401,7 +409,7 @@ export class WorkorderplanningAddComponent implements OnInit, AfterViewInit, OnD
     this.VoucherNo = "";
     this.VoucherDate = new Date();
     this.WOType = "Local";
-    this.PreparedBy = 0;
+    this.PreparedBy = this.UserId;
     this.AssignedTo = 0;
     this.AuthorizedBy = 0;
     this.StartDate = null;
