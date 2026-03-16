@@ -19,6 +19,8 @@ export class ClientService {
   private API_LockUnlock = 'ClientMaster/LockUnlock';
   private API_Delete = 'ClientMaster/Delete';
   private API_Create = 'ClientMaster/Create';
+  private API_Dashboard_GetPendingCounts = 'Sales/Dashboard/GetPendingCounts';
+  private API_Dashboard_GetPendingCountsDetails = 'Sales/Dashboard/GetPendingCountsDetails';
 
   constructor(private http: HttpClient) { }
 
@@ -97,6 +99,40 @@ export class ClientService {
     const body=JSON.stringify(clientCreateModel);
     
     return this.http.post(this.Baseurl + this.API_Create, body,{ headers});
+  }
+
+Dashboard_GetPendingCounts(){
+    let userSession:any = localStorage.getItem("userSession");
+    let context = JSON.parse(<string>userSession);
+      
+    let headers = new HttpHeaders();
+    headers = headers.set("Context","{ ClientCode: '"+ this.ClientCode +"', UserID:"+ context.data.UserID +" }");
+    headers = headers.set("XApiKey", this.APIKey);
+    
+    headers = headers.set('content-type', 'application/json')
+    headers = headers.set('Access-Control-Allow-Origin', '*');
+    headers = headers.set("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTIONS");
+    
+    return this.http.get(this.Baseurl + this.API_Dashboard_GetPendingCounts,{ 
+      headers: headers
+    });
+  }
+
+  Dashboard_GetPendingCountsDetails(SrNo :number){
+    let userSession:any = localStorage.getItem("userSession");
+    let context = JSON.parse(<string>userSession);
+      
+    let headers = new HttpHeaders();
+    headers = headers.set("Context","{ ClientCode: '"+ this.ClientCode +"', UserID:"+ context.data.UserID +" }");
+    headers = headers.set("XApiKey", this.APIKey);
+    
+    headers = headers.set('content-type', 'application/json')
+    headers = headers.set('Access-Control-Allow-Origin', '*');
+    headers = headers.set("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTIONS");
+    
+    return this.http.get(this.Baseurl + this.API_Dashboard_GetPendingCountsDetails + "?SrNo=" + SrNo, {
+      headers: headers
+    });
   }
 
 }

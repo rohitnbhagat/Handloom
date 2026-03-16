@@ -123,6 +123,18 @@ import { WorkorderplanningAddComponent } from './Sales/WorkOrderPlanning/workord
 import { WorkorderplanningAddProductComponent } from './Sales/WorkOrderPlanning/workorderplanning-add-product/workorderplanning-add-product.component';
 import { WorkorderplanningListComponent } from './Sales/WorkOrderPlanning/workorderplanning-list/workorderplanning-list.component';
 import { WorkorderplanningPrintComponent } from './Sales/WorkOrderPlanning/workorderplanning-print/workorderplanning-print.component';
+import { ProcessOutAddComponent } from './Sales/ProcessOut/process-out-add/process-out-add.component';
+import { ProcessOutListComponent } from './Sales/ProcessOut/process-out-list/process-out-list.component';
+import { ProcessOutPrintComponent } from './Sales/ProcessOut/process-out-print/process-out-print.component';
+import { ProcessInAddComponent } from './Sales/ProcessIn/process-in-add/process-in-add.component';
+import { ProcessInListComponent } from './Sales/ProcessIn/process-in-list/process-in-list.component';
+import { ProcessInPrintComponent } from './Sales/ProcessIn/process-in-print/process-in-print.component';
+import { FgPrintComponent } from './Sales/FG/fg-print/fg-print.component';
+import { FgListComponent } from './Sales/FG/fg-list/fg-list.component';
+import { FgAddComponent } from './Sales/FG/fg-add/fg-add.component';
+import { GaAddComponent } from './Sales/GA/ga-add/ga-add.component';
+import { GaListComponent } from './Sales/GA/ga-list/ga-list.component';
+import { GaPrintComponent } from './Sales/GA/ga-print/ga-print.component';
 
 export const MY_DATE_FORMATS = {
   parse: {
@@ -215,7 +227,19 @@ export const MY_DATE_FORMATS = {
     WorkorderplanningAddComponent,
     WorkorderplanningAddProductComponent,
     WorkorderplanningListComponent,
-    WorkorderplanningPrintComponent
+    WorkorderplanningPrintComponent,
+    ProcessOutAddComponent,
+    ProcessOutListComponent,
+    ProcessOutPrintComponent,
+    ProcessInAddComponent,
+    ProcessInListComponent,
+    ProcessInPrintComponent,
+    FgPrintComponent,
+    FgListComponent,
+    FgAddComponent,
+    GaAddComponent,
+    GaListComponent,
+    GaPrintComponent
   ],
   imports: [
     BrowserModule,

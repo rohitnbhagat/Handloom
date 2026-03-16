@@ -38,6 +38,10 @@ import { ProcessListComponent } from './Masters/Process/process-list/process-lis
 import { ComponentListComponent } from './Masters/Component/component-list/component-list.component';
 import { ProductBOMAddComponent } from './Masters/ProductBOM/product-bom-add/product-bom-add.component';
 import { WorkorderplanningListComponent } from './Sales/WorkOrderPlanning/workorderplanning-list/workorderplanning-list.component';
+import { ProcessOutListComponent } from './Sales/ProcessOut/process-out-list/process-out-list.component';
+import { ProcessInListComponent } from './Sales/ProcessIn/process-in-list/process-in-list.component';
+import { FgListComponent } from './Sales/FG/fg-list/fg-list.component';
+import { GaListComponent } from './Sales/GA/ga-list/ga-list.component';
 
 const routes: Routes = [
   {
@@ -176,6 +180,22 @@ const routes: Routes = [
           {
             path:"WOPlanningList",
             component: WorkorderplanningListComponent
+          },
+          {
+            path:"ProcessOutList",
+            component: ProcessOutListComponent
+          },
+          {
+            path:"ProcessInList",
+            component: ProcessInListComponent
+          },
+          {
+            path:"FGList",
+            component: FgListComponent
+          },
+          {
+            path:"GAList",
+            component: GaListComponent
           }
         ]
       },

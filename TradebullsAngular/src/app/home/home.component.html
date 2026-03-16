@@ -1,0 +1,188 @@
+<div class="page-title">
+    <div class="title_left">
+        <h3 style="font-size:1.75rem; color: #73879C;">Dashboard</h3>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="font-weight: 500;">Production Dashboard</th>
+                    <th style="font-weight: 500;width: 150px;text-align: center;">Pending Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of lstList">
+                    <td style="vertical-align: middle;">{{ item.Title }}</td>
+                    <td style="text-align: center;">
+                        <ng-container *ngIf="item.TotalCnt > 0; else normal">
+                            <button type="button" (click)="OpenList(item)" class="btn btn-sm btn-danger"
+                                style="min-width: 32px;cursor: pointer;">{{ item.TotalCnt }}</button>
+                        </ng-container>
+                        <ng-template #normal>
+                            <button type="button" (click)="OpenList(item)" class="btn btn-sm btn-success"
+                                style="min-width: 32px;cursor: pointer;">{{ item.TotalCnt }}</button>
+                        </ng-template>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div *ngIf="isModalOpen" class="modal fade bs-example-modal-lg " [ngClass]="{'show': isModalOpen}" tabindex="-1"
+    role="dialog" aria-modal="true" style="padding-right: 17px; display: block;">
+    <div class="modal-dialog modal-lg" style="max-width: 80vw;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    {{ header }}
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="CloseModel()"><span
+                        aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ng-container [ngSwitch]="SrNo">
+                    <ng-container *ngSwitchCase="1">
+                        <ng-container *ngTemplateOutlet="SrNo1236"></ng-container>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="2">
+                        <ng-container *ngTemplateOutlet="SrNo1236"></ng-container>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="3">
+                        <ng-container *ngTemplateOutlet="SrNo1236"></ng-container>
+                    </ng-container>
+                     <ng-container *ngSwitchCase="6">
+                        <ng-container *ngTemplateOutlet="SrNo1236"></ng-container>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="4">
+                        <ng-container *ngTemplateOutlet="SrNo47"></ng-container>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="7">
+                        <ng-container *ngTemplateOutlet="SrNo47"></ng-container>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="5">
+                        <ng-container *ngTemplateOutlet="SrNo5"></ng-container>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="CloseModel()">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="isModalOpen"></div>
+
+<ng-template #SrNo1236>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th style="display: none;">ID</th>
+                    <th style="width: 150px;">WO Planning No</th>
+                    <th style="width: 120px;">WO Planning Date</th>
+                    <th style="width: 130px;">WOType</th>
+                    <th style="width: 250px;">Prepared By</th>
+                    <th style="width: 250px;">Assigned To</th>
+                    <th style="width: 250px;">Authorized By</th>
+                    <th style="width: 120px;">Start Date</th>
+                    <th style="width: 120px;">End Date</th>
+                    <th style="width: 120px;">Due Days</th>
+                    <th style="width: 130px;">Total Qty</th>
+                    <th style="width: 160px;">Total Pending Qty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of lstListDetails">
+                    <td style="display: none;">{{row.WOPlanningID}}</td>
+                    <td>{{row.WONo}}</td>
+                    <td>{{row.WODate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{row.WOType}}</td>
+                    <td>{{row.PreparedByName}}</td>
+                    <td>{{row.AssignedToName}}</td>
+                    <td>{{row.AuthorizedByName}}</td>
+                    <td>{{row.StartDate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{row.EndDate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{row.DueDays}}</td>
+                    <td>{{row.TotalQty | number:'1.2-2'}}</td>
+                    <td>{{row.TotalPendingQty | number:'1.2-2'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-template>
+<ng-template #SrNo47>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th style="display: none;">ID</th>
+                    <th style="width: 150px;">Process Out No</th>
+                    <th style="width: 150px;">Process Out Date</th>
+                    <th style="width: 180px;">Process Out Type</th>
+                    <th style="width: 250px;">Process</th>
+                    <th style="width: 250px;">Worker</th>
+                    <th style="width: 150px;">Issue Type</th>
+                    <th style="width: 150px;">Work Type</th>
+                    <th style="width: 120px;">Start Date</th>
+                    <th style="width: 120px;">End Date</th>
+                    <th style="width: 120px;">Due Days</th>
+                    <th style="width: 130px;">Total Qty</th>
+                    <th style="width: 130px;">Total Pending Qty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of lstListDetails">
+                    <td style="display: none;">{{row.ProcessOutID}}</td>
+                    <td>{{row.ProcessOutNo}}</td>
+                    <td>{{row.ProcessOutDate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{row.ProcessOutType}}</td>
+                    <td>{{row.ProcessName}}</td>
+                    <td>{{row.PartyName}}</td>
+                    <td>{{row.IssueType}}</td>
+                    <td>{{row.WorkType}}</td>
+                    <td>{{row.StartDate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{row.EndDate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{row.DueDays}}</td>
+                    <td>{{row.TotalQty | number:'1.2-2'}}</td>
+                    <td>{{row.TotalPendingQty | number:'1.2-2'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-template>
+<ng-template #SrNo5>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th style="display: none;">ID</th>
+                    <th style="width: 150px;">Process In No</th>
+                    <th style="width: 150px;">Process In Date</th>
+                    <th style="width: 250px;">Process</th>
+                    <th style="width: 130px;">Total Qty</th>
+                    <th style="width: 130px;">Total Pending Qty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of lstListDetails">
+                    <td style="display: none;">{{row.ProcessInID}}</td>
+                    <td>{{row.ProcessInNo}}</td>
+                    <td>{{row.ProcessInDate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{row.ProcessName}}</td>
+                    <td>{{row.TotalQty | number:'1.2-2'}}</td>
+                    <td>{{row.TotalPendingQty | number:'1.2-2'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-template>
