@@ -2986,11 +2986,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Projects\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
+      "projectUniqueName": "G:\\Projects\\Handloom\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
       "projectName": "HandloomAPI",
-      "projectPath": "G:\\Projects\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
+      "projectPath": "G:\\Projects\\Handloom\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
       "packagesPath": "C:\\Users\\Rohit-PC\\.nuget\\packages\\",
-      "outputPath": "G:\\Projects\\Handloom\\HandloomAPI\\obj\\",
+      "outputPath": "G:\\Projects\\Handloom\\Handloom\\HandloomAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
