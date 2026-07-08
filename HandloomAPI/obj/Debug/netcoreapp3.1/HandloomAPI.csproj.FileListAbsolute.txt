@@ -139,10 +139,10 @@ G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.As
 G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.csproj.CoreCompileInputs.cache
 G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.MvcApplicationPartsAssemblyInfo.cache
 G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\staticwebassets\HandloomAPI.StaticWebAssets.Manifest.cache
-G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\staticwebassets\HandloomAPI.StaticWebAssets.xml
-G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\HandloomAPI.styles.css
 G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.RazorTargetAssemblyInfo.cache
-G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.csproj.CopyComplete
 G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.dll
 G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.pdb
 G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.genruntimeconfig.cache
+G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\staticwebassets\HandloomAPI.StaticWebAssets.xml
+G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\HandloomAPI.styles.css
+G:\Projects\Handloom\Handloom\HandloomAPI\obj\Debug\netcoreapp3.1\HandloomAPI.csproj.CopyComplete

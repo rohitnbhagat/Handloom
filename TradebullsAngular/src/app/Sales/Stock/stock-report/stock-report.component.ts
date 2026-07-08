@@ -259,4 +259,55 @@ export class StockReportComponent implements OnInit, AfterContentInit {
     return total;
   }
 
+  Print(): void {
+    const iframe = document.createElement('iframe');
+    iframe.style.position = 'absolute';
+    iframe.style.width = '0px';
+    iframe.style.height = '0px';
+    iframe.style.border = 'none';
+    document.body.appendChild(iframe);
+    
+    // Get the content from the div
+    const content = document.getElementById('contenttoprint')?.innerHTML;
+
+    const iframeDocument = iframe.contentWindow?.document;
+    iframeDocument?.open();
+    iframeDocument?.write('<html><head><title>Print</title>');
+
+
+    iframeDocument?.write('<link rel="stylesheet" href="../../styles.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/nprogress/nprogress.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/iCheck/skins/flat/green.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/google-code-prettify/bin/prettify.min.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/select2/dist/css/select2.min.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/switchery/dist/switchery.min.cs" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/starrr/dist/starrr.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/jqvmap/dist/jqvmap.min.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/bootstrap-daterangepicker/daterangepicker.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/vendors/animate.css/animate.min.css" type="text/css">');
+    iframeDocument?.write('<link rel="stylesheet" href="../../assets/build/css/custom.css" type="text/css">');
+
+    // let strScript: string = "<script>";
+    //  strScript = strScript + "window.onload = function() { window.print(); window.close();};";
+    //  strScript = strScript + "</script>";
+    //  iframeDocument?.write(strScript);
+
+     iframeDocument?.write('</head><body>');
+     iframeDocument?.write('<div class="container body"><div class="main_container"><div class="right_col m-0 p-0">');
+     iframeDocument?.write(content || '');
+     iframeDocument?.write('</div></div></div>');
+     iframeDocument?.write('</body></html>');
+     iframeDocument?.close();
+
+     iframe.onload = () => {
+      iframe.contentWindow?.focus();  // Ensure the iframe has focus
+      iframe.contentWindow?.print();  // Trigger print dialog
+      document.body.removeChild(iframe);  // Clean up by removing iframe after print
+    };
+    
+  }
+
 }

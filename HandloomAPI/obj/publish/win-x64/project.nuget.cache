@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IOYXklABSGwMDOi8uBBN28idgkQrXN8WzbmtGbe7SqDHTkvCU6S0LUdatx0tq0n59hQZ0N9D8iKcJrqS+Wallg==",
+  "dgSpecHash": "jmejEKX6qcsQkFw6g8JCRSQMUo52Q9Nb46Au1HxgU6H+d2ozemcaKyQCl0gT83IlyxVKjsz3nK+fK3QxL7XJDQ==",
   "success": true,
-  "projectFilePath": "G:\\Projects\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
+  "projectFilePath": "G:\\Projects\\Handloom\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rohit-PC\\.nuget\\packages\\log4net\\3.0.4\\log4net.3.0.4.nupkg.sha512",
     "C:\\Users\\Rohit-PC\\.nuget\\packages\\log4net.extensions.logging\\1.0.0\\log4net.extensions.logging.1.0.0.nupkg.sha512",
@@ -70,10 +70,7 @@
     "C:\\Users\\Rohit-PC\\.nuget\\packages\\system.text.json\\9.0.0\\system.text.json.9.0.0.nupkg.sha512",
     "C:\\Users\\Rohit-PC\\.nuget\\packages\\system.threading.channels\\8.0.0\\system.threading.channels.8.0.0.nupkg.sha512",
     "C:\\Users\\Rohit-PC\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Rohit-PC\\.nuget\\packages\\woocommercenet\\0.8.6\\woocommercenet.0.8.6.nupkg.sha512",
-    "C:\\Users\\Rohit-PC\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.28\\microsoft.netcore.app.runtime.win-x64.3.1.28.nupkg.sha512",
-    "C:\\Users\\Rohit-PC\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.28\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.28.nupkg.sha512",
-    "C:\\Users\\Rohit-PC\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.28\\microsoft.aspnetcore.app.runtime.win-x64.3.1.28.nupkg.sha512"
+    "C:\\Users\\Rohit-PC\\.nuget\\packages\\woocommercenet\\0.8.6\\woocommercenet.0.8.6.nupkg.sha512"
   ],
   "logs": [
     {

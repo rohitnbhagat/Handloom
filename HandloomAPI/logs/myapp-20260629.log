@@ -1,0 +1,38 @@
+2026-06-29 11:10:00.331 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-29 11:10:00.431 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/weatherforecast  
+2026-06-29 11:10:00.580 +05:30 [INF] Hosting environment: Development
+2026-06-29 11:10:00.581 +05:30 [INF] Content root path: G:\Projects\Handloom\Handloom\HandloomAPI
+2026-06-29 11:10:01.167 +05:30 [INF] Method InvokeAsunc
+2026-06-29 11:10:01.168 +05:30 [INF] Method InvokeAsunc - 1
+2026-06-29 11:10:02.391 +05:30 [INF] Request finished in 1982.5778ms 401 application/json
+2026-06-29 11:10:02.579 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44302/favicon.ico  
+2026-06-29 11:10:02.582 +05:30 [INF] Method InvokeAsunc
+2026-06-29 11:10:02.583 +05:30 [INF] Method InvokeAsunc - 1
+2026-06-29 11:10:02.590 +05:30 [INF] Request finished in 11.8857ms 401 application/json
+2026-06-29 11:10:43.991 +05:30 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44302/api/User/Login  
+2026-06-29 11:10:43.999 +05:30 [INF] CORS policy execution successful.
+2026-06-29 11:10:44.003 +05:30 [INF] Request finished in 13.1194ms 204 
+2026-06-29 11:10:44.013 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/User/Login application/json 40
+2026-06-29 11:10:44.014 +05:30 [INF] CORS policy execution successful.
+2026-06-29 11:10:44.015 +05:30 [INF] Method InvokeAsunc
+2026-06-29 11:10:44.015 +05:30 [INF] Method InvokeAsunc - 3
+2026-06-29 11:10:44.149 +05:30 [INF] No CORS policy found for the specified request.
+2026-06-29 11:10:44.161 +05:30 [INF] Executing endpoint 'TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI)'
+2026-06-29 11:10:44.224 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TrabullsAPI.Models.UserCredential) on controller TrabullsAPI.Controllers.User.UserController (HandloomAPI).
+2026-06-29 11:10:44.449 +05:30 [INF] User login attempt: rohit
+2026-06-29 11:10:46.877 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44302/api/User/Login application/json 40
+2026-06-29 11:10:46.878 +05:30 [INF] CORS policy execution successful.
+2026-06-29 11:10:46.879 +05:30 [INF] Method InvokeAsunc
+2026-06-29 11:10:46.879 +05:30 [INF] Method InvokeAsunc - 3
+2026-06-29 11:10:46.886 +05:30 [INF] No CORS policy found for the specified request.
+2026-06-29 11:10:46.886 +05:30 [INF] Executing endpoint 'TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI)'
+2026-06-29 11:10:46.887 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TrabullsAPI.Models.UserCredential) on controller TrabullsAPI.Controllers.User.UserController (HandloomAPI).
+2026-06-29 11:10:46.891 +05:30 [INF] User login attempt: rohit
+2026-06-29 11:11:03.935 +05:30 [INF] Executing ObjectResult, writing value of type 'TrabullsAPI.APIResult'.
+2026-06-29 11:11:04.249 +05:30 [INF] Executed action TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI) in 17349.8753ms
+2026-06-29 11:11:04.255 +05:30 [INF] Executed endpoint 'TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI)'
+2026-06-29 11:11:04.256 +05:30 [INF] Request finished in 17380.2867ms 404 application/json; charset=utf-8
+2026-06-29 11:11:13.759 +05:30 [INF] Executing ObjectResult, writing value of type 'TrabullsAPI.APIResult'.
+2026-06-29 11:11:13.762 +05:30 [INF] Executed action TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI) in 29538.5944ms
+2026-06-29 11:11:13.762 +05:30 [INF] Executed endpoint 'TrabullsAPI.Controllers.User.UserController.Login (HandloomAPI)'
+2026-06-29 11:11:13.763 +05:30 [INF] Request finished in 29753.0581ms 404 application/json; charset=utf-8

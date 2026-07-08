@@ -3859,22 +3859,25 @@
   },
   "packageFolders": {
     "C:\\Users\\Rohit-PC\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Projects\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
+      "projectUniqueName": "G:\\Projects\\Handloom\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
       "projectName": "HandloomAPI",
-      "projectPath": "G:\\Projects\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
+      "projectPath": "G:\\Projects\\Handloom\\Handloom\\HandloomAPI\\HandloomAPI.csproj",
       "packagesPath": "C:\\Users\\Rohit-PC\\.nuget\\packages\\",
-      "outputPath": "G:\\Projects\\Handloom\\HandloomAPI\\obj\\publish\\win-x64\\",
+      "outputPath": "G:\\Projects\\Handloom\\Handloom\\HandloomAPI\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\Rohit-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3955,20 +3958,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[3.1.28, 3.1.28]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[3.1.28, 3.1.28]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[3.1.28, 3.1.28]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

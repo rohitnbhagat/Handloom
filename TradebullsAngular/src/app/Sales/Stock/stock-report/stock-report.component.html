@@ -102,12 +102,16 @@
                         <button type="button" class="btn btn-primary btn-sm" (click)="ExportToExcel()">&nbsp;<i
                                 class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Export To Excel</button>
                     </li>
+                     <li>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="Print()">&nbsp;<i
+                                class="fa fa-print"></i>&nbsp;&nbsp;Print</button>
+                    </li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
-            <div class="x_content p-0 table-container" style="max-height: 67vh; overflow: auto;">
+            <div class="x_content p-0 table-container" style="max-height: 67vh; overflow: auto;" id="contenttoprint">
                 
-                <table class="table table-striped mb-0 mb-n-6px" *ngIf="orders.length > 0">
+                <table class="table table-striped mb-0 mb-n-6px" *ngIf="orders.length > 0" >
                     <thead>
                         <tr>
                             <th style="width: 200px;" *ngIf="IsPicVisible">Image</th>
